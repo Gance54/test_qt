@@ -11,7 +11,7 @@ read_cons()
     TMP_FILE="$CONS_DIR"/"$2"".tmp"
     test -f "$FILE" && return;
     wget -O "$TMP_FILE" -o /dev/null -U 'Mozilla/5.0' $URL$1 && iconv -f WINDOWS-1251 -t UTF-8 "$TMP_FILE" | grep '<h1>' | \
-    sed 's/<a href="[^ ]*" class=at>//g' | sed 's/<h1>[^ ]*<\/h1>/. /g' | sed 's/<[^ ]*>//g'> "$FILE";
+    sed 's/<a href="[^ ]*" class=at>//g' | sed 's/<h1>[^ ]*<\/h1>//g' | sed 's/<[^ ]*>//g'> "$FILE";
     rm "$TMP_FILE";
 }
 
@@ -42,7 +42,7 @@ while IFS='=' read LINK FNAME; do
         egrep "<p><b>|^<tr bgcolor=|^<\/span><\/td>" | sed "s/<b>Состав.*border=0>//g" | grep "href=" | sed "s/<p><b><a href='.*'>/cat=/g" |\
         sed "s/<tr bgcolor.*href='//g; s/'>/=/g; s/<\/a><span class=\".*\">//g; s/<\/span><\/td><td align=right>/, /g; s/<\/td><\/tr>//g" |\
         sed 's/<a href="[^ ]*" class=at>//g' | sed "s/<\/a>.*align=justify>/\n/g" | sed "s/<[^ ]*>//g" |\
-        sed 's/\(.*\)=\(.*\), \(.*\), \(.*\)/ Requiredpattern|\1|\2|\3|\4/g' | sed "s/<.*>//g" > "$FILE" && rm "$TMP_FILE"
+        sed 's/\(.*\)=\(.*\), \(.*\), \(.*\)/ Requiredpattern|\1|\2|\3|\4/g' | sed "s/<.*>//g" | sed "s/&rarr//g" > "$FILE" && rm "$TMP_FILE"
 	cat "$FILE" | grep "Requiredpattern" |\
         while IFS="|" read REQ LINK NAME CUR CNT; do
             read_cons "$LINK" "$NAME" "$CUR" "$CNT"
