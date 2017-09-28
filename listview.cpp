@@ -1,0 +1,15 @@
+#include "listview.h"
+#include "ui_listview.h"
+
+ListView::ListView(QDialog *parent) :
+    QDialog(parent),
+    ui(new Ui::ListView)
+{
+    ui->setupUi(this);
+}
+
+ListView::~ListView()
+{
+    delete ui;
+}
+
