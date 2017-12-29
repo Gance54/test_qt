@@ -53,7 +53,9 @@ SOURCES       = main.cpp \
 		calendar.cpp \
 		database.cpp \
 		exception.cpp \
-		listview.cpp moc_mainwindow.cpp \
+		listview.cpp \
+		fileoperations.cpp \
+		main_db/maindatabase.cpp moc_mainwindow.cpp \
 		moc_calendar.cpp \
 		moc_listview.cpp
 OBJECTS       = main.o \
@@ -62,6 +64,8 @@ OBJECTS       = main.o \
 		database.o \
 		exception.o \
 		listview.o \
+		fileoperations.o \
+		maindatabase.o \
 		moc_mainwindow.o \
 		moc_calendar.o \
 		moc_listview.o
@@ -130,12 +134,16 @@ DIST          = testqt \
 		database.h \
 		exception.h \
 		ui_listview.h \
-		listview.h main.cpp \
+		listview.h \
+		fileoperations.h \
+		main_db/maindatabase.h main.cpp \
 		mainwindow.cpp \
 		calendar.cpp \
 		database.cpp \
 		exception.cpp \
-		listview.cpp
+		listview.cpp \
+		fileoperations.cpp \
+		main_db/maindatabase.cpp
 QMAKE_TARGET  = testqt
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = testqt
@@ -305,8 +313,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h ui_mainwindow.h ui_calendar.h calendar.h database.h exception.h ui_listview.h listview.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp calendar.cpp database.cpp exception.cpp listview.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h ui_mainwindow.h ui_calendar.h calendar.h database.h exception.h ui_listview.h listview.h fileoperations.h main_db/maindatabase.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp calendar.cpp database.cpp exception.cpp listview.cpp fileoperations.cpp main_db/maindatabase.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui calendar.ui listview.ui $(DISTDIR)/
 
 
@@ -388,7 +396,8 @@ calendar.o: calendar.cpp calendar.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o calendar.o calendar.cpp
 
 database.o: database.cpp database.h \
-		exception.h
+		exception.h \
+		main_db/maindatabase.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o database.o database.cpp
 
 exception.o: exception.cpp exception.h \
@@ -398,6 +407,16 @@ exception.o: exception.cpp exception.h \
 listview.o: listview.cpp listview.h \
 		ui_listview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listview.o listview.cpp
+
+fileoperations.o: fileoperations.cpp fileoperations.h \
+		exception.h \
+		database.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fileoperations.o fileoperations.cpp
+
+maindatabase.o: main_db/maindatabase.cpp main_db/maindatabase.h \
+		database.h \
+		fileoperations.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maindatabase.o main_db/maindatabase.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

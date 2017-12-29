@@ -20,12 +20,13 @@ public:
 private slots:
     void on_Calendar_clicked();
     void on_ProductsButton_clicked();
+    void on_InitDatabase_clicked();
 
 private:
     Ui::MainWindow *ui;
     Calendar *calendar;
     ListView *products;
-    std::unique_ptr <DatabaseBuilder> d;
+    std::unique_ptr <DataBase> d;
 };
 
 #endif // MAINWINDOW_H

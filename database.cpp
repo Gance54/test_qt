@@ -1,14 +1,15 @@
 #include "database.h"
 #include <QMessageBox>
 #include <exception.h>
+#include <main_db/maindatabase.h>
+
 #define DB_CONNESTION_PREFIX "sqlite_db_connection"
 #define DB_FILENAME "database.dat"
 #define DB_DRIVER "QSQLITE"
 
-
 int DataBase::_total_connections = 0;
 
-DataBase::DataBase(std::string dbPrefix, std::string filename,
+DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
                    QStringList dbTables, QStringList dbTableDescriptions)
 {
     _m.lock();
@@ -24,13 +25,13 @@ DataBase::DataBase(std::string dbPrefix, std::string filename,
     if (_db.open())
     {
         _total_connections = currentConnections;
-        _dbValid = _isDbValid();
+        _dbValid = _IsDbValid();
 
         if(!_dbValid)
         {
             try {
-                _clear();
-                _init();
+                _Clear();
+                _Init();
             }
             catch (Exception e) {
                 e.show();
@@ -41,9 +42,14 @@ DataBase::DataBase(std::string dbPrefix, std::string filename,
         throw Exception ("Failed to open db");
 
     _m.unlock();
+
+    if(dbe >= DB_MAX)
+        throw Exception ("There is no database with requested dbSet");
+
+    _dbe = dbe;
 }
 
-QSqlError DataBase::_init()
+QSqlError DataBase::_Init()
 {
     if(_db.isOpen() && !_db.tables().count())
     {
@@ -66,7 +72,7 @@ QSqlError DataBase::_init()
     return QSqlError();
 }
 
-QSqlError DataBase::_clear()
+QSqlError DataBase::_Clear()
 {
     if(!_db.isOpen())
         throw Exception("DB is not open", this);
@@ -113,7 +119,7 @@ void DataBase::ShowMessage(QString text)
     msgBox.exec();
 }
 
-bool DataBase::_isDbValid()
+bool DataBase::_IsDbValid()
 {
     bool valid = true;
     QStringList tables = _db.tables();
@@ -143,18 +149,18 @@ int DatabaseBuilder::SetDatabaseDescriptions(DbSet db,
                                              QStringList &tableDescriptions)
 {
     if(db >= DbSet::DB_MAX)
-        return -1;
+        throw Exception("Invalid database number");
 
     dbPrefix = descriptions[db].dbPrefix;
     dbFilename = descriptions[db].dbFilename;
 
     if(sizeof(descriptions[db].tables)/sizeof(descriptions[db].tables[0]) !=
        sizeof(descriptions[db].tableDescriptions)/sizeof(descriptions[db].tableDescriptions[0]))
-        return -1;
+        throw Exception("Invalid DB tables and descriptions");
 
     for(size_t i = 0; i < sizeof(descriptions[db].tableDescriptions)/sizeof(descriptions[db].tableDescriptions[0]); i++)
         if(descriptions[db].tableDescriptions[i][0].size() != descriptions[db].tableDescriptions[i][1].size())
-            return -1;
+            throw Exception("Incompatible DB initialization.");
 
     for(size_t i = 0; i < sizeof(descriptions[db].tables)/sizeof(descriptions[db].tables[0]); i++)
     {
@@ -175,7 +181,6 @@ int DatabaseBuilder::SetDatabaseDescriptions(DbSet db,
     }
 
     return 0;
-
 }
 
 QStringList DatabaseBuilder::GetTableFields(DbSet db,
@@ -201,10 +206,10 @@ DatabaseBuilder::DatabaseBuilder(DbSet dbe)
     if(SetDatabaseDescriptions(dbe, dbPrefix, dbFilename, tables, tableDescriptions))
         throw Exception("Failed to get DB properties");
 
-    _db.reset(new DataBase(dbPrefix, dbFilename, tables, tableDescriptions));
+    _db.reset(new DataBase(dbe, dbPrefix, dbFilename, tables, tableDescriptions));
 }
 
-std::unique_ptr<DataBase> &DatabaseBuilder::get()
+std::unique_ptr<DataBase> DatabaseBuilder::get_db()
 {
-    return _db;
+    return std::move(_db);
 }

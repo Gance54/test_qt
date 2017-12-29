@@ -4,22 +4,25 @@
 #include "unistd.h"
 #include <database.h>
 #include <exception.h>
+#include <memory>
+#include <iostream>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    calendar = new Calendar();
+    products = new ListView();
+    products->setWindowTitle("Products");
 
     try {
-        d = std::unique_ptr <DatabaseBuilder>(new DatabaseBuilder(DatabaseBuilder::DB_MAIN));
+        auto db = std::unique_ptr <DatabaseBuilder>(new DatabaseBuilder(DB_MAIN));
+        d = db->get_db();
     }
     catch (Exception e) {
         e.show();
     }
-
-    calendar = new Calendar();
-    products = new ListView();
-    products->setWindowTitle("Products");
 }
 
 MainWindow::~MainWindow()
@@ -37,4 +40,14 @@ void MainWindow::on_Calendar_clicked()
 void MainWindow::on_ProductsButton_clicked()
 {
     products->show();
+}
+
+void MainWindow::on_InitDatabase_clicked()
+{
+    try {
+
+    }
+    catch (Exception e) {
+        e.show();
+    }
 }

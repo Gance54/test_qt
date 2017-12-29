@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     calendar.cpp \
     database.cpp \
     exception.cpp \
-    listview.cpp
+    listview.cpp \
+    fileoperations.cpp \
+    main_db/maindatabase.cpp
 
 HEADERS  += mainwindow.h \
     ui_mainwindow.h \
@@ -28,7 +30,9 @@ HEADERS  += mainwindow.h \
     database.h \
     exception.h \
     ui_listview.h \
-    listview.h
+    listview.h \
+    fileoperations.h \
+    main_db/maindatabase.h
 
 FORMS    += mainwindow.ui \
     calendar.ui \

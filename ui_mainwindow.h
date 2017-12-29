@@ -29,6 +29,7 @@ public:
     QWidget *centralWidget;
     QPushButton *Calendar;
     QPushButton *ProductsButton;
+    QPushButton *InitDatabase;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -46,6 +47,9 @@ public:
         ProductsButton = new QPushButton(centralWidget);
         ProductsButton->setObjectName(QStringLiteral("ProductsButton"));
         ProductsButton->setGeometry(QRect(300, 10, 80, 22));
+        InitDatabase = new QPushButton(centralWidget);
+        InitDatabase->setObjectName(QStringLiteral("InitDatabase"));
+        InitDatabase->setGeometry(QRect(279, 210, 101, 22));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -68,6 +72,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         Calendar->setText(QApplication::translate("MainWindow", "Calendar", 0));
         ProductsButton->setText(QApplication::translate("MainWindow", "Products", 0));
+        InitDatabase->setText(QApplication::translate("MainWindow", "Init database", 0));
     } // retranslateUi
 
 };

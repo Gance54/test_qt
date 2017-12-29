@@ -5,10 +5,17 @@
 #include <QStringList>
 #include <string>
 #include <memory>
+
+enum DbSet{
+    DB_MAIN = 0,
+
+    DB_MAX
+};
+
 class DataBase
 {
 public:
-    DataBase(std::string dbPrefix, std::string filename,
+    DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
              QStringList dbTables, QStringList dbTableDescriptions);
 
     ~DataBase();
@@ -22,20 +29,16 @@ private:
     std::mutex _m;
     QStringList _tables;
     QStringList _tableDescriptions;
+    DbSet _dbe;
 
-    bool _isDbValid();
-    QSqlError _init();
-    QSqlError _clear();
+    bool _IsDbValid();
+    QSqlError _Init();
+    QSqlError _Clear();
 };
 
 class DatabaseBuilder
 {
 public:
-    enum DbSet{
-        DB_MAIN = 0,
-
-        DB_MAX
-    };
 
     DatabaseBuilder(DbSet dbe);
 
@@ -49,7 +52,7 @@ public:
                                       QString table);
 
 
-    std::unique_ptr<DataBase>& get();
+    std::unique_ptr<DataBase> get_db();
 
 private:
     std::unique_ptr <DataBase> _db;
@@ -59,18 +62,38 @@ static struct TableDescriptions
 {
     std::string dbPrefix;
     std::string dbFilename;
-    std::string tables [2];
-    QStringList tableDescriptions [2][2];
-} descriptions [DatabaseBuilder::DB_MAX] =
+    std::string tables [4];
+    QStringList tableDescriptions [4][2];
+} descriptions [DB_MAX] =
 {
     "sqlite_db_connection",
     "database.dat",
     {
-        "product",
-        "image",
+        "products",
+        "categories",
+        "consumables",
+        "images",
     },
     {
-        {//product table
+        {//products table
+            {
+                "id",
+                "name",
+                "description",
+                "category_id",
+                "image_id",
+                "consumables",
+            },
+            {
+                "integer primary key",
+                "varchar",
+                "varchar",
+                "integer",
+                "integer",
+                "varchar",
+            },
+        },
+        {//categories table
             {
                 "id",
                 "name",
@@ -80,9 +103,21 @@ static struct TableDescriptions
                 "integer primary key",
                 "varchar",
                 "varchar"
-            },
+            }
         },
-        {//image table
+        {//comsumables table
+            {
+                "id",
+                "name",
+                "description"
+            },
+            {
+                "integer primary key",
+                "varchar",
+                "varchar"
+            }
+        },
+        {//images table
             {
                 "id",
                 "description"
