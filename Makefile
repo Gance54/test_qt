@@ -388,7 +388,8 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		listview.h \
 		database.h \
 		ui_mainwindow.h \
-		exception.h
+		exception.h \
+		main_db/maindatabase.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 calendar.o: calendar.cpp calendar.h \

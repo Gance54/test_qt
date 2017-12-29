@@ -5,7 +5,7 @@
 #include <database.h>
 #include <exception.h>
 #include <memory>
-#include <iostream>
+#include <main_db/maindatabase.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,14 +15,6 @@ MainWindow::MainWindow(QWidget *parent) :
     calendar = new Calendar();
     products = new ListView();
     products->setWindowTitle("Products");
-
-    try {
-        auto db = std::unique_ptr <DatabaseBuilder>(new DatabaseBuilder(DB_MAIN));
-        d = db->get_db();
-    }
-    catch (Exception e) {
-        e.show();
-    }
 }
 
 MainWindow::~MainWindow()
@@ -45,7 +37,8 @@ void MainWindow::on_ProductsButton_clicked()
 void MainWindow::on_InitDatabase_clicked()
 {
     try {
-
+        auto main_db = std::unique_ptr <MainDatabase> (new MainDatabase());
+        main_db->FillData();
     }
     catch (Exception e) {
         e.show();

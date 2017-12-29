@@ -2,10 +2,13 @@
 #include <QMessageBox>
 #include <exception.h>
 #include <main_db/maindatabase.h>
-
+#include <iostream>
+#include <QSqlQuery>
 #define DB_CONNESTION_PREFIX "sqlite_db_connection"
 #define DB_FILENAME "database.dat"
 #define DB_DRIVER "QSQLITE"
+#define DESCRYPTION_SEPARATOR ","
+#define FIELD_SEPARATOR " "
 
 int DataBase::_total_connections = 0;
 
@@ -105,11 +108,22 @@ DataBase::~DataBase()
 
      _tables.clear();
      _tableDescriptions.clear();
+     std::cout<<"DESTR!!!"<<std::endl;
 }
 
 QStringList DataBase::getTables()
 {
     return _db.tables();
+}
+
+void DataBase::Insert(QString table, QStringList fields, QStringList values)
+{
+    QSqlQuery query (_db);
+
+    if(!query.exec("INSERT INTO " + table + " (" + fields.join(", ") + ") values('" +
+               values.join(", ") + "')"))
+        throw Exception("Error adding values " + values.join(", ") + " as " + values.join(", ") +
+                        + " to table " + table + " with error " + query.lastError().text());
 }
 
 void DataBase::ShowMessage(QString text)
@@ -170,13 +184,14 @@ int DatabaseBuilder::SetDatabaseDescriptions(DbSet db,
             field != descriptions[db].tableDescriptions[i][0].end(), desc != descriptions[db].tableDescriptions[i][1].end();
             field++, desc++)
         {
-            description.append(*field + QString::fromStdString(" ") + *desc);
+            description.append(*field + QString::fromStdString(FIELD_SEPARATOR) + *desc);
             if(field != descriptions[db].tableDescriptions[i][0].end() - 1)
-                description.append(", ");
+                description.append(DESCRYPTION_SEPARATOR);
         }
 
         tables.push_back(QString::fromStdString(descriptions[db].tables[i]));
 
+        std::cout<<description.toStdString()<<";"<<std::endl;
         tableDescriptions.push_back(description);
     }
 

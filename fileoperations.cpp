@@ -1,6 +1,6 @@
 #include <fileoperations.h>
 #include <exception.h>
-
+#include <iostream>
 FileOperations::FileOperations(QString filename)
 {
     _pFile.open(filename.toStdString());
@@ -10,7 +10,7 @@ FileOperations::FileOperations(QString filename)
     while(!_pFile.eof())
     {
         std::string line;
-        _pFile>>line;
+        std::getline(_pFile, line);
         _data.push_back(QString::fromStdString(line));
     }
 }

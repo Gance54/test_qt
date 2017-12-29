@@ -5,7 +5,7 @@
 #include <QStringList>
 #include <string>
 #include <memory>
-
+#define PRIMARY_KEY_STR " primary key"
 enum DbSet{
     DB_MAIN = 0,
 
@@ -20,6 +20,8 @@ public:
 
     ~DataBase();
     QStringList getTables();
+    void Insert(QString table, QStringList fields, QStringList values);
+
     static void ShowMessage(QString text);
 
 private:
@@ -63,6 +65,7 @@ static struct TableDescriptions
     std::string dbPrefix;
     std::string dbFilename;
     std::string tables [4];
+    //tableDescriptions[TABLES][FIELD_NAME_LIST;FIELD_TYPE_LIST]
     QStringList tableDescriptions [4][2];
 } descriptions [DB_MAX] =
 {
@@ -85,7 +88,7 @@ static struct TableDescriptions
                 "consumables",
             },
             {
-                "integer primary key",
+                "integer" PRIMARY_KEY_STR,
                 "varchar",
                 "varchar",
                 "integer",
@@ -100,7 +103,7 @@ static struct TableDescriptions
                 "description"
             },
             {
-                "integer primary key",
+                "integer" PRIMARY_KEY_STR,
                 "varchar",
                 "varchar"
             }
@@ -112,7 +115,7 @@ static struct TableDescriptions
                 "description"
             },
             {
-                "integer primary key",
+                "integer" PRIMARY_KEY_STR,
                 "varchar",
                 "varchar"
             }
@@ -123,7 +126,7 @@ static struct TableDescriptions
                 "description"
             },
             {
-                "integer primary key",
+                "integer" PRIMARY_KEY_STR,
                 "varchar"
             },
         },
