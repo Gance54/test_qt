@@ -11,7 +11,8 @@ FileOperations::FileOperations(QString filename)
     {
         std::string line;
         std::getline(_pFile, line);
-        _data.push_back(QString::fromStdString(line));
+        if(!line.empty())
+            _data.push_back(QString::fromStdString(line));
     }
 }
 

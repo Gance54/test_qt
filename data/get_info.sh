@@ -31,7 +31,7 @@ while IFS='=' read LINK FNAME; do
     TMP_FILE="$CAT_DIR/$TFNAME.tmp"
     
     wget -O "$TMP_FILE" -o /dev/null -U 'Mozilla/5.0' $URL$LINK  && iconv -f WINDOWS-1251 -t UTF-8 "$TMP_FILE" | sed "s/<\/td><\/tr>/\n<----->/g;" | 
-    grep "<-----><tr" | sed "s/<-----><tr.*href='//g; s/'>/=/g; s/<\/a>.*//g" > "$FILE" && rm "$TMP_FILE"
+    grep "<-----><tr" | sed "s/<-----><tr.*href='//g; s/'>/=/g; s/<\/a>.*//g"> "$FILE" && rm "$TMP_FILE"
     cat "$FILE" | \
     while IFS='=' read P_LINK P_NAME; do
         TP_NAME=$(echo -e "$P_NAME" | sed "s/\//-/g")
