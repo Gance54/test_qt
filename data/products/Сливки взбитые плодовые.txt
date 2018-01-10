@@ -1,0 +1,17 @@
+cat=Молочные продукты ; Сливки взбитые плодовыеСливки взбитые плодовые
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|46
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|2.8
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|27
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|23.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|88
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|78
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|7
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|32
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|60
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|200
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.16
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|0.3
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.11
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.07
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|344

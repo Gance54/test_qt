@@ -1,0 +1,24 @@
+cat=Овощи
+Редис - еще одна из древнейших культур, высокая урожайность и скороспелость которой позволяют чуть ли не круглый год пополнять организм витаминами. Редис - разновидность редьки. Редис, или в разговорной речи редиска, - первый свежий овощ после зимнего перерыва.Редис содержит калий, натрий, кальций, фосфор, магний, железо, витамины РР, С. Содержит редис и тиамин, рибофлавин и никотиновую кислоту. Горчичные масла придают редису своеобразный привкус. Салаты из редиса обладают умеренным желчегонным, противоотёчными свойствами, возбуждают аппетит, способствуют лучшей перистальтике и опорожнению кишечника. Сок, полученный из редиса, улучшает пищеварение и обмен веществ. Особенно полезен он тем, кто страдает подагрой, ожирением, сахарным диабетом.Из-за большого количества эфирных масел налегать на редис не следует тем, кто страдает хроническими заболеваниями желудка, двенадцатиперстной кишки, поджелудочной железы, печени и желчного пузыря, а также сердечно-сосудистой системы.Кожура у редиса должна быть гладкой, ровно окрашенной, без черных крапинок (это знак гниения). А ботва - сочной и зеленой, а не вялой и желтой. На ощупь свежий редис - твердый. А мягкий редис внутри рыхлый и на вкус суховатый.Т.к по пищевым и лечебным свойствам редис во многом сходен с редькой, то в лечебном питании его рекомендуют при тех же заболеваниях, что и редьку. Редис имеет те же противопоказания.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|93
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|1.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|4.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|255
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|39
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|13
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|10
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|44
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1000
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|8
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|3
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|150
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|150
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|30
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|200
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|25
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.01
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|6
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|21

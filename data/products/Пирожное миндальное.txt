@@ -1,0 +1,15 @@
+cat=Кондитерские изделия ; Пирожное миндальноеПирожное миндальное
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|8
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|8.5
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|16.2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|66.2
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|78
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|63
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|7
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|137
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|1400
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.07
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.08
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.18
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1.21
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|431

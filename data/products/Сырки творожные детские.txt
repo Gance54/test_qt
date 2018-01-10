@@ -1,0 +1,24 @@
+cat=Молочные продукты ; Сырки творожные детскиеСырки творожные детские
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|48
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|9.1
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|23
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|18.5
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|112
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|135
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|10
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|41
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|200
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|400
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|1
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|70
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|10
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|30
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|395
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.38
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|0.5
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.03
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.3
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|35
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.3
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|315

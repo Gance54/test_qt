@@ -1,0 +1,26 @@
+cat=Мясные продукты
+В печени содержится 70-73% воды, 2-4% жира, 17-18% белков, в том числе все незаменимые аминокислоты. Печень очень богата витаминами группы В, в ней имеются витамины A, D, Е, K, значительное количество ферментов и экстрактивных веществ, железа, фосфора. Печень содержит: калий, натрий, кальций, магний, медь. Она очень полезна детям, страдающим малокровием. Свиная и говяжья печень полезна курильщикам. Печень содержит хром, помогающий при атеросклерозе, диабете.В печени много воды, поэтому она быстро портится. Перед готовкой ее надо внимательно осматривать, все вызывающее недоверие нещадно уничтожать. Печень получится особенно нежной, если перед приготовлением ее подержать некоторое время в молоке. Лишние две-три минуты обжарки говяжьей печени портят вкус и делают ее жесткой и сухой. Перед тепловой обработкой печень необходимо освободить от желчных протоков и пленки и тщательно промыть. Для свиной печени характерен слабый привкус горечи.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|71.7
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|17.9
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|3.7
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|277
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|8.7
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|18
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|104
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|314
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|6900
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|6.3
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|19.9
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|315
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|3800
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|110
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|230
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|5000
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|8.2
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|1.28
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|33
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.3
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|2.19
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|240
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|9
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|105

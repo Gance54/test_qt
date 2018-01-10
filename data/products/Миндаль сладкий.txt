@@ -1,0 +1,24 @@
+cat=Орехи и семечки
+Миндаль - продолговатый плод кустарника или небольшого дерева. Существует два вида миндаля обыкновенного: горький и сладкий. Ядра плода (ореха) у диких форм горькие, у культурных - сладкие.Семена миндаля содержат от 35 до 67% невысыхающего жирного масла. Миндаль является одним из лучших растительных источников белка. Миндаль содержит почти столько же белка, сколько постное мясо - до 30%. Миндаль дает высококачественный, хорошо абсорбируемый белок. Качество белка определяется количеством необходимых или незаменимых аминокислот и усваиваемостью.Миндаль содержит различные минералы, абсолютно необходимые для здоровья костей. Кальций, магний, марганец и фосфор участвуют в поддержании прочности костей. В семенах миндаля содержится большое количество жирного масла, белков и сахаров; имеются ферменты, витамины группы В, Е. В горьком миндале обнаружен гликозид амигдалин, придающий ядрам горький вкус и "миндальный" запах.В народной используют миндаль с сахаром при анемии, малокровии, бессоннице, кашле.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|4
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|18.6
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|57.7
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|16.2
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|748
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|273
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|234
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|10
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|473
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|4200
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|2
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|1920
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|140
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|91
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|2120
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|30.9
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|1.5
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.25
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.65
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|40
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|4
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|645

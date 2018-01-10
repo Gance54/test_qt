@@ -1,0 +1,11 @@
+cat=Молочные продукты ; Брынза из овечьего молокаБрынза из овечьего молока
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|49
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|14.6
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|25.5
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|550
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|1600
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|310
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|1
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.15
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|298

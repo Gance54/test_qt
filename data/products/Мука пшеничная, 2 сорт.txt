@@ -1,0 +1,23 @@
+cat=Изделия из муки
+Пшено обладает липотропным действием (препятствует отложению жира) и оказывает положительное влияние на работу сердечно-сосудистой системы, печени и кроветворения. Пшено в народной медицине ценится как продукт, дающий силу, "укрепляющий тело". Очень вкусными и питательными получаются блюда из пшена, приготовленные с молоком, творогом, печенкой, тыквой и другими продуктами.Пшенная каша наполняет организм энергией, а также выводит лишние минеральные соли из организма. Пшено наиболее богато витамином А. В пшене содержатся незаменимые аминокислоты, которые являются основным строительным материалом для мышц и клеток кожи. Пшенная каша источник витаминов группы В, особенно витамином В1 - основным недругом усталости, раздражительности и депрессией, В2, активно борющимся с перхотью и прыщами, а также делающим волосы густыми и сильными и В5, который избавляет от проблем с осанкой и стабилизирует кровяное давление. В пшене содержится почти целая таблица Менделеева: железо (для хорошего кровообращения и здорового цвета лица), фтор (для крепких зубов), магний, марганец, кремний, медь. Пшенная каша выводит из организма антибиотики и токсины. От пшенной каши не толстеют, пшено не только не способствует отложению жира, но даже выводит его из организма. Пшённая каша полезна людям, страдающим сердечно-сосудистыми заболеваниями, так как при нарушении сердечной деятельности необходим калий, а его ценным источником как раз и является пшено.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|14
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|11.7
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|1.8
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|64.3
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|251
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|32
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|73
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|6
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|184
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|3900
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|3
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|1470
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|290
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|20.4
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|1850
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|5.37
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.37
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.12
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|38.4
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|4.55
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|324

@@ -1,0 +1,14 @@
+cat=Фрукты
+Родиной шелковицы считается Восточный Китай, откуда она распространилась в Среднюю и Южную Азию, затем - в Закавказье. Ягоды шелковицы бывают белыми, черными, красными. В шелковице много калия, по его содержанию она, наряду с черной смородиной, лидирует среди плодово-ягодных культур. Шелковица содержит сахара, железо, витамины. Плоды шелковицы обладают желчегонным, мочегонным, противовоспалительным действием и рекомендуются при дискинезии желчевыводящих путей, запорах, отеках сердечного и почечного происхождения, воспалительных процессах. Плоды используют в свежем, сушеном, консервированном виде. Красная шелковица полезна для крови, белая - для нервной системы. Если шелковицу высушить, то компоты в весенний период - это не только удовольствие от вкуса и цвета, а еще лечение и профилактика авитаминоза.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|82.7
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.7
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|13.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|350
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|24
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|51
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|16
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|10
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.8
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|52

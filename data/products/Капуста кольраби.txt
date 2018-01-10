@@ -1,0 +1,23 @@
+cat=Овощи ; Капуста кольрабиКапуста кольраби
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|85
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|2.8
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|10.7
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|370
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|46
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|30
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|10
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|50
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|600
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|3
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|3
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|170
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|75
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|10
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|10
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|400
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|50
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.06
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|31
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.9
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|42

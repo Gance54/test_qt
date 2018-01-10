@@ -1,0 +1,23 @@
+cat=Мясные продукты
+В почках содержатся 82-83% воды, 1,8-2% жира, 1около 2% белков, витамины группы В, РР, пантотеновая кислота, минеральные вещества (кальций, магний, железо, фосфор). Почки, так же как и печень, богаты ферментами и экстрактивными веществами.Для удаления неприятного запаха и привкуса почки вымачивают в течение 30 мин в воде или слабом растворе уксусной кислоты. Перед обжариванием почки следует нарезать не слишком тонкими ломтиками, так как они быстро высыхают и становятся жесткими.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|79
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|15.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|2.8
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|237
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|12.5
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|18
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|218
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|239
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|5950
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|8.8
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|139
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|450
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|89
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|2320
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.23
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|10
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.39
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|1.8
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|56
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|5.7
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|86

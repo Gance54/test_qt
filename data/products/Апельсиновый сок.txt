@@ -1,0 +1,15 @@
+cat=Плодоовощные консервы ; Апельсиновый сокАпельсиновый сок
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|84.5
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.7
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|13
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|179
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|18
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|11
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|10
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|13
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|300
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|40
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.22
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|54

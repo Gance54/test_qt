@@ -1,0 +1,23 @@
+cat=Крупы
+Ячневая крупа представляет собой разной формы частицы дробленого ядра ячменя, освобожденные от цветочных пленок. Ячневая крупа обладает высокой калорийностью и хорошими вкусовыми качествами. Современные диетологи советуют почаще есть ячменные каши и супы с добавление круп из ячменя людям с избыточным весом, также и при заболеваниях кишечника, сопровождающихся запорами.Ячмень используется при лечении диабета, ослабленном зрении, заболеваниях почек, печени, желчного пузыря, мочевыводящих путей, геморрое, при желудочно-кишечных заболеваниях и поносах. Он облегчает боли при артритах, в том числе ревматических.Ячменная каша благодаря своему составу может заменить овсяную, так как содержит ценное для человеческого организма вещество - бета-глюкан - тот же вид растворимой клетчатки, который есть и в овсянке.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|14
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|10
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|1.3
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|71.7
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|205
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|80
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|50
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|15
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|343
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1810
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|2.1
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|760
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|370
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|13
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|90
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|1090
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.27
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.08
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|32
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|2.74
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|324

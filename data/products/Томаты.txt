@@ -1,0 +1,26 @@
+cat=Овощи
+В своем составе помидоры содержат легкоусвояемые углеводы, пектиновые вещества, богаты витаминами и являются ценным пищевым продуктом. Помидоры содержат калий (полезен для сердца, способствует выведению избытка жидкости из организма), магний (помогает телу адаптироваться к холоду), железо (рекомендуется при анемии), цинк (необходим для роста клеток кожи, волос и заживления ран), кальций (укрепляет кости), фосфор (участвует в обменных процессах). Томаты содержат большое количество органических кислот, которые необходимы нашему организму для нормальной работы. Ликопен - пигмент, придающий томатам красный цвет, снижает риск возникновения сердечно-сосудистых заболеваний, простатита, некоторых видов рака, дистрофии желтого пятна (приводящей к слепоте у людей в возрасте 55 лет и старше). Лучше всего ликопен усваивается из термически обработанных продуктов, однако, и свежими томатами не стоит пренебрегать. Кроме ликопена, томаты содержат антиоксиданты.Помидоры лишают нас застенчивости. Помидоры содержат в достаточно большом количестве 5-гидро-кситриптамин, чье действие напоминает действие серотонина. Мы расслабляемся, теряем "тормоза". Недаром помидоры называют иногда "яблоками любви".Томаты содержат (а разных количествах) довольно много витаминов - В1, В2, В3, В6, В9, Е, но больше всего в них витамина С. 100г спелых помидоров на четверть покрывают потребность в нем взрослого человека.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|92
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|1.1
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|5
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|290
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|14
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|20
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|40
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|26
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|900
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|2
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|6
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|140
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|110
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|7
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|20
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|200
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.39
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|25
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.06
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|11
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.53
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|23

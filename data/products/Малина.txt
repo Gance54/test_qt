@@ -1,0 +1,25 @@
+cat=Ягоды
+Лечебный и косметический эффект малины известен со времен Древней Греции. В составе этой ягоды обнаружены дубильные вещества, пектины, органические кислоты, множество витаминов. Витамин А укрепляет ногти и корни волос. Витамин С выводит из организма излишки жидкости, укрепляет соединительную ткань, понижает уровень холестерина в организме и уменьшает вероятность сердечно-сосудистых заболеваний, поэтому ягода очень полезна при проявлениях целлюлита. Малину рекомендуют больным варикозным расширением вен. Малина содержит органические кислоты, в том числе салициловую. Именно поэтому ягода используется как противопростудное, потогонное, и жаропонижающее средство. Железа в плодах малины содержится в 2-3 раза больше, чем у черной смородины, что определяет их высокую кроветворную способность в организме человека. Малина - богатый источник летучих антибиотиков, обладающих антисептическими свойствами для лечения верхних дыхательных путей и предупреждения простудных заболеваний. Малина содержит много меди, а медь входит в состав большинства антидепрессантов. Поэтому есть малину горстями полезно тем, кто находится на грани стресса. Малина богата кислотой Элладжик, которая помогает остановить рост раковых клеток. Малина обладает большим количеством клетчатки. Малина в отличие от большинства ягод не теряет своих полезных качеств даже после тепловой обработки.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|82
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.8
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.3
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|14.1
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|224
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|40
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|22
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|10
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|37
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1200
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|2
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|210
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|170
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|15
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|3
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|200
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.58
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|25
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|6
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.6
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|42

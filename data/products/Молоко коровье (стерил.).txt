@@ -1,0 +1,26 @@
+cat=Молочные продукты
+Пастеризация сохраняет свежесть молока, так как гибнут все патогенные микробы, но не споры, поэтому для большей устойчивости молоко стерилизуют.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|88.1
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|2.9
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|4.7
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|4.7
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|146
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|121
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|14
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|50
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|91
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|100
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|9
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|0.9
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|5
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|12
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|5
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|20
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|400
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|0.6
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.13
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|4.5
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|61

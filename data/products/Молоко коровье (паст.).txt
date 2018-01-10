@@ -1,0 +1,18 @@
+cat=Молочные продукты
+При нагревании до 100 градусов большинство витаминов молока, кроме витамина С, не теряет своих свойств. Чтобы сохранить качество свежего молока, его пастеризуют, то есть нагревают до 85-90 градусов и выдерживают несколько секунд - это и есть моментальная пастеризация. Если молоко нагревают при температуре 72-75 градусов в течение 15 секунд - этот прием называется кратковременной пастеризацией. И, наконец, если молоко нагревают до 63 градусов около 30 минут - такой способ называется длительной пастеризацией. 
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|88.5
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|2.8
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|3.2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|4.7
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|146
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|120
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|14
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|50
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|90
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|60
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|1.3
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.15
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|58

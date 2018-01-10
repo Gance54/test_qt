@@ -1,0 +1,15 @@
+cat=Напитки ; Кофе жареный в зернахКофе жареный в зернах
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|7
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|13.9
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|14.4
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|15.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|1600
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|147
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|200
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|2
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|198
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|5300
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.07
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.2
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|17
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|223

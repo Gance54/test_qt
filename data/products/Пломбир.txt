@@ -1,0 +1,17 @@
+cat=Молочные продукты ; Пломбир
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|60
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|3.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|15
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|20.8
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|162
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|159
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|21
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|50
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|114
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|200
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.06
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|0.4
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.03
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.21
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|227

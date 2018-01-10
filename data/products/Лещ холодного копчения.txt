@@ -1,0 +1,10 @@
+cat=Рыба и морепродукты ; Лещ холодного копченияЛещ холодного копчения
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|53.3
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|26.7
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|4.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|165
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|205
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|32
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|200
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|3400
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|160

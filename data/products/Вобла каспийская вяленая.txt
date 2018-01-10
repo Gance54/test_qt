@@ -1,0 +1,10 @@
+cat=Рыба и морепродукты ; Вобла каспийская вяленаяВобла каспийская вяленая
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|34.7
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|46.4
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|5.5
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|630
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|368
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|49
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|470
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|6900
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|235

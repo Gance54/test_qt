@@ -1,0 +1,10 @@
+cat=Рыба и морепродукты ; Вобла холодного копченияВобла холодного копчения
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|50
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|31.1
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|6.3
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|169
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|189
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|39
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|222
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2900
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|181

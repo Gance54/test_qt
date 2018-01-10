@@ -1,0 +1,25 @@
+cat=Бобовые
+Зеленая горошина содержит витамины группы В, каротин, витамины С и РР, соли железа, калия и фосфора. Плоды гороха содержат высокий процент антиоксидантов (веществ, задерживающих окисление), белка и таких важных для организма минеральных веществ, как кальций и железо. Горох снижает вероятность онкологических заболеваний, инфаркта, гипертонии и тормозит процессы старения кожи.Большое содержание селена рассматривают как антиканцерогенное свойство. Зеленый горошек блокирует поступление в организм ряда радиоактивных металлов. Припарки из гороховой муки помогают избавляться от фурункулов, карбункулов, нарывов, прыщей, твердых воспалительных инфильтратов.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|14
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|20.5
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|53.3
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|873
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|115
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|107
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|33
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|329
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|6800
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|5.1
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|13.1
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|1750
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|750
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|84.2
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|30
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|3180
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|9.1
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.81
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.15
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|16
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|2.2
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|298

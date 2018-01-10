@@ -1,0 +1,19 @@
+cat=Овощи
+Съедобная часть ревеня - толстые мясистые черешки, имеющие зеленоватую или красноватую окраску. Благодаря незначительной сахаристости и высокому содержанию кислот (в основном яблочной) черешки ревеня имеют резко выраженный кислый вкус с характерным привкусом и ароматом, напоминающим яблокиВ народной медицине ревень применяют как средство, улучшающее пищеварение. Нужно только иметь в виду, что лекарственное действие ревеня сильно зависит от дозы. При приеме больших доз ревень действует как слабительное, а малые дозы оказывают закрепляющее действие.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|91.5
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.7
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|4.3
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|325
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|44
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|17
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|35
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|25
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|600
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.2
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|10
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.01
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.06
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|15
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|16

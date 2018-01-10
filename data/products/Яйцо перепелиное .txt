@@ -1,0 +1,21 @@
+cat=Птица ; Яйцо перепелиное Яйцо перепелиное 
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|73.3
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|11.9
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|13.1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|0.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|144
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|54
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|32
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|115
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|210
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|3300
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|14
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|30
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|112
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|2
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.47
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.11
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.65
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|5.6
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.26
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|168

@@ -1,0 +1,19 @@
+cat=Плодоовощные консервы ; Паста яблочная с сахаромПаста яблочная с сахаром
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|60.7
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|36.9
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|124
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|12
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|7
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|1
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|7
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|3000
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|2
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|1
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|47
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|110
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|6
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|8
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|150
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.63
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|137

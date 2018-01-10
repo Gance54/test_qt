@@ -1,0 +1,24 @@
+cat=Молочные продукты ; Йогурт
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|86.3
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|5
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|3.2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|3.8
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|147
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|122
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|15
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|52
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|96
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|90
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|9
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|1
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|6
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|10
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|5
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|20
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|400
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|0.6
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.2
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.15
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|66

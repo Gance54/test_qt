@@ -1,0 +1,14 @@
+cat=Фрукты сушенные ; Яблоки
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|20
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|3.2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|68
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|580
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|111
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|60
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|156
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|77
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|6000
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|2
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|199

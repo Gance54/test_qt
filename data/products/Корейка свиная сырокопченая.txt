@@ -1,0 +1,16 @@
+cat=Мясные продукты ; Корейка свиная сырокопченаяКорейка свиная сырокопченая
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|37.7
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|10.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|47.4
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|255
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|23
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|308
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|1134
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|176
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2100
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|1.11
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.61
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.07
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|1.57
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|2.3
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|475

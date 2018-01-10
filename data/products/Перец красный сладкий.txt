@@ -1,0 +1,25 @@
+cat=Овощи
+Красный перец - это плод травянистого растения, напоминающий по внешнему виду крупный стручок, который в зависимости от разновидности и стадии зрелости бывает и тёмно- и ярко-красным, оранжевым, а в недозрелом виде - зелёным. Красный перец имеет высокую витаминозность. По содержанию витамина С он значительно превосходит даже такой витаминный плод, как лимон. В красном перце есть особое вещество - капсаицин, обладающий очень острым и "жгучим" вкусом. В зависимости от количества капсаицина различают перец сладкий и горький. Его лучший сорт - болгарский - в стадии полной зрелости обычно ярко-красного цвета. Незрелый сладкий перец имеет зелёный цвет. В 100 г перца содержится 150-250 мг витамина С, при дневной норме около 100 мг. Витамин С, который содержится в перце, обладает антигистаминными свойствами и поэтому облегчает дыхание. Богат перец каротином и почти всеми витаминами группы В, особенно В1 и В2. Плоды перца содержат также полезные сахара, эфирные масла, азотистые вещества. Ученые обнаружили в сочных стручках калий, натрий, кальций, железо, фосфор, серу, хлор и кремний. Содержащиеся в перце бета-каротин и витамин С помогают предотвратить образование раковых клеток. Эти вещества оказывают лечебное действие на больных раком. Красный перец лечит расстройства пищеварения и язву. Зеленый перец богат р-кумаровой и хлорогеновой кислотами, которые связывают и удаляют из организма нитроксиды - потенциальные канцерогены. В красном перце, как и в томате, содержится ликопин, препятствующий развитию рака. По полчашки порезанного сладкого перца в день поможет предотвратить рак и сердечные заболевания.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|90
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|1.3
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|сл.
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|7.2
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|163
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|8
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|11
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|19
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|16
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|600
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|3
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|3
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|160
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|100
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|7
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|440
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.67
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|250
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.08
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|17
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|27

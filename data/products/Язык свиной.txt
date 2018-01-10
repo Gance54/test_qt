@@ -1,0 +1,20 @@
+cat=Мясные продукты
+Свиной язык весит около 350 г и продается в свежем или засоленном виде. Засоленный язык следует вымочить в течение 8-10 часов, затем сварить без соли, так как он содержит достаточное ее количество. Время варки составляет около 40 минут.Говяжий, бараний и свиной язык содержит магний, железо, кальций, калий, натрий, медь, марганец, кобальт и некоторое количество витаминов В1, В2, B6, PP. Кожица с языка после отваривания обязательно снимается. Язык содержит мало соединительной ткани и поэтому хорошо усваивается.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|65.1
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|15.9
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|16
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|178
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|11
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|22
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|93
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|166
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|3200
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|3
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|19.8
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|сл.
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|сл.
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.15
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.36
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|3
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|4.4
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|208

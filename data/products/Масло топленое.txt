@@ -1,0 +1,8 @@
+cat=Масла и жиры ; Масло топленоеМасло топленое
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|1
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.3
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|98
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|0.6
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.6
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|2.2
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|887

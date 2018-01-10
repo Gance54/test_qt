@@ -1,0 +1,8 @@
+cat=Напитки ; Квас хлебный 0.8% об.Квас хлебный 0.8% об.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|93.4
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|5
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.7
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|25

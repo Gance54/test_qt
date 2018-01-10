@@ -1,0 +1,25 @@
+cat=Фрукты
+Родиной сливы считают Малую Азию, Кавказ и Северный Иран.Сливы содержат довольно много витаминов группы В (поддерживают в порядке нервную систему, борются с усталостью и бессонницей, улучшают настроение), витамин С (помогает справиться с различными инфекциями и продлевает молодость), провитамин А (улучшает зрение, снижает восприимчивость организма к вирусам и делает кожу гладкой и эластичной). Есть в сливе натрий, калий, железо и медь. Слива - богатейший источник витамина К, который улучшает состав крови, предотвращая тромбозы, и витамина Р, который укрепляет стенки как крупных артерий, так и мелких капилляров. Сливы выводят из организма избыток вредного холестеринаСливы используют при запорах как слабительное, при гипертонической болезни, атеросклерозе, заболеваниях почек, ревматизме, как мочегонное, повышающее аппетит средство.Слива сохраняет большинство своих полезных веществ при переработке. 
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|87
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.8
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|11.2
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|214
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|20
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|9
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|18
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|20
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|500
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|4
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|1
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|110
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|87
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|8
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|2
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|100
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.63
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|10
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.06
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|1.5
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.6
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|43

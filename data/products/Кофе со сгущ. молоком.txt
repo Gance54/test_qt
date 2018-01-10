@@ -1,0 +1,11 @@
+cat=Молочные продукты ; Кофе со сгущ. молокомКофе со сгущ. молоком
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|28
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|8.4
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|8.6
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|53
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.03
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.07
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.4
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|3
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.93
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|312

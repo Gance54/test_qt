@@ -1,0 +1,22 @@
+cat=Изделия из муки
+Рожь проникла в Европу из Азии еще до нашей эры. Рожь - родная сестра пшеницы, но значительно полезней ее. Рожь содержит большое количество незаменимых аминокислот (по сравнению с пшеничной), что весьма важно для людей страдающих диабетом. В ржаной муки в 5 раз больше, чем в пшеничной, содержится фруктозы, необходимой для нормальной жизнедеятельности человеческого организма. Изделия из ржаной муки имеют с своем составе достаточное количество клетчатки и гемицеллюлозы, которые играют определенную роль в питании человека - они усиливают перестальтику кишечника.По мнению норвежского кардиолога профессора П. Овеха, люди, постоянно употребляющие в пищу ржаной хлеб, менее подвержены болезням сердца, благодаря присутствию в нем линоленовой кислоты, которой нет в пшеничном. Ржаной хлеб показан при хронических запорах.Употребление ржи помогает противодействовать депрессии, способствует повышению жизненного тонуса, улучшению настроения. К тому же она обладает общеукрепляющим, регулирующим обменные процессы действием. Отвар ржаных отрубей в качестве отхаркивающего и мягчительного средства используется при хронических бронхитах и трахеитах. Приложенный к нарывам ржаной хлеб, размоченный в горячем молоке, ускоряет их созревание.Пророщенная рожь содержит растительные гормоны, масла и является отличным средством для лечения отека и восполнения предстательной железы. Способна активизировать защитные силы организма в борьбе с различными заболеваниями.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|14
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|6.9
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|1.4
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|67.3
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|200
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|19
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|25
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|1
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|129
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2920
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|800
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|110
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|3.5
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|1140
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|2.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.17
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|35
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.99
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|304

@@ -1,0 +1,27 @@
+cat=Молочные продукты
+Молоко способны выделять самки всех видов животных класса млекопитающих. На земле их насчитывается около 6000. У каждого животного молоко свое, непохожее на молоко другого животного. Самое распространенное - коровье молоко. В молоке содержится свыше 100 ценнейших компонентов - до 20 сбалансированных аминокислот и почти такое же количество жирных, сахар - лактозу, очень разнообразный ассортимент минеральных веществ, большую часть которых составляет кальций. Практически пол-литра молока удовлетворяет суточную потребность человека в кальции. Коровье молоко содержит молозиво, оно укрепляет иммунную систему детей и коров.Молоко возбуждает пищеварительные железы и вызывать отделение пищеварительных соков, даже если не хочется есть. Молоко усваивается только с определенными продуктами. Пить молоко лучше отдельно от всего, но если так вы не можете его употреблять, то делайте на нем каши. Молоко, крахмал и фрукты не стоит употреблять вместе, будьте аккуратны. Молоко нельзя пить с рыбой, яйцами, мясом и сыром, потому что нейтральная пища и эти продукты не совместимы с другими протеинами, в молоке больше углеводов. Не пейте молоко и другие молочные продукты быстро. Т.к. в молоке высокое содержание карбонатов, молоко нужно пить 5-6 минут. Пейте молоко маленькими глотками, потому что для усвоения углеводов нужно время. 
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|87.3
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|3.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|3.6
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|4.8
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|146
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|120
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|14
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|50
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|90
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|67
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|9
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|0.8
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|6
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|12
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|5
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|20
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|400
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.03
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.09
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|1.5
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.15
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|5
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|64

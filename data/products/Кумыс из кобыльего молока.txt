@@ -1,0 +1,23 @@
+cat=Молочные продукты
+Кумыс - это лечебный и высокопитательный напиток, который получается в результате молочнокислого и спиртового брожения молока кобылицы или смешиванием молока коровьего с молочной сывороткой и сахаром. Крепкий натуральный кумыс содержит до 4,5% спирта и его для лечебных целей не используют. По вкусу кумыс - приятный, освежающий, кисловато-сладкий пенистый напиток. Кумыс применяют для лечения туберкулеза легких, а также при хронических бронхитах, энтероколитах, анацидных гастритах. Большую роль микрофлора кумыса играет в накоплении антибиотических веществ, действующих бактериостатически и бактерицидно на болезнетворные микробы. Кумыс содержит меньше жира, белка, минеральных веществ, чем коровье молоко, зато сахара в 1,5 раза, а витаминов в 10 раз больше.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|87.8
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|2.05
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|5
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|77
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|94
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|25
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|34
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|60
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|100
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|1
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|3
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|22
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|210
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.03
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.03
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|9
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.09
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|48

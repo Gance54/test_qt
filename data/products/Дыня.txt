@@ -1,0 +1,24 @@
+cat=Бахчевые
+Родина дыни Средняя и Малая Азия. В Европу эта культура переселилась в античные времена, в Россию попала в XVII веке из теплиц Англии.Дыня содержит калий, железо, витамины В1, В2, РР, А, С. Дыня чрезвычайно богата железом: его массовая доля в дыне в 17 раз больше, чем в молоке. Кроме железа дыня содержит калий, кальций, натрий и хлор. Дыню рекомендуют принимать при истощении и малокровии, а также при атеросклерозе и некоторых других сердечно-сосудистых заболеваниях. Дыня усиливает действие антибиотиков, снижая их токсичность.Дыня содержит огромное количество ферментов, посему великолепно усваивается кишечником, помогая его нормальной работе. Как лекарство дыню можно принимать при любых расстройствах пищеварения. Врачи рекомендуют употребление дыни при любых болезнях печени, а так же при камнях в почках и мочевом пузыре. Кроме того, дыня повышает гемоглобин и иммунитет, успокаивающе влияет на нервную систему, улучшает ваш внешний вид.Дынные семечки - народное средство для повышения потенции: смолотые в порошок сухие семена дыни надо принимать по 1 чайной ложке 3 раза в день.Признаки хорошей, спелой, вкусной дыни:1) от дыни обязательно должен исходить аромат;2) при хлопке по дыне ладонью - звук должен быть не звонким, а глухим;3) нажмите на корку в зоне противоположного от стебля полюса плода. У недозрелой дыни корка твердая, а у спелой немного поддается при нажиме. Корка спелой дыни слегка пружинит, если на нее нажать. 
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|88.5
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.6
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|10.3
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|118
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|16
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|13
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|32
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|12
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1000
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|2
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|2
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|35
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|47
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|20
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|90
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|20
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|6
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.4
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|38

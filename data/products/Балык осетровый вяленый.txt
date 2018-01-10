@@ -1,0 +1,10 @@
+cat=Рыба и морепродукты ; Балык осетровый вяленыйБалык осетровый вяленый
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|54.7
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|21.6
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|10.1
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|254
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|42
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|22
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|191
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2700
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|177

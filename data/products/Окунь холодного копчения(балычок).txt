@@ -1,0 +1,10 @@
+cat=Рыба и морепродукты ; Окунь холодного копчения(балычок)Окунь холодного копчения(балычок)
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|53.5
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|26.4
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|10.4
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|193
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|64
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|26
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|211
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1200
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|199

@@ -1,0 +1,22 @@
+cat=Птица
+Мясо гусей отменного вкуса, и на международном рынке реализуется по цене более чем в два раза дороже, чем мясо цыплят-бройлеров. По мере роста у гусей накапливается жир, который практически не содержит холестерина и по качеству превосходит жир других видов птицы. Применение гусиного жира эффективно, он выводит радиоактивные элементы из организма. Калорийность мяса гуся выше, чем в мясе других видов домашней птицы. Гусиное мясо - прекрасный источник железа и белка.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|45
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|15.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|39
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|257
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|13
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|32
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|95
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|172
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2400
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|4
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|11
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|18
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|243
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|9
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.08
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.23
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|4.1
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|5.2
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|412

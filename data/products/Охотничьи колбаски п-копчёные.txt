@@ -1,0 +1,14 @@
+cat=Мясные продукты ; Охотничьи колбаски п/копчёныеОхотничьи колбаски п/копчёные
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|30
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|25.7
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|40
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|316
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|27
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|25
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|1467
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|217
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2600
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.23
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.13
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|3.15
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|463

@@ -1,0 +1,24 @@
+cat=Бахчевые
+Тыква - идеально подходит для диетического и детского питания. Ее плоды содержат в среднем 5-6 процентов сахаров (а в лучших сортах до 20 процентов), крахмал, каротин, витамины С, В1, В2, РР, клетчатку, пектиновые вещества, органические кислоты, соли кальция, магния, железа. Особенно много в тыкве солей калия. Тыква оказывает мочегонное и желчегонное действие, улучшает работу кишечника. Отвар тыквы с медом поможет справиться с нервными расстройствами и особенно полезен при бессоннице. Отвар тыквы с медом поможет справиться с нервными расстройствами и особенно полезен при бессоннице. Пектин, который содержится в мякоти тыквы, выводит из организма яды. Тыквенный сок применяют при лечении почек, гипертонии. Семена тыквы богаты белком, сахаром, содержат кислоты и масло. В народной медицине их использовали как глистогонное средство. Полезно для здоровья употреблять в пищу салат из свежей тыквы: натереть на крупной терке морковь, яблоки и тыкву, заправить рафинированным растительным маслом. Употребление тыквы с мясом дает быстрое и хорошее усвоение ее организмом.Лучшие тыквы - средние по размеру, белые, со сладкой мякотью.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|90.3
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|1
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|5.9
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|204
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|25
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|14
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|4
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|25
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|400
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|1
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|1
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|40
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|180
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|86
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|240
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|8
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.06
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|14
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.5
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|25

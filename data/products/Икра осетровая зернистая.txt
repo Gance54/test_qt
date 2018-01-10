@@ -1,0 +1,14 @@
+cat=Рыба и морепродукты ; Икра осетровая зернистаяИкра осетровая зернистая
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|58
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|28.9
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|9.7
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|186
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|36
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|35
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.18
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|1.7
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.3
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.36
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|24
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1.52
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|203

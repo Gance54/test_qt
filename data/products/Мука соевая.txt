@@ -1,0 +1,11 @@
+cat=Изделия из муки ; Мука соеваяМука соевая
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|9
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|36.5
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|18.6
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|17.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|1600
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|217
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|200
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|5
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|600
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|374

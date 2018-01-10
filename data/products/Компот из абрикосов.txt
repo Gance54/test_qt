@@ -1,0 +1,15 @@
+cat=Плодоовощные консервы ; Компот из абрикосовКомпот из абрикосов
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|76.2
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.5
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|21.4
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|183
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|12
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|6
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|2
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|18
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|500
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|4
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.37
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|85

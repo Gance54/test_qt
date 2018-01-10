@@ -1,0 +1,25 @@
+cat=Изделия из муки ; Сдоба выборгская с макомСдоба выборгская с маком
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|26.1
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|7.5
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|4.2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|59.8
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|100
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|41
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|18
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|285
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|80
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1510
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|1.6
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|2
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|444
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|80
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|9.3
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|26
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|512
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.01
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|1.6
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.11
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|25
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.92
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|304

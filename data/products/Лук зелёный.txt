@@ -1,0 +1,23 @@
+cat=Овощи
+Лук насчитывается около 400 видов. На территории СНГ произрастает 228 видов. Наиболее распространенный вид, дающий луковицу-репку и листья-перо. Родина - Средняя Азия, Иран и Афганистан. В Европу лук попал благодаря римлянам, от которых культивировать его научились и другие европейские народы.Репчатый лук - источник витаминов группы В, С, эфирных масел, кальция, микроэлементов (марганца, меди, кобальта, цинка, фтора, молибдена, йода, железа, никеля и др.). Лук богат железом. Получить этот важный элемент можно как из сырого, так и из жареного, печеного и тушеного лука, особенно если использовать его как гарнир к печенке. Еще лук богат калием, благотворно влияющим на сердечно - сосудистую систему человека. В соке зеленых перьев лука содержится много каротина, фолиевой кислоты, биотина. Сок лука богат витаминами, эфирными маслами, углеводами. Кстати, острые по вкусу сорта лука намного богаче сахарами, чем сладкие. Богаче сахарами внутренние чешуйки луковицы, чем внешние. Лук возбуждает аппетит и улучшает пищеварение, повышает тонус организма, оказывает антисептическое, антимикробное, бактерицидное, противовоспалительное, антисклеротическое и противодиабетическое действие. Лук - помогает бороться с низким давлением и содержит флавониды, препятствующие образованию раковых клеток. В некоторых странах сырой лук принято прикладывать к пяткам во время простудных заболеваний. Совет: сырой лук содержит больше полезных элементов, но при обработке он почти не теряет своих свойств. Можно есть сырым - класть в бутерброды и салаты, а можно запекать с мясом, добавлять в супы и рагу.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|93
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|1.3
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|4.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|259
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|100
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|18
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|10
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|26
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1000
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|7
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|200
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|92
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|20
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|300
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|1
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|30
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|18
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.3
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|19

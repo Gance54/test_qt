@@ -1,0 +1,17 @@
+cat=Овощи
+Петрушка имеет приятный запах, терпкий сладковатый вкус. Содержит эфирные масла, витамин А, витамины В1, В2, РР, К. В 100 граммах петрушки содержатся примерно две суточные нормы витамина С - 150 миллиграммов, это в 4 раза больше, чем в100 граммах лимона. По содержанию каротина петрушка не уступает всеми признанному чемпиону - моркови. Петрушка содержит много селена (антиканцерогенный фактор) и препятствует развитию некоторых видов сердечно-сосудистых заболеваний. Петрушка применяется при расстройствах пищеварения и мочеиспускания у детей, вздутии живота, диспепсии, маточных кровотечениях, при хронических гастритах со сниженной секреторной деятельностью желудка и как профилактическое средство для сохранения зрения. Из-за своего бактерицидного действия петрушка рекомендуется при воспалительных процессах десен, языка, слизистой рта, а также для устранения неприятного запаха изо рта.Петрушка повышает функцию половых желез у мужчин, используется при заболеваниях предстательной железы.Свежезамороженная петрушка полностью сохраняет в течение нескольких месяцев (при правильном хранении - до года) питательные и целебные свойства.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|83
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|1.5
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.6
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|11.8
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|262
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|88
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|41
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|82
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|700
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|35
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.08
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|24
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|53

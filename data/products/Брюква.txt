@@ -1,0 +1,18 @@
+cat=Овощи
+Брюква похожа на репу, но она несколько крупнее и ее мякоть нежно оранжевого цвета. Считается, что она впервые была выведена в Швеции (американское название брюквы rutabaga отражает шведское корень-сумка, а в Европе брюкву так и называют swede). Брюква применяется (свежая, тушеная, пареная, печеная, жареная) как источник витаминов и солей. Брюква рекомендуется как мочегонное и разжижающее мокроту средство, при хронических запорах. Брюква противопоказана при острых заболеваниях желудочно-кишечного тракта. Брюква содержит витамины группы В, витамины С, Р, А, каротин, кальций, фосфор, натрий, железо, магний, серу. Аскорбиновая кислота сохраняется в брюкве и при длительном хранении. Сок брюквы используют как отхаркивающие и мочегонное средство, а также при витаминной недостаточности.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|87.2
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|1.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|8.9
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|238
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|40
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|7
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|10
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|41
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1500
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|30
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|5
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1.05
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|34

@@ -1,0 +1,18 @@
+cat=Молочные продукты
+Обезжиренное молоко полезно лицам, которым нужно ограничить употребление жиров (при атеросклерозе, ожирении, болезнях печени, поносах). В нем много витаминов и минеральных солей. Обезжиренное молоко богато кальцием, необходимым для костей и профилактики остеопороза.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|91.4
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.05
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|4.8
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|146
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|120
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|14
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|50
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|90
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|100
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|сл.
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|0.4
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.15
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|31

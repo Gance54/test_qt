@@ -1,0 +1,24 @@
+cat=Птица ; Яичный порошокЯичный порошок
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|46
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|46
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|37.3
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|4.5
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|448
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|193
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|42
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|436
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|725
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|8900
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|64
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|32
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|103
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|315
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|22
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|200
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|3500
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.9
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.25
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|1.64
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|8
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1.18
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|542

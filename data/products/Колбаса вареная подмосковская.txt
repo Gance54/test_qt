@@ -1,0 +1,21 @@
+cat=Птица ; Колбаса вареная подмосковскаяКолбаса вареная подмосковская
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|65.6
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|17.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|11.6
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|1.8
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|234
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|38
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|17
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|980
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|206
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|3200
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|13
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|45
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|91
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|6
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|3300
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.23
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.16
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|3.6
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|180

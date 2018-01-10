@@ -1,0 +1,25 @@
+cat=Изделия из муки ; Сухари сливочные в/сСухари сливочные в/с
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|9.6
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|8.5
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|10.8
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|69.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|109
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|22
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|14
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|315
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|80
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1930
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|3.5
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|2.3
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|514
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|94
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|10.8
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|16
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|600
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.038
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|1.86
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.12
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|21
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1.07
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|398

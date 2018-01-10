@@ -1,0 +1,11 @@
+cat=Мясные продукты ; Колбаса вареная телячьяКолбаса вареная телячья
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|55
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|13.8
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|28.3
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|22
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|19
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|20
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|883
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|144
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2100
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|310

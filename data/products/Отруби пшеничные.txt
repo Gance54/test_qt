@@ -1,0 +1,15 @@
+cat=Сырье ; Отруби пшеничныеОтруби пшеничные
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|14.4
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|15.1
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|3.8
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|33.5
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|1260
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|150
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|448
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|8
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|950
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|14000
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.75
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.26
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|10.5
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|191

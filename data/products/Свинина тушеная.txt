@@ -1,0 +1,22 @@
+cat=Мясные продукты ; Свинина тушенаяСвинина тушеная
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|51.1
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|14.9
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|32.2
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|316
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|8
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|27
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|400
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|170
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1600
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|6.6
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|8
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|28.5
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|96
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|13
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|69.3
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|2070
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|сл.
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.14
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.14
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|2.45
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|349

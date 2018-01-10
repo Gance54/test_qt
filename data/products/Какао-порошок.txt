@@ -1,0 +1,24 @@
+cat=Сырье
+Какао-бобы полны антиоксидантных полифенолов, которые сокращают риск сердечных заболеваний. Этот химический компонент присутствует во всех фруктах, однако особенно высокой концентрацией и активностью отличается именно в какао. Употребление какао очень полезно для головного мозга. В бобах какао содержится очень полезное вещество - антиоксидант флаванол, улучшающее кровообращение мозга. Согласно исследованию, флаванол может быть использован в лечении болезней, связанных со слабым кровотоком в сосудах головного мозга. Не все какао содержит достаточное количество флаванола. Это связано с тем, что данный антиоксидант придает напитку горький вкус, поэтому при производстве его часто удаляют.Какао эффективно для понижения кровяного давления, какао помогает усиливать приток крови к мозгу и конечностям.Какао богат белком, клетчаткой, витаминами, фолиевой кислотой, минералами, а по содержанию железа и цинка его вообще можно назвать рекордсменом среди всех продуктов. И наконец, какао богато пуринами, которые являются составной частью нуклеиновых кислот и обеспечивают хранение и передачу генетической информации, а также участвуют в биосинтезе белков 
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|4
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|24.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|17.5
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|33.4
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|1689
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|55
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|191
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|10
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|655
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|14800
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|4625
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|4550
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|56
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|245
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|7100
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|3
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.3
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|45
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1.8
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|380

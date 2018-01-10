@@ -1,0 +1,15 @@
+cat=Изделия из муки ; Сухари армейскиеСухари армейские
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|11
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|11.3
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|60
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|418
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|53
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|80
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|623
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|271
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|6900
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.31
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.14
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1.16
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|308

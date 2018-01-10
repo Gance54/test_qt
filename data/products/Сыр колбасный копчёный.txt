@@ -1,0 +1,5 @@
+cat=Молочные продукты ; Сыр колбасный копчёныйСыр колбасный копчёный
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|52
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|23
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|19
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|271

@@ -1,0 +1,15 @@
+cat=Изделия из муки ; Хлеб пеклеванныйХлеб пеклеванный
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|36.7
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|5.9
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|1.1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|47.1
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|178
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|23
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|28
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|422
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|115
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|3000
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.13
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.06
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.93
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|227

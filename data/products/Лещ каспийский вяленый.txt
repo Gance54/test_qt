@@ -1,0 +1,10 @@
+cat=Рыба и морепродукты ; Лещ каспийский вяленыйЛещ каспийский вяленый
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|38.5
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|42
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|5.9
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|536
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|274
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|46
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|413
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|5200
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|221

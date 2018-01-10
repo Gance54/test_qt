@@ -1,0 +1,24 @@
+cat=Молочные продукты
+По составу козье молоко очень близко к молоку кормящей женщины, поэтому его часто используют для вскармливания грудных младенцев. Древние греки использовали козье молоко для вскармливания младенцев, лишенных молока матери. Если верить древней легенде, молоком божественной козы Амалфеи, из ее рога вскормлен сам громовержец Зевс. В Древнем Риме им лечили селезенку. Гиппократ считал козье молоко верным средством для лечения чахотки. Авиценна рекомендовал регулярно пить молоко козы, чтобы в старости сохранить ясность ума и крепкое здоровье. Козье молоко издревле употребляли в пищу и на Руси, так как наши предки считали его лучшим источником здоровья. В козьем молоке содержится кальций, фосфор, кобальт, железо, витамины B1, B2 и C в естественной легко усваиваемой форме. Белки козьего молока, в отличие от коровьего, не содержат казеинов, вызывающих пищевую аллергию, поэтому его могут без опасения употреблять люди, страдающие аллергией на коровье молоко. В козьем молоке в отличие от коровьего больше содержится сухого вещества, жира, кальция, фосфора, жировые шарики мельче. Козье молоко свертывается в желудке в виде мелких, неплотных хлопьев, благодаря чему легко усваивается организмом.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|87.3
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|3
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|4.2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|4.5
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|145
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|143
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|14
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|47
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|89
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|100
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|2
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|17
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|20
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|7
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.06
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.09
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|2
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.14
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|1
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.3
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|68

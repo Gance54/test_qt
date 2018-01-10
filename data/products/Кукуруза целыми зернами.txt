@@ -1,0 +1,15 @@
+cat=Плодоовощные консервы
+Кукурузная каша еще известна как мамалыга. Кукурузная крупа - ценный питательный продукт. В ней содержится до 75% углеводов, витамины B1 В2, РР, каротин, поэтому она особенно рекомендуется пожилым людям и тем, кто ведет малоподвижный образ жизни. Кукуруза - малокалорийная каша, которая способна выводить жир из организма. Кукурузная каша лучше всего выводит пестициды из организма.Кукурузная крупа относится к легкоусвояемым продуктам. Каша из кукурузы обладает особенностью подавлять гнилостные процессы в кишечнике за счет содержания в ней пищевых волокон.
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|87
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|2.2
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.4
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|9.8
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|5
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|400
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|50
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|400
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|4.8
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.05
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.95
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|58

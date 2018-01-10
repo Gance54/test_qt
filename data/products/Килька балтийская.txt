@@ -1,0 +1,11 @@
+cat=Рыба и морепродукты ; Килька балтийскаяКилька балтийская
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|61
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|17.1
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|7.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|380
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|50
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|35
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|120
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|220
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1350
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|137

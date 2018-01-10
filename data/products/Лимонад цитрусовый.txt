@@ -1,0 +1,4 @@
+cat=Напитки ; Лимонад цитрусовыйЛимонад цитрусовый
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|92
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|7.5
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|31

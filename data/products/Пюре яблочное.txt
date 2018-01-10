@@ -1,0 +1,16 @@
+cat=Плодоовощные консервы ; Пюре яблочноеПюре яблочное
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|78.4
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.6
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|0.1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|20
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|124
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|12
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|7
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|1
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|17
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1300
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|1.6
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.01
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.38
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|78

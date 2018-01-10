@@ -1,0 +1,15 @@
+cat=Мясные продукты ; Грудинка свиная копчено-запеченнаяГрудинка свиная копчено-запеченная
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|33.8
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|10
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|52.7
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|159
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|18
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|13
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|1087
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|100
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1600
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.31
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.08
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|2.7
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1.65
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|514

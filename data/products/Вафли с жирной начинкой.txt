@@ -1,0 +1,15 @@
+cat=Кондитерские изделия ; Вафли с жирной начинкойВафли с жирной начинкой
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|1
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|3.4
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|30.2
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|64.7
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|43
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|8
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|2
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|7
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|33
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|500
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.04
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.02
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.36
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|539

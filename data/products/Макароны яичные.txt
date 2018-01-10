@@ -1,0 +1,15 @@
+cat=Изделия из муки ; Макароны яичныеМакароны яичные
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|13
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|11.3
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|2.1
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|68.1
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|132
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|42
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|17
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|17
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|106
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2100
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.17
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.08
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|1.21
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|345

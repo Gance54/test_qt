@@ -1,0 +1,12 @@
+cat=Сырье ; Крахмал картофельныйКрахмал картофельный
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|20
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|0.1
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|сл.
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|79.6
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|15
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|40
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|сл.
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|6
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|77
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|сл.
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|327

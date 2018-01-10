@@ -1,0 +1,24 @@
+cat=Овощи ; Капуста брюссельскаяКапуста брюссельская
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|86
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|4.8
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|8
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|375
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|34
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|40
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|7
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|78
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1300
+ Requiredpattern|/text/sostav-produktov/jod|йод|мкг|3
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|3
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|170
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|75
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|10
+ Requiredpattern|/text/sostav-produktov/ftor|фтор|мкг|10
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|400
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|1
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|120
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.1
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.2
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|31
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|0.7
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|43

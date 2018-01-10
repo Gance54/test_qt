@@ -1,0 +1,11 @@
+cat=Мясные продукты ; Буйволятина 1 категорииБуйволятина 1 категории
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|66.8
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|19
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|13.2
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|250
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|11
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|25
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|80
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|197
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2200
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|195

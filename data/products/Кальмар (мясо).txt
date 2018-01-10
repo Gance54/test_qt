@@ -1,0 +1,21 @@
+cat=Рыба и морепродукты ; Кальмар (мясо)Кальмар (мясо)
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|76.4
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|18
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|4.2
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|280
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|40
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|90
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|110
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|1100
+ Requiredpattern|/text/sostav-produktov/cobalt|кобальт|мкг|95
+ Requiredpattern|/text/sostav-produktov/marganets|марганец|мкг|170
+ Requiredpattern|/text/sostav-produktov/cuprum|медь|мкг|1500
+ Requiredpattern|/text/sostav-produktov/molibden|молибден|мкг|20
+ Requiredpattern|/text/sostav-produktov/tsink|цинк|мкг|1800
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|2.2
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|1.5
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.18
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.09
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|11
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|2.54
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|110

@@ -1,0 +1,6 @@
+cat=Масла и жиры ; Жир бараний топленыйЖир бараний топленый
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|0.3
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|99.7
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|0.06
+ Requiredpattern|/text/sostav-produktov/vitamin_e|витамин Е(токоферол)|мг|0.5
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|897

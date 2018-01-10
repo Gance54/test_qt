@@ -1,0 +1,9 @@
+cat=Напитки ; Пунш "Чёрносмородиновый"17%обПунш "Чёрносмородиновый"17%об
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|46.7
+ Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|39
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|0.3
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|сл.
+ Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|10
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|сл.
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|сл.
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|244

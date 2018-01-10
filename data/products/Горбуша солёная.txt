@@ -1,0 +1,16 @@
+cat=Рыба и морепродукты ; Горбуша солёнаяГорбуша солёная
+ Requiredpattern|/text/sostav-produktov/voda|вода|г|54.1
+ Requiredpattern|/text/sostav-produktov/belki|белки|г|22.1
+ Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|9
+ Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|278
+ Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|60
+ Requiredpattern|/text/sostav-produktov/magniy|магний|мг|29
+ Requiredpattern|/text/sostav-produktov/phosfor|фосфор|мг|126
+ Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|2500
+ Requiredpattern|/text/sostav-produktov/vitamin_a|витамин А(ретинол)|мг|сл.
+ Requiredpattern|/text/sostav-produktov/vitamin_c|витамин С (аскорбиновая кислота)|мг|1.2
+ Requiredpattern|/text/sostav-produktov/vitamin_b1|витамин В1 (тиамин)|мг|0.2
+ Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.16
+ Requiredpattern|/text/sostav-produktov/vitamin_b9|витамин В9 (фолиевая кислота)|мкг|7
+ Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|2.6
+ Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|169
