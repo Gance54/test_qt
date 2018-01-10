@@ -21,6 +21,7 @@ public:
     ~DataBase();
     QStringList getTables();
     void Insert(QString table, QStringList fields, QStringList values);
+    QSqlQuery Select(QString table, QStringList fields, QString conditions);
 
     static void ShowMessage(QString text);
 
@@ -36,6 +37,7 @@ private:
     bool _IsDbValid();
     QSqlError _Init();
     QSqlError _Clear();
+    QSqlQuery _Execute(QString queryString);
 };
 
 class DatabaseBuilder
@@ -108,7 +110,7 @@ static struct TableDescriptions
                 "varchar"
             }
         },
-        {//comsumables table
+        {//consumables table
             {
                 "id",
                 "name",

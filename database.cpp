@@ -56,8 +56,6 @@ QSqlError DataBase::_Init()
 {
     if(_db.isOpen() && !_db.tables().count())
     {
-        QSqlQuery q(_db);
-
         if(!_tables.count() || _tables.count() != _tableDescriptions.count())
             throw Exception(QString::fromStdString("Invalid database format"));
 
@@ -65,8 +63,7 @@ QSqlError DataBase::_Init()
             t != _tables.end(), d != _tableDescriptions.end(); t++, d++)
         {
             QString query = QString::fromStdString("Create table '" + t->toStdString() + "' (" + d->toStdString() + ")");
-            if (!q.exec(query))
-                throw Exception(query + QString::fromStdString("\n") + q.lastError().text());
+            _Execute(query);
         }
     }
     else
@@ -83,17 +80,26 @@ QSqlError DataBase::_Clear()
     if(!_db.tables().size())
         return QSqlError();
 
-    QSqlQuery q(_db);
-
     while(_db.tables().size()) {
         QString query("Drop table '");
         query.append(*(_db.tables().begin()));
         query.append("'");
-        if (!q.exec(query))
-            throw Exception(q.lastError().text(), this);
+        _Execute(query);
     }
 
     return QSqlError();
+}
+
+QSqlQuery DataBase::_Execute(QString queryString)
+{
+    QSqlQuery query (_db);
+    std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<NEW REQUEST>>>>>>>>>>>>>>>>>>>>>>>>>>"<<std::endl;
+    std::cout<<queryString.toStdString()<<std::endl;
+
+    if(!query.exec(queryString))
+        throw Exception("Error '" + query.lastError().text() +" on request '" + queryString + "'");
+
+    return query;
 }
 
 DataBase::~DataBase()
@@ -119,11 +125,22 @@ QStringList DataBase::getTables()
 void DataBase::Insert(QString table, QStringList fields, QStringList values)
 {
     QSqlQuery query (_db);
+    QString queryString = "INSERT INTO " + table + " ('" + fields.join("','") + "') values('" +
+            values.join("','") + "')";
 
-    if(!query.exec("INSERT INTO " + table + " (" + fields.join(", ") + ") values('" +
-               values.join(", ") + "')"))
-        throw Exception("Error adding values " + values.join(", ") + " as " + values.join(", ") +
-                        + " to table " + table + " with error " + query.lastError().text());
+    _Execute(queryString);
+}
+
+QSqlQuery DataBase::Select(QString table, QStringList fields, QString conditions)
+{
+    QString queryString = "SELECT " + fields.join(",") + " FROM " + table;
+    if(!conditions.isEmpty())
+        queryString += " WHERE " + conditions;
+
+    QSqlQuery q = _Execute(queryString);
+    if(!q.next())
+        throw Exception("Failed to get valid position");
+    return q;
 }
 
 void DataBase::ShowMessage(QString text)

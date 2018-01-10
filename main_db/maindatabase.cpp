@@ -1,6 +1,7 @@
 #include <main_db/maindatabase.h>
 #include <fileoperations.h>
 #include <exception.h>
+#include <QRegExp>
 MainDatabase::MainDatabase()
 {
     try {
@@ -14,7 +15,7 @@ MainDatabase::MainDatabase()
 
 void MainDatabase::FillData()
 {
-    QString dataDir = "data";
+    QString dataDir = "/home/mike/Dev/testqt/data";
     QString catFilename = "categories.txt";
     QString
         catDir = dataDir + "/" + "categories",
@@ -53,34 +54,99 @@ void MainDatabase::FillData()
             FileOperations f1(prodDir + "/" + pname + ".txt");
             QStringList productData = f1.getData();
             QStringList product;
-            product.push_back("Cat=" + cat);
-            product.push_back("Name=" + pname);
+            QStringList productCons;
+            product.push_back(cat);
+            product.push_back(pname);
             productData.erase(productData.begin()); /* erase first line */
             std::for_each(productData.begin(), productData.end(), [&](QString l) {
                 if(!l.contains("Requiredpattern"))
-                    product.push_back("Description=" + l);
+                    product.push_back(l);
                 else
                 {
                     QStringList productStrings = l.split("|");
                     if(productStrings.size() != 5)
                         throw Exception ("Failed to get product description from " + pname + ".txt");
 
+                    /* erase Requiredpattern and link */
                     productStrings.erase(productStrings.begin());
                     productStrings.erase(productStrings.begin());
-                    QString conName = productStrings.first();
+
                     /* get consumables data */
-                    if(!consumables.contains(conName))
+                    QString conName = productStrings.first();
+
+                    bool present = false;
+                    std::for_each(consumables.begin(), consumables.end(), [&](QString cons){
+                        QStringList consLst = cons.split("|");
+                        if((consLst.first()).contains(conName))
+                        {
+                            present = true;
+                        }
+                    });
+
+                    if(!present)
                     {
                         FileOperations f2(conDir + "/" + conName + ".txt");
                         QStringList conData = f2.getData();
                         if(conData.size() != 1)
                             throw Exception("Failed to get data for consumable " + conName + " from product " + pname);
-                        consumables.push_back("Name=" + conName + ";Description=" + conData.first());
+                        /* consumables format = "name|description" */
+                        consumables.push_back(conName + "|" + conData.first());
                     }
-                    product.push_back("Comp=" + productStrings.join("|"));
+                    productCons.push_back(productStrings.join("|"));
                 }
             });
-            products.push_back(product.join(";"));
+            product.push_back(productCons.join(";"));
+            /* products format = "cat@name@description@con1;con2;..;con#" */
+            /* con# format:name|unit|value*/
+            products.push_back(product.join("@"));
         });
+    });
+
+    /* Insert consumables */
+    std::for_each (consumables.begin(), consumables.end(), [&](QString consumable) {
+        _d->Insert("consumables", {"name", "description"}, consumable.split("|"));
+    });
+
+    /* Insert categories */
+    std::for_each (categories.begin(), categories.end(), [&](QString cat) {
+        _d->Insert("categories", {"name"}, { cat });
+    });
+
+    /* Insert products */
+    std::for_each(products.begin(), products.end(), [&](QString prodStr){
+        QStringList prodList = prodStr.split("@");
+        bool isDescPresent = prodList.size() == 4 ? true : false;
+        QString cat = prodList.first();
+        QSqlQuery query = _d->Select("categories", {"id"}, "name = '" + cat + "'");
+        if(!query.size())
+            throw Exception("Can not get category " + cat + " from db");
+
+        QString catId = query.value(0).toString();
+        QStringList consIdList;
+
+        QStringList consList = (prodList.last()).split(";");
+        std::for_each(consList.begin(), consList.end(), [&](QString conData) {
+            QString conName = (conData.split("|")).first();
+            QSqlQuery query1 = _d->Select("consumables", {"id"}, "name = '" + conName + "'");
+            if(!query1.size())
+                throw Exception("Can not get consumable " + conName + " from db");
+
+            consIdList.push_back(query1.value(0).toString());
+        });
+
+        /* cat id and consumable ids we already got.
+         * Erase category from list to access name by first() and description by last() (if present) */
+        prodList.erase(prodList.end()-1);
+        prodList.erase(prodList.begin());
+
+        QString prodName = prodList.first();
+        QString prodDescr;
+        if(isDescPresent)
+            prodDescr = prodList.last();
+        else
+            prodDescr.clear();
+
+        //_d->Insert("products", {"name", "description", "category_id", "consumables"},
+        //                       {prodName, prodDescr, catId, consIdList.join("|")});
     });
 }
