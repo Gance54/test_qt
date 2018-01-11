@@ -13,6 +13,17 @@ MainDatabase::MainDatabase()
     }
 }
 
+void MainDatabase::Block()
+{
+    _d->Block();
+}
+
+
+void MainDatabase::Unblock()
+{
+    _d->Unblock();
+}
+
 void MainDatabase::FillData()
 {
     QString dataDir = "/home/mike/Dev/testqt/data";
@@ -179,3 +190,42 @@ void MainDatabase::FillData()
 
     /**/
 }
+
+void DBWorker::process()
+{
+    try {
+        _mainDb = std::unique_ptr <MainDatabase> (new MainDatabase());
+        _mainDb->FillData();
+    }
+    catch (Exception e) {
+        e.show();
+    }
+
+    emit finished();
+    return;
+}
+
+void DBWorker::stop()
+{
+    try {
+        _mainDb->Block();
+    }
+    catch (Exception e) {
+        e.show();
+    }
+}
+
+void DBWorker::resume()
+{
+    try {
+        _mainDb->Unblock();
+    }
+    catch (Exception e) {
+        e.show();
+    }
+}
+
+/*void DBWorker::finished()
+{
+    std::cout<<"Finished!"<<std::endl;
+}*/

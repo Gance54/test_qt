@@ -57,7 +57,8 @@ SOURCES       = main.cpp \
 		fileoperations.cpp \
 		main_db/maindatabase.cpp moc_mainwindow.cpp \
 		moc_calendar.cpp \
-		moc_listview.cpp
+		moc_listview.cpp \
+		moc_maindatabase.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		calendar.o \
@@ -68,7 +69,8 @@ OBJECTS       = main.o \
 		maindatabase.o \
 		moc_mainwindow.o \
 		moc_calendar.o \
-		moc_listview.o
+		moc_listview.o \
+		moc_maindatabase.o
 DIST          = testqt \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -338,9 +340,9 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_calendar.cpp moc_listview.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_calendar.cpp moc_listview.cpp moc_maindatabase.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_calendar.cpp moc_listview.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_calendar.cpp moc_listview.cpp moc_maindatabase.cpp
 moc_mainwindow.cpp: calendar.h \
 		listview.h \
 		database.h \
@@ -352,6 +354,10 @@ moc_calendar.cpp: calendar.h
 
 moc_listview.cpp: listview.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/Dev/testqt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include listview.h -o moc_listview.cpp
+
+moc_maindatabase.cpp: database.h \
+		main_db/maindatabase.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/Dev/testqt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include main_db/maindatabase.h -o moc_maindatabase.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -416,7 +422,8 @@ fileoperations.o: fileoperations.cpp fileoperations.h \
 
 maindatabase.o: main_db/maindatabase.cpp main_db/maindatabase.h \
 		database.h \
-		fileoperations.h
+		fileoperations.h \
+		exception.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maindatabase.o main_db/maindatabase.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
@@ -427,6 +434,9 @@ moc_calendar.o: moc_calendar.cpp
 
 moc_listview.o: moc_listview.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_listview.o moc_listview.cpp
+
+moc_maindatabase.o: moc_maindatabase.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_maindatabase.o moc_maindatabase.cpp
 
 ####### Install
 

@@ -50,6 +50,7 @@ DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
         throw Exception ("There is no database with requested dbSet");
 
     _dbe = dbe;
+    _blocked = false;
 }
 
 QSqlError DataBase::_Init()
@@ -95,6 +96,15 @@ QSqlError DataBase::_Clear()
 QSqlQuery DataBase::_Execute(QString queryString)
 {
     QSqlQuery query (_db);
+
+    if(_blocked)
+    {
+        std::cout<<"Database was blocked for running"<<std::endl;
+        while(_blocked)
+        {
+            QThread::msleep(500);
+        }
+    }
 
     _m.lock();
     if(!query.exec(queryString))
@@ -158,6 +168,16 @@ void DataBase::ShowMessage(QString text)
     QMessageBox msgBox;
     msgBox.setText(text);
     msgBox.exec();
+}
+
+void DataBase::Block()
+{
+    _blocked = true;
+}
+
+void DataBase::Unblock()
+{
+    _blocked = false;
 }
 
 bool DataBase::_IsDbValid()

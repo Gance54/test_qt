@@ -3,6 +3,8 @@
 #include <QtSql>
 #include <mutex>
 #include <QStringList>
+#include <QThread>
+#include <QObject>
 #include <string>
 #include <memory>
 #define PRIMARY_KEY_STR " primary key"
@@ -24,6 +26,8 @@ public:
     QSqlQuery Select(QString table, QStringList fields, QString conditions);
 
     static void ShowMessage(QString text);
+    void Block();
+    void Unblock();
 
 private:
     static int _total_connections;
@@ -39,6 +43,7 @@ private:
     QSqlError _Clear();
     QSqlQuery _Execute(QString queryString);
     int _transaction_count;
+    bool _blocked;
 };
 
 class DatabaseBuilder

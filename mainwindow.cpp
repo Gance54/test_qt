@@ -36,11 +36,18 @@ void MainWindow::on_ProductsButton_clicked()
 
 void MainWindow::on_InitDatabase_clicked()
 {
-    try {
+    /*try {
         auto main_db = std::unique_ptr <MainDatabase> (new MainDatabase());
         main_db->FillData();
     }
     catch (Exception e) {
         e.show();
-    }
+    }*/
+
+    DBWorker *worker = new DBWorker();
+    QThread *thread = new QThread;
+    worker->moveToThread(thread);
+    connect(thread, SIGNAL(started()), worker, SLOT(process()));
+    thread->start();
+    return;
 }
