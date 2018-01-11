@@ -55,10 +55,12 @@ SOURCES       = main.cpp \
 		exception.cpp \
 		listview.cpp \
 		fileoperations.cpp \
-		main_db/maindatabase.cpp moc_mainwindow.cpp \
+		main_db/maindatabase.cpp \
+		labelmapper.cpp moc_mainwindow.cpp \
 		moc_calendar.cpp \
 		moc_listview.cpp \
-		moc_maindatabase.cpp
+		moc_maindatabase.cpp \
+		moc_labelmapper.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		calendar.o \
@@ -67,10 +69,12 @@ OBJECTS       = main.o \
 		listview.o \
 		fileoperations.o \
 		maindatabase.o \
+		labelmapper.o \
 		moc_mainwindow.o \
 		moc_calendar.o \
 		moc_listview.o \
-		moc_maindatabase.o
+		moc_maindatabase.o \
+		moc_labelmapper.o
 DIST          = testqt \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -138,14 +142,16 @@ DIST          = testqt \
 		ui_listview.h \
 		listview.h \
 		fileoperations.h \
-		main_db/maindatabase.h main.cpp \
+		main_db/maindatabase.h \
+		labelmapper.h main.cpp \
 		mainwindow.cpp \
 		calendar.cpp \
 		database.cpp \
 		exception.cpp \
 		listview.cpp \
 		fileoperations.cpp \
-		main_db/maindatabase.cpp
+		main_db/maindatabase.cpp \
+		labelmapper.cpp
 QMAKE_TARGET  = testqt
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = testqt
@@ -315,8 +321,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h ui_mainwindow.h ui_calendar.h calendar.h database.h exception.h ui_listview.h listview.h fileoperations.h main_db/maindatabase.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp calendar.cpp database.cpp exception.cpp listview.cpp fileoperations.cpp main_db/maindatabase.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h ui_mainwindow.h ui_calendar.h calendar.h database.h exception.h ui_listview.h listview.h fileoperations.h main_db/maindatabase.h labelmapper.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp calendar.cpp database.cpp exception.cpp listview.cpp fileoperations.cpp main_db/maindatabase.cpp labelmapper.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui calendar.ui listview.ui $(DISTDIR)/
 
 
@@ -340,12 +346,13 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_calendar.cpp moc_listview.cpp moc_maindatabase.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_calendar.cpp moc_listview.cpp moc_maindatabase.cpp moc_labelmapper.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_calendar.cpp moc_listview.cpp moc_maindatabase.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_calendar.cpp moc_listview.cpp moc_maindatabase.cpp moc_labelmapper.cpp
 moc_mainwindow.cpp: calendar.h \
 		listview.h \
 		database.h \
+		labelmapper.h \
 		mainwindow.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/Dev/testqt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
 
@@ -358,6 +365,9 @@ moc_listview.cpp: listview.h
 moc_maindatabase.cpp: database.h \
 		main_db/maindatabase.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/Dev/testqt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include main_db/maindatabase.h -o moc_maindatabase.cpp
+
+moc_labelmapper.cpp: labelmapper.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/Dev/testqt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include labelmapper.h -o moc_labelmapper.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -386,13 +396,15 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 main.o: main.cpp mainwindow.h \
 		calendar.h \
 		listview.h \
-		database.h
+		database.h \
+		labelmapper.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
 		calendar.h \
 		listview.h \
 		database.h \
+		labelmapper.h \
 		ui_mainwindow.h \
 		exception.h \
 		main_db/maindatabase.h
@@ -426,6 +438,9 @@ maindatabase.o: main_db/maindatabase.cpp main_db/maindatabase.h \
 		exception.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maindatabase.o main_db/maindatabase.cpp
 
+labelmapper.o: labelmapper.cpp labelmapper.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o labelmapper.o labelmapper.cpp
+
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
@@ -437,6 +452,9 @@ moc_listview.o: moc_listview.cpp
 
 moc_maindatabase.o: moc_maindatabase.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_maindatabase.o moc_maindatabase.cpp
+
+moc_labelmapper.o: moc_labelmapper.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_labelmapper.o moc_labelmapper.cpp
 
 ####### Install
 

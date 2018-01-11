@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -32,6 +33,8 @@ public:
     QPushButton *InitDatabase;
     QPushButton *lockButton;
     QPushButton *unlockButton;
+    QLabel *DbStatusText;
+    QLabel *DbStatusLabel;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -40,7 +43,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(400, 300);
+        MainWindow->resize(400, 297);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Calendar = new QPushButton(centralWidget);
@@ -54,10 +57,16 @@ public:
         InitDatabase->setGeometry(QRect(279, 210, 101, 22));
         lockButton = new QPushButton(centralWidget);
         lockButton->setObjectName(QStringLiteral("lockButton"));
-        lockButton->setGeometry(QRect(10, 180, 80, 22));
+        lockButton->setGeometry(QRect(10, 140, 80, 22));
         unlockButton = new QPushButton(centralWidget);
         unlockButton->setObjectName(QStringLiteral("unlockButton"));
-        unlockButton->setGeometry(QRect(10, 210, 80, 22));
+        unlockButton->setGeometry(QRect(10, 170, 80, 22));
+        DbStatusText = new QLabel(centralWidget);
+        DbStatusText->setObjectName(QStringLiteral("DbStatusText"));
+        DbStatusText->setGeometry(QRect(10, 220, 71, 16));
+        DbStatusLabel = new QLabel(centralWidget);
+        DbStatusLabel->setObjectName(QStringLiteral("DbStatusLabel"));
+        DbStatusLabel->setGeometry(QRect(80, 220, 71, 16));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -83,6 +92,8 @@ public:
         InitDatabase->setText(QApplication::translate("MainWindow", "Init database", 0));
         lockButton->setText(QApplication::translate("MainWindow", "Lock DB", 0));
         unlockButton->setText(QApplication::translate("MainWindow", "Unlock DB", 0));
+        DbStatusText->setText(QApplication::translate("MainWindow", "DB Status:", 0));
+        DbStatusLabel->setText(QApplication::translate("MainWindow", "Undefined", 0));
     } // retranslateUi
 
 };

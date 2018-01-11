@@ -5,6 +5,8 @@
 #include <calendar.h>
 #include <listview.h>
 #include <database.h>
+#include <labelmapper.h>
+
 namespace Ui {
 class MainWindow;
 }
@@ -32,7 +34,6 @@ private:
     ListView *products;
     std::unique_ptr <DataBase> d;
     void *_object;
-
 };
 
 #endif // MAINWINDOW_H

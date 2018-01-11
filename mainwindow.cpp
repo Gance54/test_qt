@@ -6,6 +6,9 @@
 #include <exception.h>
 #include <memory>
 #include <main_db/maindatabase.h>
+#include <iostream>
+
+LabelMapper gdbLabels;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,10 +19,12 @@ MainWindow::MainWindow(QWidget *parent) :
     products = new ListView();
     products->setWindowTitle("Products");
     _object = NULL;
+    gdbLabels.RegisterLabel(ui->DbStatusLabel);
 }
 
 MainWindow::~MainWindow()
 {
+    std::cout<<"Main window destructor"<<std::endl;
     delete ui;
     delete calendar;
     delete products;
@@ -54,11 +59,13 @@ void MainWindow:: RegisterObject(void *ptr)
 void MainWindow::on_lockButton_clicked()
 {
     DBWorker *worker = reinterpret_cast<DBWorker *>(_object);
-    worker->stop();
+    if(worker)
+        worker->stop();
 }
 
 void MainWindow::on_unlockButton_clicked()
 {
     DBWorker *worker = reinterpret_cast<DBWorker *>(_object);;
-    worker->resume();
+    if(worker)
+        worker->resume();
 }

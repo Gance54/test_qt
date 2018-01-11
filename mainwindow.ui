@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>297</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -57,7 +57,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>180</y>
+      <y>140</y>
       <width>80</width>
       <height>22</height>
      </rect>
@@ -70,13 +70,39 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>210</y>
+      <y>170</y>
       <width>80</width>
       <height>22</height>
      </rect>
     </property>
     <property name="text">
      <string>Unlock DB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DbStatusText">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DB Status:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DbStatusLabel">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>220</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Undefined</string>
     </property>
    </widget>
   </widget>

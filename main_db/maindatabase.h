@@ -30,7 +30,6 @@ private:
 public slots:
     void process();
 
-
 signals:
     void finished();
 };

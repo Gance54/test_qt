@@ -2,6 +2,7 @@
 #include <QMessageBox>
 #include <exception.h>
 #include <main_db/maindatabase.h>
+#include <mainwindow.h>
 #include <iostream>
 #include <QSqlQuery>
 #define DB_CONNESTION_PREFIX "sqlite_db_connection"
@@ -10,12 +11,13 @@
 #define DESCRYPTION_SEPARATOR ","
 #define FIELD_SEPARATOR " "
 
+extern LabelMapper gdbLabels;
+
 int DataBase::_total_connections = 0;
 
 DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
                    QStringList dbTables, QStringList dbTableDescriptions)
 {
-    _m.lock();
     _transaction_count = 0;
     int currentConnections = _total_connections + 1;
     std::string connectionName = std::string(dbPrefix + std::to_string(currentConnections));
@@ -37,6 +39,7 @@ DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
                 _Init();
             }
             catch (Exception e) {
+                gdbLabels.UpdateLabels("Failed to initialize", "red");
                 e.show();
             }
         }
@@ -44,13 +47,12 @@ DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
     else
         throw Exception ("Failed to open db");
 
-    _m.unlock();
-
     if(dbe >= DB_MAX)
         throw Exception ("There is no database with requested dbSet");
 
     _dbe = dbe;
     _blocked = false;
+    gdbLabels.UpdateLabels("Connection established", "grey");
 }
 
 QSqlError DataBase::_Init()
@@ -96,15 +98,6 @@ QSqlError DataBase::_Clear()
 QSqlQuery DataBase::_Execute(QString queryString)
 {
     QSqlQuery query (_db);
-
-    if(_blocked)
-    {//TODO: do with mutex
-        std::cout<<"Database was blocked for running"<<std::endl;
-        while(_blocked)
-        {
-            QThread::msleep(500);
-        }
-    }
 
     _m.lock();
     if(!query.exec(queryString))
@@ -172,12 +165,21 @@ void DataBase::ShowMessage(QString text)
 
 void DataBase::Block()
 {
+    _m.lock();
     _blocked = true;
+    gdbLabels.UpdateLabels("Blocked", "red");
 }
 
 void DataBase::Unblock()
 {
+    _m.unlock();
     _blocked = false;
+    gdbLabels.UpdateLabels("Online", "green");
+}
+
+bool DataBase::IsBlocked()
+{
+    return _blocked;
 }
 
 bool DataBase::_IsDbValid()

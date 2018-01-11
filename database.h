@@ -28,6 +28,7 @@ public:
     static void ShowMessage(QString text);
     void Block();
     void Unblock();
+    bool IsBlocked();
 
 private:
     static int _total_connections;
@@ -94,7 +95,7 @@ static struct TableDescriptions
                 "description",
                 "category_id",
                 "image_id",
-             },
+            },
             {
                 "integer" PRIMARY_KEY_STR,
                 "varchar",
