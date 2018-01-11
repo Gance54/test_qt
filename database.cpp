@@ -98,7 +98,7 @@ QSqlQuery DataBase::_Execute(QString queryString)
     QSqlQuery query (_db);
 
     if(_blocked)
-    {
+    {//TODO: do with mutex
         std::cout<<"Database was blocked for running"<<std::endl;
         while(_blocked)
         {

@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     calendar = new Calendar();
     products = new ListView();
     products->setWindowTitle("Products");
+    _object = NULL;
 }
 
 MainWindow::~MainWindow()
@@ -36,18 +37,28 @@ void MainWindow::on_ProductsButton_clicked()
 
 void MainWindow::on_InitDatabase_clicked()
 {
-    /*try {
-        auto main_db = std::unique_ptr <MainDatabase> (new MainDatabase());
-        main_db->FillData();
-    }
-    catch (Exception e) {
-        e.show();
-    }*/
-
     DBWorker *worker = new DBWorker();
     QThread *thread = new QThread;
     worker->moveToThread(thread);
     connect(thread, SIGNAL(started()), worker, SLOT(process()));
+    RegisterObject(worker);
     thread->start();
     return;
+}
+
+void MainWindow:: RegisterObject(void *ptr)
+{
+    _object = ptr;
+}
+
+void MainWindow::on_lockButton_clicked()
+{
+    DBWorker *worker = reinterpret_cast<DBWorker *>(_object);
+    worker->stop();
+}
+
+void MainWindow::on_unlockButton_clicked()
+{
+    DBWorker *worker = reinterpret_cast<DBWorker *>(_object);;
+    worker->resume();
 }

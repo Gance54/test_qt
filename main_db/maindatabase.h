@@ -22,13 +22,14 @@ public:
     DBWorker(){}
     ~DBWorker(){}
 
+    void stop();
+    void resume();
 private:
     std::unique_ptr <MainDatabase> _mainDb;
 
 public slots:
     void process();
-    void stop();
-    void resume();
+
 
 signals:
     void finished();

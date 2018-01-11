@@ -207,6 +207,7 @@ void DBWorker::process()
 
 void DBWorker::stop()
 {
+    std::cout<<"stop>>"<<std::endl;
     try {
         _mainDb->Block();
     }
@@ -217,6 +218,7 @@ void DBWorker::stop()
 
 void DBWorker::resume()
 {
+    std::cout<<"resume>>"<<std::endl;
     try {
         _mainDb->Unblock();
     }
@@ -224,8 +226,3 @@ void DBWorker::resume()
         e.show();
     }
 }
-
-/*void DBWorker::finished()
-{
-    std::cout<<"Finished!"<<std::endl;
-}*/

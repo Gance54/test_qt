@@ -30,6 +30,8 @@ public:
     QPushButton *Calendar;
     QPushButton *ProductsButton;
     QPushButton *InitDatabase;
+    QPushButton *lockButton;
+    QPushButton *unlockButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -50,6 +52,12 @@ public:
         InitDatabase = new QPushButton(centralWidget);
         InitDatabase->setObjectName(QStringLiteral("InitDatabase"));
         InitDatabase->setGeometry(QRect(279, 210, 101, 22));
+        lockButton = new QPushButton(centralWidget);
+        lockButton->setObjectName(QStringLiteral("lockButton"));
+        lockButton->setGeometry(QRect(10, 180, 80, 22));
+        unlockButton = new QPushButton(centralWidget);
+        unlockButton->setObjectName(QStringLiteral("unlockButton"));
+        unlockButton->setGeometry(QRect(10, 210, 80, 22));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -73,6 +81,8 @@ public:
         Calendar->setText(QApplication::translate("MainWindow", "Calendar", 0));
         ProductsButton->setText(QApplication::translate("MainWindow", "Products", 0));
         InitDatabase->setText(QApplication::translate("MainWindow", "Init database", 0));
+        lockButton->setText(QApplication::translate("MainWindow", "Lock DB", 0));
+        unlockButton->setText(QApplication::translate("MainWindow", "Unlock DB", 0));
     } // retranslateUi
 
 };
