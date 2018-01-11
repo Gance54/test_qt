@@ -38,6 +38,8 @@ void MainDatabase::FillData()
     });
     data.clear();
 
+    std::cout<<"Reading data... ";
+
     /* get products data */
     std::for_each (categories.begin(), categories.end(), [&](QString cat) {
         FileOperations f(catDir + "/" + cat + ".txt");
@@ -101,16 +103,24 @@ void MainDatabase::FillData()
             products.push_back(product.join("@"));
         });
     });
+    std::cout<<"OK"<<std::endl;
+    std::cout<<"Inserting consumables... ";
 
     /* Insert consumables */
     std::for_each (consumables.begin(), consumables.end(), [&](QString consumable) {
         _d->Insert("consumables", {"name", "description"}, consumable.split("|"));
     });
 
+    std::cout<<"OK"<<std::endl;
+    std::cout<<"Inserting categories... ";
+
     /* Insert categories */
     std::for_each (categories.begin(), categories.end(), [&](QString cat) {
         _d->Insert("categories", {"name"}, { cat });
     });
+
+    std::cout<<"OK"<<std::endl;
+    std::cout<<"Inserting products... ";
 
     /* Insert products */
     std::for_each(products.begin(), products.end(), [&](QString prodStr){
@@ -122,31 +132,50 @@ void MainDatabase::FillData()
             throw Exception("Can not get category " + cat + " from db");
 
         QString catId = query.value(0).toString();
-        QStringList consIdList;
-
-        QStringList consList = (prodList.last()).split(";");
-        std::for_each(consList.begin(), consList.end(), [&](QString conData) {
-            QString conName = (conData.split("|")).first();
-            QSqlQuery query1 = _d->Select("consumables", {"id"}, "name = '" + conName + "'");
-            if(!query1.size())
-                throw Exception("Can not get consumable " + conName + " from db");
-
-            consIdList.push_back(query1.value(0).toString());
-        });
-
-        /* cat id and consumable ids we already got.
-         * Erase category from list to access name by first() and description by last() (if present) */
-        prodList.erase(prodList.end()-1);
-        prodList.erase(prodList.begin());
-
-        QString prodName = prodList.first();
+        QString prodName = *(prodList.begin() + 1);
         QString prodDescr;
         if(isDescPresent)
-            prodDescr = prodList.last();
+            prodDescr = *(prodList.begin() + 2);
         else
             prodDescr.clear();
 
-        //_d->Insert("products", {"name", "description", "category_id", "consumables"},
-        //                       {prodName, prodDescr, catId, consIdList.join("|")});
+        _d->Insert("products", {"name", "description", "category_id"},
+                               {prodName, prodDescr, catId});
     });
+
+    std::cout<<"OK"<<std::endl;
+    std::cout<<"Building communication table... ";
+
+    std::for_each(products.begin(), products.end(), [&](QString prodStr) {
+        QStringList prodList = prodStr.split("@");
+        QString prodName = *(prodList.begin() + 1);
+
+        QSqlQuery query = _d->Select("products", {"id"}, "name = '" + prodName + "'");
+        if(!query.size())
+            throw Exception("Can not get product " + prodName + " from db");
+        QString prodId = query.value(0).toString();
+
+        QStringList consList = (prodList.last()).split(";");
+        std::for_each(consList.begin(), consList.end(), [&](QString conData) {
+            QStringList conDataList = conData.split("|");
+            if(conDataList.size() != 3)
+                throw Exception ("Invalid consumable data description for " + conData);
+
+            QString conName = conDataList.first();
+            QString conUnit = *(conDataList.begin() + 1);
+            QString conValue = *(conDataList.begin() + 2);
+            QSqlQuery query1 = _d->Select("consumables", {"id"}, "name = '" + conName + "'");
+            if(!query1.size())
+                throw Exception("Can not get consumable " + conName + " from db");
+            QString conId = query1.value(0).toString();
+
+            _d->Insert("prod_cons", {"product_id", "consumable_id", "consumable_unit", "consumable_value"},
+                                    {prodId, conId, conUnit, conValue });
+        });
+    });
+
+    std::cout<<"OK"<<std::endl;
+    std::cout<<"Data insertion finished!";
+
+    /**/
 }

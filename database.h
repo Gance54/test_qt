@@ -38,6 +38,7 @@ private:
     QSqlError _Init();
     QSqlError _Clear();
     QSqlQuery _Execute(QString queryString);
+    int _transaction_count;
 };
 
 class DatabaseBuilder
@@ -66,9 +67,9 @@ static struct TableDescriptions
 {
     std::string dbPrefix;
     std::string dbFilename;
-    std::string tables [4];
+    std::string tables [5];
     //tableDescriptions[TABLES][FIELD_NAME_LIST;FIELD_TYPE_LIST]
-    QStringList tableDescriptions [4][2];
+    QStringList tableDescriptions [5][2];
 } descriptions [DB_MAX] =
 {
     "sqlite_db_connection",
@@ -77,6 +78,7 @@ static struct TableDescriptions
         "products",
         "categories",
         "consumables",
+        "prod_cons",
         "images",
     },
     {
@@ -87,15 +89,13 @@ static struct TableDescriptions
                 "description",
                 "category_id",
                 "image_id",
-                "consumables",
-            },
+             },
             {
                 "integer" PRIMARY_KEY_STR,
                 "varchar",
                 "varchar",
                 "integer",
                 "integer",
-                "varchar",
             },
         },
         {//categories table
@@ -120,6 +120,22 @@ static struct TableDescriptions
                 "integer" PRIMARY_KEY_STR,
                 "varchar",
                 "varchar"
+            }
+        },
+        {//prod_cons table
+            {
+                "id",
+                "product_id",
+                "consumable_id",
+                "consumable_unit",
+                "consumable_value"
+            },
+            {
+                "integer" PRIMARY_KEY_STR,
+                "integer",
+                "integer",
+                "varchar",
+                "real"
             }
         },
         {//images table

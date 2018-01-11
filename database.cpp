@@ -16,7 +16,7 @@ DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
                    QStringList dbTables, QStringList dbTableDescriptions)
 {
     _m.lock();
-
+    _transaction_count = 0;
     int currentConnections = _total_connections + 1;
     std::string connectionName = std::string(dbPrefix + std::to_string(currentConnections));
     _db = QSqlDatabase::addDatabase(QString::fromStdString(DB_DRIVER), QString::fromStdString(connectionName));
@@ -87,18 +87,28 @@ QSqlError DataBase::_Clear()
         _Execute(query);
     }
 
+    _transaction_count = 0;
+
     return QSqlError();
 }
 
 QSqlQuery DataBase::_Execute(QString queryString)
 {
     QSqlQuery query (_db);
-    std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<NEW REQUEST>>>>>>>>>>>>>>>>>>>>>>>>>>"<<std::endl;
-    std::cout<<queryString.toStdString()<<std::endl;
 
+    _m.lock();
     if(!query.exec(queryString))
+    {
+        std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<NEW FAILED REQUEST>>>>>>>>>>>>>>>>>>>>>>>>>>"<<std::endl;
+        std::cout<<queryString.toStdString()<<std::endl;
         throw Exception("Error '" + query.lastError().text() +" on request '" + queryString + "'");
+    }
 
+    _transaction_count++;
+    _m.unlock();
+
+    if(!(_transaction_count%10))
+        std::cout<<"Total transactions - "<< _transaction_count <<std::endl;
     return query;
 }
 
