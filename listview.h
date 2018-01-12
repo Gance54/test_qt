@@ -1,6 +1,8 @@
 #ifndef LISTVIEW_H
 #define LISTVIEW_H
 #include <QDialog>
+#include <database.h>
+
 namespace Ui {
 class ListView;
 }
@@ -15,6 +17,7 @@ public:
 
 private:
     Ui::ListView *ui;
+    std::unique_ptr <DataBase> _d;
 };
 
 #endif // LISTVIEW_H

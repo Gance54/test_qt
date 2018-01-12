@@ -51,7 +51,7 @@ DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
 
     _dbe = dbe;
     _blocked = false;
-    gdbLabels.UpdateLabels("Connection established", "green");
+    gdbLabels.UpdateLabels("Online", "green");
 }
 
 QSqlError DataBase::_Init()
@@ -128,6 +128,9 @@ DataBase::~DataBase()
 
      _tables.clear();
      _tableDescriptions.clear();
+     _transaction_count = 0;
+     gdbTransactionLabels.UpdateLabels(QString::number(_transaction_count), "");
+     gdbLabels.UpdateLabels("Closed", "black");
 }
 
 QStringList DataBase::getTables()

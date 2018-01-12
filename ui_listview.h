@@ -25,8 +25,9 @@ class Ui_ListView
 {
 public:
     QDialogButtonBox *buttonBox;
-    QListWidget *listWidget;
     QTextEdit *descriptionText;
+    QListWidget *catListWidget;
+    QListWidget *prodListWidget;
 
     void setupUi(QDialog *ListView)
     {
@@ -38,12 +39,15 @@ public:
         buttonBox->setGeometry(QRect(750, 20, 81, 241));
         buttonBox->setOrientation(Qt::Vertical);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        listWidget = new QListWidget(ListView);
-        listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(30, 20, 211, 381));
         descriptionText = new QTextEdit(ListView);
         descriptionText->setObjectName(QStringLiteral("descriptionText"));
-        descriptionText->setGeometry(QRect(280, 20, 371, 381));
+        descriptionText->setGeometry(QRect(280, 50, 371, 381));
+        catListWidget = new QListWidget(ListView);
+        catListWidget->setObjectName(QStringLiteral("catListWidget"));
+        catListWidget->setGeometry(QRect(10, 50, 256, 51));
+        prodListWidget = new QListWidget(ListView);
+        prodListWidget->setObjectName(QStringLiteral("prodListWidget"));
+        prodListWidget->setGeometry(QRect(10, 110, 256, 321));
 
         retranslateUi(ListView);
         QObject::connect(buttonBox, SIGNAL(accepted()), ListView, SLOT(accept()));
