@@ -25,6 +25,11 @@ void MainDatabase::Unblock()
     _d->Unblock();
 }
 
+typedef struct consSstruct {
+    QString id;
+    QString name;
+} ConsStruct;
+
 void MainDatabase::FillData()
 {
     QString dataDir = "/home/mike/Dev/testqt/data";
@@ -122,6 +127,15 @@ void MainDatabase::FillData()
         _d->Insert("consumables", {"name", "description"}, consumable.split("|"));
     });
 
+    QSqlQuery conQuery = _d->Select("consumables", {"id", "name"}, {});
+    QList <ConsStruct> ConsList;
+    while(1)
+    {
+        ConsList.push_back({ conQuery.value(0).toString(), conQuery.value(1).toString() });
+        if(!conQuery.next())
+            break;
+    }
+
     gdbLabels.UpdateLabels("Inserting categories...", "grey");
 
     /* Insert categories */
@@ -170,10 +184,27 @@ void MainDatabase::FillData()
             QString conName = conDataList.first();
             QString conUnit = *(conDataList.begin() + 1);
             QString conValue = *(conDataList.begin() + 2);
-            QSqlQuery query1 = _d->Select("consumables", {"id"}, "name = '" + conName + "'");
+
+
+            QString conId = "";
+            for(int i = 0; i < ConsList.size(); i++)
+            {
+                auto con = ConsList.begin() + i;
+                if(con->name == conName)
+                {
+                    conId = con->id;
+                    break;
+                }
+            }
+
+            if(conId.isEmpty())
+                throw Exception("Failed to get consumable ID for "+ conName + "!!");
+
+            /*QSqlQuery query1 = _d->Select("consumables", {"id"}, "name = '" + conName + "'");
             if(!query1.size())
                 throw Exception("Can not get consumable " + conName + " from db");
-            QString conId = query1.value(0).toString();
+            QString conId = query1.value(0).toString();*/
+
 
             _d->Insert("prod_cons", {"product_id", "consumable_id", "consumable_unit", "consumable_value"},
                                     {prodId, conId, conUnit, conValue });

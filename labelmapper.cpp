@@ -24,8 +24,9 @@ void LabelMapper::UpdateLabels(QString text, QString color)
         if(!text.isEmpty())
         {
             _previosText = label->text();
-            label->setText(text);
+            label->clear();
             label->setFixedWidth(label->fontMetrics().width(text));
+            label->setText(text);
         }
 
         if(!color.isEmpty())
@@ -47,6 +48,7 @@ void LabelMapper::SetPrevios()
         return;
 
     std::for_each(_labelList.begin(), _labelList.end(), [&](QLabel *label){
+        label->clear();
         label->setFixedWidth(label->fontMetrics().width(_previosText));
         label->setPalette(_previosPalette);
         label->setText(_previosText);

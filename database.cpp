@@ -99,6 +99,8 @@ QSqlQuery DataBase::_Execute(QString queryString)
     QSqlQuery query (_db);
 
     _m.lock();
+    //std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<NEW REQUEST>>>>>>>>>>>>>>>>>>>>>>>>>>"<<std::endl;
+    //std::cout<<queryString.toStdString()<<std::endl;
     if(!query.exec(queryString))
     {
         std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<NEW FAILED REQUEST>>>>>>>>>>>>>>>>>>>>>>>>>>"<<std::endl;
