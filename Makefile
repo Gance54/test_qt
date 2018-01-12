@@ -416,7 +416,11 @@ calendar.o: calendar.cpp calendar.h \
 
 database.o: database.cpp database.h \
 		exception.h \
-		main_db/maindatabase.h
+		main_db/maindatabase.h \
+		mainwindow.h \
+		calendar.h \
+		listview.h \
+		labelmapper.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o database.o database.cpp
 
 exception.o: exception.cpp exception.h \

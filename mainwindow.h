@@ -11,6 +11,9 @@ namespace Ui {
 class MainWindow;
 }
 
+extern LabelMapper gdbLabels;
+extern LabelMapper gdbTransactionLabels;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

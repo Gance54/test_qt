@@ -35,6 +35,8 @@ public:
     QPushButton *unlockButton;
     QLabel *DbStatusText;
     QLabel *DbStatusLabel;
+    QLabel *DbTransactionsText;
+    QLabel *DbTransactionsCountLabel;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -43,7 +45,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(400, 297);
+        MainWindow->resize(762, 364);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Calendar = new QPushButton(centralWidget);
@@ -51,10 +53,10 @@ public:
         Calendar->setGeometry(QRect(10, 10, 80, 22));
         ProductsButton = new QPushButton(centralWidget);
         ProductsButton->setObjectName(QStringLiteral("ProductsButton"));
-        ProductsButton->setGeometry(QRect(300, 10, 80, 22));
+        ProductsButton->setGeometry(QRect(670, 10, 80, 22));
         InitDatabase = new QPushButton(centralWidget);
         InitDatabase->setObjectName(QStringLiteral("InitDatabase"));
-        InitDatabase->setGeometry(QRect(279, 210, 101, 22));
+        InitDatabase->setGeometry(QRect(10, 200, 101, 22));
         lockButton = new QPushButton(centralWidget);
         lockButton->setObjectName(QStringLiteral("lockButton"));
         lockButton->setGeometry(QRect(10, 140, 80, 22));
@@ -63,14 +65,29 @@ public:
         unlockButton->setGeometry(QRect(10, 170, 80, 22));
         DbStatusText = new QLabel(centralWidget);
         DbStatusText->setObjectName(QStringLiteral("DbStatusText"));
-        DbStatusText->setGeometry(QRect(10, 220, 71, 16));
+        DbStatusText->setGeometry(QRect(10, 260, 71, 16));
         DbStatusLabel = new QLabel(centralWidget);
         DbStatusLabel->setObjectName(QStringLiteral("DbStatusLabel"));
-        DbStatusLabel->setGeometry(QRect(80, 220, 71, 16));
+        DbStatusLabel->setGeometry(QRect(90, 260, 71, 16));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(DbStatusLabel->sizePolicy().hasHeightForWidth());
+        DbStatusLabel->setSizePolicy(sizePolicy);
+        DbStatusLabel->setScaledContents(true);
+        DbTransactionsText = new QLabel(centralWidget);
+        DbTransactionsText->setObjectName(QStringLiteral("DbTransactionsText"));
+        DbTransactionsText->setGeometry(QRect(10, 280, 91, 16));
+        DbTransactionsCountLabel = new QLabel(centralWidget);
+        DbTransactionsCountLabel->setObjectName(QStringLiteral("DbTransactionsCountLabel"));
+        DbTransactionsCountLabel->setGeometry(QRect(100, 280, 71, 16));
+        sizePolicy.setHeightForWidth(DbTransactionsCountLabel->sizePolicy().hasHeightForWidth());
+        DbTransactionsCountLabel->setSizePolicy(sizePolicy);
+        DbTransactionsCountLabel->setScaledContents(true);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 19));
+        menuBar->setGeometry(QRect(0, 0, 762, 19));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -94,6 +111,8 @@ public:
         unlockButton->setText(QApplication::translate("MainWindow", "Unlock DB", 0));
         DbStatusText->setText(QApplication::translate("MainWindow", "DB Status:", 0));
         DbStatusLabel->setText(QApplication::translate("MainWindow", "Undefined", 0));
+        DbTransactionsText->setText(QApplication::translate("MainWindow", "Transactions:", 0));
+        DbTransactionsCountLabel->setText(QApplication::translate("MainWindow", "0", 0));
     } // retranslateUi
 
 };

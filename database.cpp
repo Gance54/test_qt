@@ -11,14 +11,13 @@
 #define DESCRYPTION_SEPARATOR ","
 #define FIELD_SEPARATOR " "
 
-extern LabelMapper gdbLabels;
-
 int DataBase::_total_connections = 0;
 
 DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
                    QStringList dbTables, QStringList dbTableDescriptions)
 {
     _transaction_count = 0;
+    gdbLabels.UpdateLabels("Establishing connection...", "grey");
     int currentConnections = _total_connections + 1;
     std::string connectionName = std::string(dbPrefix + std::to_string(currentConnections));
     _db = QSqlDatabase::addDatabase(QString::fromStdString(DB_DRIVER), QString::fromStdString(connectionName));
@@ -52,7 +51,7 @@ DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
 
     _dbe = dbe;
     _blocked = false;
-    gdbLabels.UpdateLabels("Connection established", "grey");
+    gdbLabels.UpdateLabels("Connection established", "green");
 }
 
 QSqlError DataBase::_Init()
@@ -110,8 +109,8 @@ QSqlQuery DataBase::_Execute(QString queryString)
     _transaction_count++;
     _m.unlock();
 
-    if(!(_transaction_count%10))
-        std::cout<<"Total transactions - "<< _transaction_count <<std::endl;
+    gdbTransactionLabels.UpdateLabels(QString::number(_transaction_count), "");
+
     return query;
 }
 
@@ -127,7 +126,6 @@ DataBase::~DataBase()
 
      _tables.clear();
      _tableDescriptions.clear();
-     std::cout<<"DESTR!!!"<<std::endl;
 }
 
 QStringList DataBase::getTables()
@@ -174,7 +172,7 @@ void DataBase::Unblock()
 {
     _m.unlock();
     _blocked = false;
-    gdbLabels.UpdateLabels("Online", "green");
+    gdbLabels.SetPrevios();
 }
 
 bool DataBase::IsBlocked()
@@ -239,8 +237,6 @@ int DatabaseBuilder::SetDatabaseDescriptions(DbSet db,
         }
 
         tables.push_back(QString::fromStdString(descriptions[db].tables[i]));
-
-        std::cout<<description.toStdString()<<";"<<std::endl;
         tableDescriptions.push_back(description);
     }
 

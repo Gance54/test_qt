@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>297</height>
+    <width>762</width>
+    <height>364</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
    <widget class="QPushButton" name="ProductsButton">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>670</x>
       <y>10</y>
       <width>80</width>
       <height>22</height>
@@ -43,8 +43,8 @@
    <widget class="QPushButton" name="InitDatabase">
     <property name="geometry">
      <rect>
-      <x>279</x>
-      <y>210</y>
+      <x>10</x>
+      <y>200</y>
       <width>101</width>
       <height>22</height>
      </rect>
@@ -83,7 +83,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>220</y>
+      <y>260</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -95,14 +95,58 @@
    <widget class="QLabel" name="DbStatusLabel">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>220</y>
+      <x>90</x>
+      <y>260</y>
       <width>71</width>
       <height>16</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="text">
      <string>Undefined</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DbTransactionsText">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Transactions:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DbTransactionsCountLabel">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>280</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -111,7 +155,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>762</width>
      <height>19</height>
     </rect>
    </property>

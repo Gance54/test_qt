@@ -1,6 +1,7 @@
 #include <main_db/maindatabase.h>
 #include <fileoperations.h>
 #include <exception.h>
+#include <mainwindow.h>
 #include <QRegExp>
 MainDatabase::MainDatabase()
 {
@@ -34,6 +35,8 @@ void MainDatabase::FillData()
         prodDir = dataDir + "/" + "products";
     QString filename = dataDir + "/" + catFilename;
 
+    gdbLabels.UpdateLabels("Initialization of input data...", "grey");
+
     QStringList data;
     FileOperations file(filename);
     QStringList
@@ -48,8 +51,6 @@ void MainDatabase::FillData()
         categories.push_back(c.last());
     });
     data.clear();
-
-    std::cout<<"Reading data... ";
 
     /* get products data */
     std::for_each (categories.begin(), categories.end(), [&](QString cat) {
@@ -114,24 +115,21 @@ void MainDatabase::FillData()
             products.push_back(product.join("@"));
         });
     });
-    std::cout<<"OK"<<std::endl;
-    std::cout<<"Inserting consumables... ";
+    gdbLabels.UpdateLabels("Inserting consumables...", "grey");
 
     /* Insert consumables */
     std::for_each (consumables.begin(), consumables.end(), [&](QString consumable) {
         _d->Insert("consumables", {"name", "description"}, consumable.split("|"));
     });
 
-    std::cout<<"OK"<<std::endl;
-    std::cout<<"Inserting categories... ";
+    gdbLabels.UpdateLabels("Inserting categories...", "grey");
 
     /* Insert categories */
     std::for_each (categories.begin(), categories.end(), [&](QString cat) {
         _d->Insert("categories", {"name"}, { cat });
     });
 
-    std::cout<<"OK"<<std::endl;
-    std::cout<<"Inserting products... ";
+    gdbLabels.UpdateLabels("Inserting products...", "grey");
 
     /* Insert products */
     std::for_each(products.begin(), products.end(), [&](QString prodStr){
@@ -154,13 +152,10 @@ void MainDatabase::FillData()
                                {prodName, prodDescr, catId});
     });
 
-    std::cout<<"OK"<<std::endl;
-    std::cout<<"Building communication table... ";
-
     std::for_each(products.begin(), products.end(), [&](QString prodStr) {
         QStringList prodList = prodStr.split("@");
         QString prodName = *(prodList.begin() + 1);
-
+        gdbLabels.UpdateLabels("Building communication table for " + prodName + "...", "grey");
         QSqlQuery query = _d->Select("products", {"id"}, "name = '" + prodName + "'");
         if(!query.size())
             throw Exception("Can not get product " + prodName + " from db");
@@ -185,8 +180,7 @@ void MainDatabase::FillData()
         });
     });
 
-    std::cout<<"OK"<<std::endl;
-    std::cout<<"Data insertion finished!";
+    gdbLabels.UpdateLabels("Online", "green");
 
     /**/
 }

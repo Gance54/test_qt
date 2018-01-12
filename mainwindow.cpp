@@ -9,6 +9,7 @@
 #include <iostream>
 
 LabelMapper gdbLabels;
+LabelMapper gdbTransactionLabels;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     products->setWindowTitle("Products");
     _object = NULL;
     gdbLabels.RegisterLabel(ui->DbStatusLabel);
+    gdbTransactionLabels.RegisterLabel(ui->DbTransactionsCountLabel);
 }
 
 MainWindow::~MainWindow()
