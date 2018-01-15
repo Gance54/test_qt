@@ -200,12 +200,6 @@ void MainDatabase::FillData()
             if(conId.isEmpty())
                 throw Exception("Failed to get consumable ID for "+ conName + "!!");
 
-            /*QSqlQuery query1 = _d->Select("consumables", {"id"}, "name = '" + conName + "'");
-            if(!query1.size())
-                throw Exception("Can not get consumable " + conName + " from db");
-            QString conId = query1.value(0).toString();*/
-
-
             _d->Insert("prod_cons", {"product_id", "consumable_id", "consumable_unit", "consumable_value"},
                                     {prodId, conId, conUnit, conValue });
         });

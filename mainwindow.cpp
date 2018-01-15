@@ -16,12 +16,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    calendar = new Calendar();
-    products = new ListView();
-    products->setWindowTitle("Products");
-    _object = NULL;
     gdbLabels.RegisterLabel(ui->DbStatusLabel);
     gdbTransactionLabels.RegisterLabel(ui->DbTransactionsCountLabel);
+    _object = NULL;
 }
 
 MainWindow::~MainWindow()
@@ -34,11 +31,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Calendar_clicked()
 {
+    calendar = new Calendar();
     calendar->show();
 }
 
 void MainWindow::on_ProductsButton_clicked()
 {
+    products = new ListView();
+    products->setWindowTitle("Products");
     products->show();
 }
 

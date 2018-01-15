@@ -2,6 +2,7 @@
 #define LISTVIEW_H
 #include <QDialog>
 #include <database.h>
+#include "ui_listview.h"
 
 namespace Ui {
 class ListView;
@@ -14,6 +15,9 @@ class ListView : public QDialog
 public:
     explicit ListView(QDialog *parent = 0);
     ~ListView();
+
+private slots:
+    void on_catListWidget_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::ListView *ui;

@@ -52,5 +52,6 @@ void LabelMapper::SetPrevios()
         label->setFixedWidth(label->fontMetrics().width(_previosText));
         label->setPalette(_previosPalette);
         label->setText(_previosText);
+        label->update();
     });
 }

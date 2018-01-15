@@ -52,6 +52,7 @@ DataBase::DataBase(DbSet dbe, std::string dbPrefix, std::string filename,
     _dbe = dbe;
     _blocked = false;
     gdbLabels.UpdateLabels("Online", "green");
+    std::cout<<"Database constructor finished\n";
 }
 
 QSqlError DataBase::_Init()
@@ -99,8 +100,6 @@ QSqlQuery DataBase::_Execute(QString queryString)
     QSqlQuery query (_db);
 
     _m.lock();
-    //std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<NEW REQUEST>>>>>>>>>>>>>>>>>>>>>>>>>>"<<std::endl;
-    //std::cout<<queryString.toStdString()<<std::endl;
     if(!query.exec(queryString))
     {
         std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<NEW FAILED REQUEST>>>>>>>>>>>>>>>>>>>>>>>>>>"<<std::endl;
@@ -155,7 +154,7 @@ QSqlQuery DataBase::Select(QString table, QStringList fields, QString conditions
 
     QSqlQuery q = _Execute(queryString);
     if(!q.next())
-        throw Exception("Failed to get valid position");
+        throw Exception("Failed to execute query. Err = + " + q.lastError().text());
     return q;
 }
 

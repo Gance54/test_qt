@@ -44,10 +44,10 @@ public:
         descriptionText->setGeometry(QRect(280, 50, 371, 381));
         catListWidget = new QListWidget(ListView);
         catListWidget->setObjectName(QStringLiteral("catListWidget"));
-        catListWidget->setGeometry(QRect(10, 50, 256, 51));
+        catListWidget->setGeometry(QRect(10, 50, 256, 101));
         prodListWidget = new QListWidget(ListView);
         prodListWidget->setObjectName(QStringLiteral("prodListWidget"));
-        prodListWidget->setGeometry(QRect(10, 110, 256, 321));
+        prodListWidget->setGeometry(QRect(10, 160, 256, 271));
 
         retranslateUi(ListView);
         QObject::connect(buttonBox, SIGNAL(accepted()), ListView, SLOT(accept()));

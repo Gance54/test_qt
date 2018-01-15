@@ -56,8 +56,7 @@ SOURCES       = main.cpp \
 		listview.cpp \
 		fileoperations.cpp \
 		main_db/maindatabase.cpp \
-		labelmapper.cpp \
-		listviewitem.cpp moc_mainwindow.cpp \
+		labelmapper.cpp moc_mainwindow.cpp \
 		moc_calendar.cpp \
 		moc_listview.cpp \
 		moc_maindatabase.cpp \
@@ -71,7 +70,6 @@ OBJECTS       = main.o \
 		fileoperations.o \
 		maindatabase.o \
 		labelmapper.o \
-		listviewitem.o \
 		moc_mainwindow.o \
 		moc_calendar.o \
 		moc_listview.o \
@@ -145,8 +143,7 @@ DIST          = testqt \
 		listview.h \
 		fileoperations.h \
 		main_db/maindatabase.h \
-		labelmapper.h \
-		listviewitem.h main.cpp \
+		labelmapper.h main.cpp \
 		mainwindow.cpp \
 		calendar.cpp \
 		database.cpp \
@@ -154,8 +151,7 @@ DIST          = testqt \
 		listview.cpp \
 		fileoperations.cpp \
 		main_db/maindatabase.cpp \
-		labelmapper.cpp \
-		listviewitem.cpp
+		labelmapper.cpp
 QMAKE_TARGET  = testqt
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = testqt
@@ -325,8 +321,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h ui_mainwindow.h ui_calendar.h calendar.h database.h exception.h ui_listview.h listview.h fileoperations.h main_db/maindatabase.h labelmapper.h listviewitem.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp calendar.cpp database.cpp exception.cpp listview.cpp fileoperations.cpp main_db/maindatabase.cpp labelmapper.cpp listviewitem.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h ui_mainwindow.h ui_calendar.h calendar.h database.h exception.h ui_listview.h listview.h fileoperations.h main_db/maindatabase.h labelmapper.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp calendar.cpp database.cpp exception.cpp listview.cpp fileoperations.cpp main_db/maindatabase.cpp labelmapper.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui calendar.ui listview.ui $(DISTDIR)/
 
 
@@ -435,7 +431,6 @@ exception.o: exception.cpp exception.h \
 listview.o: listview.cpp listview.h \
 		database.h \
 		ui_listview.h \
-		listviewitem.h \
 		exception.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listview.o listview.cpp
 
@@ -456,9 +451,6 @@ maindatabase.o: main_db/maindatabase.cpp main_db/maindatabase.h \
 
 labelmapper.o: labelmapper.cpp labelmapper.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o labelmapper.o labelmapper.cpp
-
-listviewitem.o: listviewitem.cpp listviewitem.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listviewitem.o listviewitem.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

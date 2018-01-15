@@ -23,8 +23,7 @@ SOURCES += main.cpp\
     listview.cpp \
     fileoperations.cpp \
     main_db/maindatabase.cpp \
-    labelmapper.cpp \
-    listviewitem.cpp
+    labelmapper.cpp
 
 HEADERS  += mainwindow.h \
     ui_mainwindow.h \
@@ -36,8 +35,7 @@ HEADERS  += mainwindow.h \
     listview.h \
     fileoperations.h \
     main_db/maindatabase.h \
-    labelmapper.h \
-    listviewitem.h
+    labelmapper.h
 
 FORMS    += mainwindow.ui \
     calendar.ui \
