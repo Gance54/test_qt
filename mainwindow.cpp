@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     gdbLabels.RegisterLabel(ui->DbStatusLabel);
     gdbTransactionLabels.RegisterLabel(ui->DbTransactionsCountLabel);
     _object = NULL;
+    products = NULL;
+    calendar = NULL;
 }
 
 MainWindow::~MainWindow()
@@ -31,14 +33,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Calendar_clicked()
 {
-    calendar = new Calendar();
+    if(!calendar)
+    {
+        calendar = new Calendar();
+    }
     calendar->show();
 }
 
 void MainWindow::on_ProductsButton_clicked()
 {
-    products = new ListView();
-    products->setWindowTitle("Products");
+    if(!products)
+    {
+        products = new ListView();
+        products->setWindowTitle("Products");
+    }
     products->show();
 }
 

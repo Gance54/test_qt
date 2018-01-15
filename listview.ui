@@ -34,8 +34,8 @@
     <rect>
      <x>280</x>
      <y>50</y>
-     <width>371</width>
-     <height>381</height>
+     <width>441</width>
+     <height>191</height>
     </rect>
    </property>
   </widget>
@@ -56,6 +56,16 @@
      <y>160</y>
      <width>256</width>
      <height>271</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="compositionListWidget">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>250</y>
+     <width>441</width>
+     <height>181</height>
     </rect>
    </property>
   </widget>

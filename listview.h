@@ -18,6 +18,9 @@ public:
 
 private slots:
     void on_catListWidget_itemClicked(QListWidgetItem *item);
+    void on_prodListWidget_itemClicked(QListWidgetItem *item);
+
+    void on_prodListWidget_itemSelectionChanged();
 
 private:
     Ui::ListView *ui;

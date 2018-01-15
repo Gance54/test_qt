@@ -46,15 +46,15 @@ ListView::~ListView()
 
 void ListView::on_catListWidget_itemClicked(QListWidgetItem *item)
 {
-    QSqlQuery query;
     if(!item)
         return;
 
     ui->prodListWidget->clear();
 
     QString catId = item->data(Qt::UserRole).toString();
+    QSqlQuery query;
     try {
-        query = _d->Select("products", {"id, name"}, "category_id = '" + catId + "'");
+        query = _d->Select("products", {"id, name, description"}, "category_id = '" + catId + "'");
     }
     catch (Exception e) {
         e.show();
@@ -62,13 +62,51 @@ void ListView::on_catListWidget_itemClicked(QListWidgetItem *item)
 
     while(1)
     {
-        QVariant id = query.value(0);
         QVariant name = query.value(1);
+        QString id = query.value(0).toString();
+        QString description = query.value(2).toString();
+        QStringList data = { id, description };
         QListWidgetItem *newItem = new QListWidgetItem(ui->prodListWidget);
         newItem->setData(Qt::DisplayRole, name);
-        newItem->setData(Qt::UserRole, id);
+        newItem->setData(Qt::UserRole, data);
         ui->prodListWidget->addItem(newItem);
         if(!query.next())
             break;
     }
+}
+
+void ListView::on_prodListWidget_itemClicked(QListWidgetItem *item)
+{
+    if (!item)
+        return;
+
+    QString prodDescription = item->data(Qt::UserRole).toStringList().last();
+    QString prodId = item->data(Qt::UserRole).toStringList().first();
+    ui->descriptionText->setText(prodDescription);
+    QSqlQuery query;
+    try {
+        query = _d->Select("prod_cons", { "consumable_id", "consumable_unit", "consumable_value" }, "product_id = " + prodId);
+        while(1)
+        {
+            QString conId = query.value(0).toString();
+            QString conUnit = query.value(1).toString();
+            QString conValue = query.value(2).toString();
+            QSqlQuery queryInternal = _d->Select("consumables", {"name"}, "id = " + conId);
+            QString conName = queryInternal.value(0).toString();
+            QListWidgetItem *newItem = new QListWidgetItem(ui->compositionListWidget);
+            newItem->setData(Qt::DisplayRole, QVariant(conName + ": " + conValue + " " + conUnit));
+            newItem->setData(Qt::UserRole, QVariant(conId));
+            if(!query.next())
+                break;
+        }
+    }
+    catch (Exception e) {
+        e.show();
+    }
+}
+
+void ListView::on_prodListWidget_itemSelectionChanged()
+{
+    ui->descriptionText->clear();
+    ui->compositionListWidget->clear();
 }

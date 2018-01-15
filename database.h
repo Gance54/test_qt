@@ -141,7 +141,7 @@ static struct TableDescriptions
                 "integer",
                 "integer",
                 "varchar",
-                "real"
+                "varchar"
             }
         },
         {//images table

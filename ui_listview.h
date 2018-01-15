@@ -28,6 +28,7 @@ public:
     QTextEdit *descriptionText;
     QListWidget *catListWidget;
     QListWidget *prodListWidget;
+    QListWidget *compositionListWidget;
 
     void setupUi(QDialog *ListView)
     {
@@ -41,13 +42,16 @@ public:
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         descriptionText = new QTextEdit(ListView);
         descriptionText->setObjectName(QStringLiteral("descriptionText"));
-        descriptionText->setGeometry(QRect(280, 50, 371, 381));
+        descriptionText->setGeometry(QRect(280, 50, 441, 191));
         catListWidget = new QListWidget(ListView);
         catListWidget->setObjectName(QStringLiteral("catListWidget"));
         catListWidget->setGeometry(QRect(10, 50, 256, 101));
         prodListWidget = new QListWidget(ListView);
         prodListWidget->setObjectName(QStringLiteral("prodListWidget"));
         prodListWidget->setGeometry(QRect(10, 160, 256, 271));
+        compositionListWidget = new QListWidget(ListView);
+        compositionListWidget->setObjectName(QStringLiteral("compositionListWidget"));
+        compositionListWidget->setGeometry(QRect(280, 250, 441, 181));
 
         retranslateUi(ListView);
         QObject::connect(buttonBox, SIGNAL(accepted()), ListView, SLOT(accept()));
