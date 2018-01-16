@@ -24,6 +24,7 @@ public:
     QStringList getTables();
     void Insert(QString table, QStringList fields, QStringList values);
     QSqlQuery Select(QString table, QStringList fields, QString conditions);
+    void Update(QString table, QStringList fields, QString conditions);
 
     static void ShowMessage(QString text);
     void Block();

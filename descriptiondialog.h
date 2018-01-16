@@ -18,10 +18,17 @@ public:
 
 private slots:
 
+    void on_changeButton_clicked();
+    void on_buttonBox_accepted();
+    void on_textDescription_textChanged();
+    void on_buttonBox_rejected();
+
 private:
     Ui::DescriptionDialog *ui;
     QString _id;
     QString _table;
+    QString _desc;
+    QString _changedDesc;
     DataBase *_d;
 };
 

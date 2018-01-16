@@ -158,6 +158,14 @@ QSqlQuery DataBase::Select(QString table, QStringList fields, QString conditions
     return q;
 }
 
+void DataBase::Update(QString table, QStringList fields, QString conditions)
+{
+    QString queryString = "UPDATE " + table + " SET " + fields.join("," );
+    if(!conditions.isEmpty())
+        queryString += " WHERE " + conditions;
+    _Execute(queryString);
+}
+
 void DataBase::ShowMessage(QString text)
 {
     QMessageBox msgBox;
