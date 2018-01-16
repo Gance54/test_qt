@@ -2,7 +2,8 @@
 #include "ui_listview.h"
 #include <exception.h>
 #include <database.h>
-
+#include <descriptiondialog.h>
+#include <iostream>
 ListView::ListView(QDialog *parent) :
     QDialog(parent),
     ui(new Ui::ListView)
@@ -69,7 +70,6 @@ void ListView::on_catListWidget_itemClicked(QListWidgetItem *item)
         QListWidgetItem *newItem = new QListWidgetItem(ui->prodListWidget);
         newItem->setData(Qt::DisplayRole, name);
         newItem->setData(Qt::UserRole, data);
-        ui->prodListWidget->addItem(newItem);
         if(!query.next())
             break;
     }
@@ -109,4 +109,15 @@ void ListView::on_prodListWidget_itemSelectionChanged()
 {
     ui->descriptionText->clear();
     ui->compositionListWidget->clear();
+}
+
+void ListView::on_compositionListWidget_itemDoubleClicked(QListWidgetItem *item)
+{
+    try {
+        DescriptionDialog *dd = new DescriptionDialog(0, _d.get(), "consumables", item->data(Qt::UserRole).toString());
+        dd->show();
+    }
+    catch (Exception e) {
+        e.show();
+    }
 }

@@ -186,7 +186,7 @@ void MainDatabase::FillData()
             QString conValue = *(conDataList.begin() + 2);
 
 
-            QString conId = "";
+            QString conId;
             for(int i = 0; i < ConsList.size(); i++)
             {
                 auto con = ConsList.begin() + i;

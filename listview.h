@@ -3,7 +3,7 @@
 #include <QDialog>
 #include <database.h>
 #include "ui_listview.h"
-
+#include <descriptiondialog.h>
 namespace Ui {
 class ListView;
 }
@@ -19,8 +19,8 @@ public:
 private slots:
     void on_catListWidget_itemClicked(QListWidgetItem *item);
     void on_prodListWidget_itemClicked(QListWidgetItem *item);
-
     void on_prodListWidget_itemSelectionChanged();
+    void on_compositionListWidget_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     Ui::ListView *ui;

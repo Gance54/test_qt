@@ -29,6 +29,8 @@ MainWindow::~MainWindow()
     delete ui;
     delete calendar;
     delete products;
+    if(_object)
+        delete (DBWorker *)_object;
 }
 
 void MainWindow::on_Calendar_clicked()
