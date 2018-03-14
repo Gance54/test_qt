@@ -1,9 +1,0 @@
-cat=Мясные продукты
-Вымя - молочная железа крупного рогатого скота, содержащая 72-73% воды, 13-14% жира, 12-13% белков. Перед кулинарной обработкой вымя нарезают на куски, промывают в воде и вымачивают в течение 6 ч. Затем вымя требует длительной варки или тушения. Если его хотят подать жареным, то предварительно отваривают. 
- Requiredpattern|/text/sostav-produktov/voda|вода|г|72.6
- Requiredpattern|/text/sostav-produktov/belki|белки|г|12.3
- Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|13.7
- Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|49
- Requiredpattern|/text/sostav-produktov/magniy|магний|мг|11
- Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|3300
- Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|175

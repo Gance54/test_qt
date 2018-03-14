@@ -1,9 +1,0 @@
-cat=Напитки ; Коньяк "3 звёздочки" 40%об.Коньяк "3 звёздочки" 40%об.
- Requiredpattern|/text/sostav-produktov/voda|вода|г|65
- Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|1.5
- Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|2
- Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|0.1
- Requiredpattern|/text/sostav-produktov/magniy|магний|мг|0.1
- Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|0.5
- Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|0.1
- Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|239

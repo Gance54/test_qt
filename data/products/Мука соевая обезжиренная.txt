@@ -1,8 +1,0 @@
-cat=Изделия из муки ; Мука соевая обезжиреннаяМука соевая обезжиренная
- Requiredpattern|/text/sostav-produktov/voda|вода|г|9
- Requiredpattern|/text/sostav-produktov/belki|белки|г|48.9
- Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|1
- Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|24.5
- Requiredpattern|/text/sostav-produktov/vitamin_b2|витамин В2 (рибофлавин)|мг|0.3
- Requiredpattern|/text/sostav-produktov/vitamin_pp|витамин РР (ниацин)|мг|2.3
- Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|292

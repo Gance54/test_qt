@@ -16,6 +16,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -25,6 +26,7 @@ class Ui_ListView
 public:
     QDialogButtonBox *buttonBox;
     QPushButton *getMarketInfoButton;
+    QListView *listView;
 
     void setupUi(QDialog *ListView)
     {
@@ -38,7 +40,10 @@ public:
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         getMarketInfoButton = new QPushButton(ListView);
         getMarketInfoButton->setObjectName(QStringLiteral("getMarketInfoButton"));
-        getMarketInfoButton->setGeometry(QRect(20, 20, 101, 22));
+        getMarketInfoButton->setGeometry(QRect(20, 20, 121, 22));
+        listView = new QListView(ListView);
+        listView->setObjectName(QStringLiteral("listView"));
+        listView->setGeometry(QRect(20, 50, 171, 361));
 
         retranslateUi(ListView);
         QObject::connect(buttonBox, SIGNAL(accepted()), ListView, SLOT(accept()));

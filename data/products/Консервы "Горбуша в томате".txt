@@ -1,6 +1,0 @@
-cat=Рыба и морепродукты ; Консервы "Горбуша в томате"Консервы "Горбуша в томате"
- Requiredpattern|/text/sostav-produktov/voda|вода|г|70.7
- Requiredpattern|/text/sostav-produktov/belki|белки|г|14.5
- Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|5.1
- Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|6.9
- Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|132

@@ -1,9 +1,0 @@
-cat=Сырье ; Пектин
- Requiredpattern|/text/sostav-produktov/voda|вода|г|10
- Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|89.6
- Requiredpattern|/text/sostav-produktov/kaliy|калий|мг|сл.
- Requiredpattern|/text/sostav-produktov/caltsiy|кальций|мг|сл.
- Requiredpattern|/text/sostav-produktov/magniy|магний|мг|сл.
- Requiredpattern|/text/sostav-produktov/natriy|натрий|мг|сл.
- Requiredpattern|/text/sostav-produktov/ferum|железо|мкг|сл.
- Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|42

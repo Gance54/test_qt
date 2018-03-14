@@ -1,4 +1,0 @@
-cat=Напитки ; Лимонад плодовоягодныйЛимонад плодовоягодный
- Requiredpattern|/text/sostav-produktov/voda|вода|г|88
- Requiredpattern|/text/sostav-produktov/uglevod|углеводы|г|9.5
- Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|40

@@ -1,11 +1,10 @@
 #include <fileoperations.h>
-#include <exception.h>
 #include <iostream>
 FileOperations::FileOperations(QString filename)
 {
     _pFile.open(filename.toStdString());
     if(!_pFile.is_open())
-        throw Exception("Failed to open " + filename);
+        return;
 
     while(!_pFile.eof())
     {

@@ -1,9 +1,7 @@
 #ifndef LISTVIEW_H
 #define LISTVIEW_H
 #include <QDialog>
-#include <database.h>
 #include "ui_listview.h"
-#include <descriptiondialog.h>
 namespace Ui {
 class ListView;
 }

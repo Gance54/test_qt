@@ -1,3 +1,0 @@
-cat=Масла и жиры ; Жир тресковыйЖир тресковый
- Requiredpattern|/text/sostav-produktov/zhiri|жиры|г|100
- Requiredpattern|/text/sostav-produktov/calorii|калорийность|ккал|900
