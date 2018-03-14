@@ -9,7 +9,13 @@ DescriptionDialog::DescriptionDialog(QDialog *parent, DataBase *d, QString table
     _id = id;
     _d = d;
 
-    QSqlQuery query = _d->Select(_table, {"name, description"}, "id = " + _id);
+    QSqlQuery query;
+    try {
+        query = _d->Select(_table, {"name, description"}, "id = " + _id);
+    }
+    catch (Exception e) {
+        throw e;
+    }
     QString title = query.value(0).toString();
     _desc = query.value(1).toString();
     title.replace(0, 1, title[0].toUpper());

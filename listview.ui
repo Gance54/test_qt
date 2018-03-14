@@ -29,43 +29,26 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QTextEdit" name="descriptionText">
+  <widget class="QPushButton" name="getMarketInfoButton">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>20</x>
+     <y>20</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>GetMarketInfo</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
      <y>50</y>
-     <width>441</width>
-     <height>191</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="catListWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>50</y>
-     <width>256</width>
-     <height>101</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="prodListWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>160</y>
-     <width>256</width>
-     <height>271</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="compositionListWidget">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>250</y>
-     <width>441</width>
-     <height>181</height>
+     <width>171</width>
+     <height>361</height>
     </rect>
    </property>
   </widget>

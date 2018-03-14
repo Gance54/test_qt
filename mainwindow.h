@@ -26,7 +26,6 @@ private slots:
     void on_Calendar_clicked();
     void on_ProductsButton_clicked();
     void on_InitDatabase_clicked();
-    void RegisterObject(void *ptr);
 
     void on_lockButton_clicked();
     void on_unlockButton_clicked();

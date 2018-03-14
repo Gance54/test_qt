@@ -47,37 +47,22 @@ void MainWindow::on_ProductsButton_clicked()
     if(!products)
     {
         products = new ListView();
-        products->setWindowTitle("Products");
+        products->setWindowTitle("MarketInfo");
     }
     products->show();
 }
 
 void MainWindow::on_InitDatabase_clicked()
 {
-    DBWorker *worker = new DBWorker();
-    QThread *thread = new QThread;
-    worker->moveToThread(thread);
-    connect(thread, SIGNAL(started()), worker, SLOT(process()));
-    RegisterObject(worker);
-    thread->start();
-    return;
-}
 
-void MainWindow:: RegisterObject(void *ptr)
-{
-    _object = ptr;
 }
 
 void MainWindow::on_lockButton_clicked()
 {
-    DBWorker *worker = reinterpret_cast<DBWorker *>(_object);
-    if(worker)
-        worker->stop();
+
 }
 
 void MainWindow::on_unlockButton_clicked()
 {
-    DBWorker *worker = reinterpret_cast<DBWorker *>(_object);;
-    if(worker)
-        worker->resume();
+
 }

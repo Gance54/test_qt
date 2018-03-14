@@ -105,7 +105,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         Calendar->setText(QApplication::translate("MainWindow", "Calendar", 0));
-        ProductsButton->setText(QApplication::translate("MainWindow", "Products", 0));
+        ProductsButton->setText(QApplication::translate("MainWindow", "Market", 0));
         InitDatabase->setText(QApplication::translate("MainWindow", "Init database", 0));
         lockButton->setText(QApplication::translate("MainWindow", "Lock DB", 0));
         unlockButton->setText(QApplication::translate("MainWindow", "Unlock DB", 0));

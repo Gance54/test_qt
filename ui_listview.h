@@ -16,8 +16,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QListWidget>
-#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -25,10 +24,7 @@ class Ui_ListView
 {
 public:
     QDialogButtonBox *buttonBox;
-    QTextEdit *descriptionText;
-    QListWidget *catListWidget;
-    QListWidget *prodListWidget;
-    QListWidget *compositionListWidget;
+    QPushButton *getMarketInfoButton;
 
     void setupUi(QDialog *ListView)
     {
@@ -40,18 +36,9 @@ public:
         buttonBox->setGeometry(QRect(750, 20, 81, 241));
         buttonBox->setOrientation(Qt::Vertical);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        descriptionText = new QTextEdit(ListView);
-        descriptionText->setObjectName(QStringLiteral("descriptionText"));
-        descriptionText->setGeometry(QRect(280, 50, 441, 191));
-        catListWidget = new QListWidget(ListView);
-        catListWidget->setObjectName(QStringLiteral("catListWidget"));
-        catListWidget->setGeometry(QRect(10, 50, 256, 101));
-        prodListWidget = new QListWidget(ListView);
-        prodListWidget->setObjectName(QStringLiteral("prodListWidget"));
-        prodListWidget->setGeometry(QRect(10, 160, 256, 271));
-        compositionListWidget = new QListWidget(ListView);
-        compositionListWidget->setObjectName(QStringLiteral("compositionListWidget"));
-        compositionListWidget->setGeometry(QRect(280, 250, 441, 181));
+        getMarketInfoButton = new QPushButton(ListView);
+        getMarketInfoButton->setObjectName(QStringLiteral("getMarketInfoButton"));
+        getMarketInfoButton->setGeometry(QRect(20, 20, 101, 22));
 
         retranslateUi(ListView);
         QObject::connect(buttonBox, SIGNAL(accepted()), ListView, SLOT(accept()));
@@ -63,6 +50,7 @@ public:
     void retranslateUi(QDialog *ListView)
     {
         ListView->setWindowTitle(QApplication::translate("ListView", "Dialog", 0));
+        getMarketInfoButton->setText(QApplication::translate("ListView", "GetMarketInfo", 0));
     } // retranslateUi
 
 };

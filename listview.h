@@ -17,14 +17,11 @@ public:
     ~ListView();
 
 private slots:
-    void on_catListWidget_itemClicked(QListWidgetItem *item);
-    void on_prodListWidget_itemClicked(QListWidgetItem *item);
-    void on_prodListWidget_itemSelectionChanged();
-    void on_compositionListWidget_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_getMarketInfoButton_clicked();
 
 private:
     Ui::ListView *ui;
-    std::unique_ptr <DataBase> _d;
 };
 
 #endif // LISTVIEW_H
