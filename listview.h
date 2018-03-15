@@ -2,6 +2,9 @@
 #define LISTVIEW_H
 #include <QDialog>
 #include "ui_listview.h"
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
 namespace Ui {
 class ListView;
 }
@@ -12,12 +15,14 @@ class ListView : public QDialog
 
 public:
     explicit ListView(QDialog *parent = 0);
+    QNetworkRequest request;
+    QNetworkReply *reply = NULL;
     ~ListView();
 
 private slots:
 
     void on_getMarketInfoButton_clicked();
-
+    void replyFinished();
 private:
     Ui::ListView *ui;
 };
