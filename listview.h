@@ -16,7 +16,7 @@ class ListView : public QDialog
 public:
     explicit ListView(QDialog *parent = 0);
     QNetworkRequest request;
-    QNetworkReply *reply = NULL;
+
     ~ListView();
 
 private slots:
