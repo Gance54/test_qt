@@ -55,31 +55,22 @@ void ListView::CharactersFinished()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
     QJsonDocument doc = (QJsonDocument::fromJson(reply->readAll()));
-    QVariantMap json_map = doc.object().toVariantMap();
-    QJsonObject charsDoc = json_map["characters"].toJsonObject();
-    QStringList characterIds;
-    if(charsDoc.isEmpty())
+    QJsonObject json_obj = doc.object();
+    QJsonArray arr = json_obj["characters"].toArray();
+    std::list<int> characterIds;
+    if(arr.isEmpty())
     {
         DropMessageBox("Empty response. Check spelling");
         return;
     }
 
-    if(charsDoc.isArray())
+    for(auto i=0; i < arr.count(); i++)
     {
-        QJsonArray arr = charsDoc.array();
-        for(auto i=0; i < arr.count(); i++)
-        {
-            QVariantMap map =  arr.at(i).toObject().toVariantMap();
-            characterIds.append(map["id"].toString());
-        }
-    }
-    else
-    {
-        QVariantMap map = charsDoc.object().toVariantMap();
-        characterIds.append(map["id"].toString());
+        QJsonObject obj =  arr.at(i).toObject();
+        characterIds.push_back(obj["id"].toInt());
+        DropMessageBox(QString::number(obj["id"].toInt()));
     }
 
-    DropMessageBox(characterIds.join(','));
 }
 
 void ListView::on_getMarketInfoButton_clicked()
