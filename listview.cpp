@@ -12,8 +12,9 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-
+#include <cstdio>
 #define REGION_IDS_URL "https://esi.tech.ccp.is/latest/universe/regions/"
+#define CHARACTER_IDS_URL "https://esi.tech.ccp.is/latest/universe/ids/?datasource=tranquility&language=en-us"
 
 ListView::ListView(QDialog *parent) :
     QDialog(parent),
@@ -21,6 +22,16 @@ ListView::ListView(QDialog *parent) :
 {
     ui->setupUi(this);
 
+    _manager = new QNetworkAccessManager();
+    QSslConfiguration config = QSslConfiguration::defaultConfiguration();
+    config.setProtocol(QSsl::TlsV1_0OrLater);
+    _request.setSslConfiguration(config);
+    _request.setRawHeader("Content-Type", "application/json");
+}
+
+void ListView::SetRequestUrl(const char *url)
+{
+    _request.setUrl(QUrl(url));
 }
 
 ListView::~ListView()
@@ -28,27 +39,58 @@ ListView::~ListView()
     delete ui;
 }
 
-void ListView::replyFinished()
+QNetworkReply* ListView::Post(QJsonDocument json)
 {
-    QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    QString str = QString::fromStdString((reply->readAll().toStdString()));
-    str.remove(0,1);
-    str.remove(str.size()-1, 1);
-    QStringList arr = str.split(',');
-    for (auto i = arr.begin(); i < arr.end(); i++)
-    {
-        ui->listWidget->addItem(*i);
-    }
+    return _manager->post(_request, json.toJson());
 }
 
+void ListView::DropMessageBox(QString text)
+{
+    QMessageBox mb;
+    mb.setText(text);
+    mb.exec();
+}
+
+void ListView::CharactersFinished()
+{
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
+    QJsonDocument doc = (QJsonDocument::fromJson(reply->readAll()));
+    QVariantMap json_map = doc.object().toVariantMap();
+    QJsonObject charsDoc = json_map["characters"].toJsonObject();
+    QStringList characterIds;
+    if(charsDoc.isEmpty())
+    {
+        DropMessageBox("Empty response. Check spelling");
+        return;
+    }
+
+    if(charsDoc.isArray())
+    {
+        QJsonArray arr = charsDoc.array();
+        for(auto i=0; i < arr.count(); i++)
+        {
+            QVariantMap map =  arr.at(i).toObject().toVariantMap();
+            characterIds.append(map["id"].toString());
+        }
+    }
+    else
+    {
+        QVariantMap map = charsDoc.object().toVariantMap();
+        characterIds.append(map["id"].toString());
+    }
+
+    DropMessageBox(characterIds.join(','));
+}
 
 void ListView::on_getMarketInfoButton_clicked()
 {
-    QNetworkAccessManager *manager = new QNetworkAccessManager();
-    QSslConfiguration config = QSslConfiguration::defaultConfiguration();
-    config.setProtocol(QSsl::TlsV1_0OrLater);
-    request.setSslConfiguration(config);
-    request.setUrl(QUrl(REGION_IDS_URL));
-    QNetworkReply *reply = manager->get(request);
-    connect(reply, SIGNAL(finished()), this, SLOT(replyFinished()));
+    SetRequestUrl(CHARACTER_IDS_URL);
+    QStringList charList = ui->CharactersPlainTextEdit->toPlainText().split(',');
+    QJsonArray arr;
+
+    for (auto i = charList.begin(); i < charList.end(); i++)
+        arr.append(*i);
+
+    QNetworkReply *reply = Post((QJsonDocument)arr);
+    connect(reply, SIGNAL(finished()), this, SLOT(CharactersFinished()));
 }

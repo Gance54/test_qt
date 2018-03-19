@@ -15,16 +15,19 @@ class ListView : public QDialog
 
 public:
     explicit ListView(QDialog *parent = 0);
-    QNetworkRequest request;
-
     ~ListView();
+    void SetRequestUrl(const char *url);
+    QNetworkReply * Post(QJsonDocument json);
+    void DropMessageBox(QString text);
 
 private slots:
 
     void on_getMarketInfoButton_clicked();
-    void replyFinished();
+    void CharactersFinished();
 private:
     Ui::ListView *ui;
+    QNetworkRequest _request;
+    QNetworkAccessManager *_manager;
 };
 
 #endif // LISTVIEW_H

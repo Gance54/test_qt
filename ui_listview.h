@@ -16,7 +16,9 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -27,6 +29,8 @@ public:
     QDialogButtonBox *buttonBox;
     QPushButton *getMarketInfoButton;
     QListWidget *listWidget;
+    QLabel *label;
+    QPlainTextEdit *CharactersPlainTextEdit;
 
     void setupUi(QDialog *ListView)
     {
@@ -40,10 +44,16 @@ public:
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         getMarketInfoButton = new QPushButton(ListView);
         getMarketInfoButton->setObjectName(QStringLiteral("getMarketInfoButton"));
-        getMarketInfoButton->setGeometry(QRect(20, 20, 121, 22));
+        getMarketInfoButton->setGeometry(QRect(20, 20, 161, 22));
         listWidget = new QListWidget(ListView);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(30, 70, 256, 321));
+        listWidget->setGeometry(QRect(20, 90, 261, 321));
+        label = new QLabel(ListView);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(20, 60, 81, 16));
+        CharactersPlainTextEdit = new QPlainTextEdit(ListView);
+        CharactersPlainTextEdit->setObjectName(QStringLiteral("CharactersPlainTextEdit"));
+        CharactersPlainTextEdit->setGeometry(QRect(100, 50, 311, 31));
 
         retranslateUi(ListView);
         QObject::connect(buttonBox, SIGNAL(accepted()), ListView, SLOT(accept()));
@@ -55,7 +65,8 @@ public:
     void retranslateUi(QDialog *ListView)
     {
         ListView->setWindowTitle(QApplication::translate("ListView", "Dialog", 0));
-        getMarketInfoButton->setText(QApplication::translate("ListView", "GetMarketInfo", 0));
+        getMarketInfoButton->setText(QApplication::translate("ListView", "GetOrders", 0));
+        label->setText(QApplication::translate("ListView", "Characters:", 0));
     } // retranslateUi
 
 };

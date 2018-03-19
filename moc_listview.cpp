@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_ListView_t {
     QByteArrayData data[4];
-    char stringdata0[55];
+    char stringdata0[60];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,11 +32,11 @@ static const qt_meta_stringdata_ListView_t qt_meta_stringdata_ListView = {
 QT_MOC_LITERAL(0, 0, 8), // "ListView"
 QT_MOC_LITERAL(1, 9, 30), // "on_getMarketInfoButton_clicked"
 QT_MOC_LITERAL(2, 40, 0), // ""
-QT_MOC_LITERAL(3, 41, 13) // "replyFinished"
+QT_MOC_LITERAL(3, 41, 18) // "CharactersFinished"
 
     },
     "ListView\0on_getMarketInfoButton_clicked\0"
-    "\0replyFinished"
+    "\0CharactersFinished"
 };
 #undef QT_MOC_LITERAL
 
@@ -71,7 +71,7 @@ void ListView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_getMarketInfoButton_clicked(); break;
-        case 1: _t->replyFinished(); break;
+        case 1: _t->CharactersFinished(); break;
         default: ;
         }
     }
