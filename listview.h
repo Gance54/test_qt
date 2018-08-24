@@ -17,7 +17,8 @@ public:
     explicit ListView(QDialog *parent = 0);
     ~ListView();
     void SetRequestUrl(const char *url);
-    QNetworkReply * Post(QJsonDocument json);
+    QNetworkReply *Post(QJsonDocument json);
+    QNetworkReply *Get(const char *url);
     void DropMessageBox(QString text);
 
 private slots:

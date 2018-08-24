@@ -13,8 +13,10 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <cstdio>
+#define DATASOURCE "?datasource=tranquility"
+#define LANGUAGE "language=en-us"
 #define REGION_IDS_URL "https://esi.tech.ccp.is/latest/universe/regions/"
-#define CHARACTER_IDS_URL "https://esi.tech.ccp.is/latest/universe/ids/?datasource=tranquility&language=en-us"
+#define CHARACTER_IDS_URL "https://esi.tech.ccp.is/latest/universe/ids/"
 
 ListView::ListView(QDialog *parent) :
     QDialog(parent),
@@ -44,6 +46,12 @@ QNetworkReply* ListView::Post(QJsonDocument json)
     return _manager->post(_request, json.toJson());
 }
 
+QNetworkReply* ListView::Get(const char *url)
+{
+    SetRequestUrl(url);
+    return _manager->get(_request);
+}
+
 void ListView::DropMessageBox(QString text)
 {
     QMessageBox mb;
@@ -71,11 +79,19 @@ void ListView::CharactersFinished()
         DropMessageBox(QString::number(obj["id"].toInt()));
     }
 
+    for(auto i=0; i < arr.count(); i++)
+    {
+        QJsonObject obj =  arr.at(i).toObject();
+        QJsonArray arr;
+        arr.append(obj["id"].toString());
+        QNetworkReply *reply = Get()
+        connect(reply, SIGNAL(finished()), this, SLOT(CharactersFinished()));
+    }
 }
 
 void ListView::on_getMarketInfoButton_clicked()
 {
-    SetRequestUrl(CHARACTER_IDS_URL);
+    SetRequestUrl(CHARACTER_IDS_URL DATASOURCE "&" LANGUAGE);
     QStringList charList = ui->CharactersPlainTextEdit->toPlainText().split(',');
     QJsonArray arr;
 
