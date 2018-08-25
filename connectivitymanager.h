@@ -15,7 +15,7 @@ public:
     ConnectivityManager();
 
     void SetRequestUrl(QString url);
-    QNetworkReply *Post(QJsonDocument json);
+    QNetworkReply *Post(QString url, QJsonDocument json);
     QNetworkReply *Get(QString url);
     QJsonDocument ReadJsonReply(QObject *sender);
 

@@ -14,8 +14,9 @@ void ConnectivityManager::SetRequestUrl(QString url)
     _request.setUrl(QUrl(url));
 }
 
-QNetworkReply* ConnectivityManager::Post(QJsonDocument json)
+QNetworkReply* ConnectivityManager::Post(QString url, QJsonDocument json)
 {
+    SetRequestUrl(url);
     return _manager->post(_request, json.toJson());
 }
 

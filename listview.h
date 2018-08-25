@@ -17,9 +17,6 @@ class ListView : public QDialog
 public:
     explicit ListView(QDialog *parent = 0);
     ~ListView();
-    void SetRequestUrl(QString url);
-    QNetworkReply *Post(QJsonDocument json);
-    QNetworkReply *Get(QString url);
     void DropMessageBox(QString text);
 
 private slots:
@@ -29,10 +26,9 @@ private slots:
 
     /* callbacks */
     void OnGetRegionInfoFinished();
+    void OnGetProductListFinished();
+    void OnGetProductNamesFinished();
 
-    //    void CharactersFinished();
-    //    void CharactersDescriptionFinished();
-    
 private:
     Ui::ListView *ui;
     ConnectivityManager *_cManager;
