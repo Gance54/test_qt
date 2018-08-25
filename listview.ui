@@ -39,7 +39,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>GetOrders</string>
+    <string>GetMarketInfo</string>
    </property>
   </widget>
   <widget class="QListWidget" name="listWidget">

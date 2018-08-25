@@ -26,12 +26,9 @@
 #define URL_MARKET "https://esi.evetech.net/latest/markets/"
 #define MARKET_ORDERS "orders"
 #define MARKET_HISTORY "history"
-#define MARKET_ACTIVE_PRODUCTS "types"
-
-//https://esi.evetech.net/latest/markets/10000043/history/?datasource=tranquility&type_id=34
+#define MARKET_TYPES "types"
 
 #define PRODUCT_TYPE_ID "type_id"
-/*https://esi.evetech.net/latest/markets/10000043/orders/?datasource=tranquility&type_id=34*/
 
 ListView::ListView(QDialog *parent) :
     QDialog(parent),
@@ -66,7 +63,8 @@ void ListView::OnGetProductNamesFinished()
     for(auto i=0; i < productsArray.count(); i++)
     {
         QJsonObject productJson = productsArray.at(i).toObject();
-        Product *product = new Product(productJson["id"].toInt(), _cManager, productJson["name"].toString());
+        Product *product = new Product(productJson["id"].toInt(), _cManager,
+                productJson["name"].toString());
         QListWidgetItem *item = new QListWidgetItem();
         item->setText(product->getName());
         item->setData(Qt::UserRole, product->getId());
@@ -97,6 +95,16 @@ void ListView::OnGetProductListFinished()
     connect(r, SIGNAL(finished()), this, SLOT(OnGetProductNamesFinished()));
 }
 
+void ListView::OnGetProductOrdersFinished()
+{
+    QJsonArray arr = _cManager->ReadJsonReply(sender()).array();
+    /*for (auto i = 0; i < arr.count(); i++)
+    {
+        QJsonObject object = arr.at(i);
+
+    }*/
+}
+
 void ListView::OnGetProductHistoryFinished()
 {
     ui->productHistoryTextBrowser->clear();
@@ -118,7 +126,16 @@ void ListView::OnGetProductHistoryFinished()
 
 void ListView::on_getMarketInfoButton_clicked()
 {
+    for (auto i = 0; i < ui->productListWidget->count(); i++)
+    {
+        itemId = ui->productListWidget->item(i)->data(Qt::UserRole).toInt();
+        QString url = QString(URL_MARKET) + QString::number(regionId) + "/" +
+                QString(MARKET_ORDERS) + "/" + QString(DATASOURCE) + "&" +
+                QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
 
+        QNetworkReply *r = _cManager->Get(url);
+        connect(r, SIGNAL(finished()), this, SLOT(OnGetProductOrdersFinished()));
+    }
 }
 
 void ListView::OnGetRegionInfoFinished()
@@ -136,11 +153,13 @@ void ListView::on_GetRegions_clicked()
 
     for(auto i=0; i < regions.count(); i++)
     {
-        QString url = QString(URL_REGION_INFO) + regions.at(i) + "/" + QString(DATASOURCE) + "&" + QString(LANGUAGE);
+        QString url = QString(URL_REGION_INFO) + regions.at(i) + "/" +
+                QString(DATASOURCE) + "&" + QString(LANGUAGE);
         QNetworkReply *r = _cManager->Get(url);
         connect(r, SIGNAL(finished()), this, SLOT(OnGetRegionInfoFinished()));
     }
 }
+
 void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
 {
     ui->productListWidget->clear();
@@ -151,7 +170,8 @@ void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
     }
 
     QJsonObject regionData = item->data(Qt::UserRole).toJsonObject();
-    QString url = QString(URL_MARKET) + QString::number(regionData["region_id"].toInt()) + "/" + MARKET_ACTIVE_PRODUCTS + "/" DATASOURCE;
+    QString url = QString(URL_MARKET) + QString::number(regionData["region_id"].toInt())
+            + "/" + MARKET_TYPES + "/" DATASOURCE;
 
     QNetworkReply *r = _cManager->Get(url);
     connect(r, SIGNAL(finished()), this, SLOT(OnGetProductListFinished()));
@@ -163,8 +183,9 @@ void ListView::on_productListWidget_itemClicked(QListWidgetItem *item)
     ui->productTextBrowser->clear();
     int regionId = (ui->listWidget->currentItem()->data(Qt::UserRole).toJsonObject())["region_id"].toInt();
     int productId = item->data(Qt::UserRole).toInt();
-    QString url = QString(URL_MARKET) + QString::number(regionId) + "/" + QString(MARKET_HISTORY) +
-            "/" + QString(DATASOURCE) + "&" + QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
+    QString url = QString(URL_MARKET) + QString::number(regionId) + "/" +
+            QString(MARKET_HISTORY) + "/" + QString(DATASOURCE) + "&" +
+            QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
 
     QNetworkReply *r = _cManager->Get(url);
     connect(r, SIGNAL(finished()), this, SLOT(OnGetProductHistoryFinished()));

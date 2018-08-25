@@ -21,11 +21,13 @@ public:
 private:
 
     int _id;
-    std::list <Order> _buyOrders;
-    std::list <Order> _sellOrders;
+    QList <Order> _buyOrders;
+    QList <Order> _sellOrders;
     QString _name;
 
     ConnectivityManager *_cManager;
 };
+
+Q_DECLARE_METATYPE(Product)
 
 #endif // PRODUCT_H
