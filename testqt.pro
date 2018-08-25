@@ -8,6 +8,7 @@ QT       += core
 QT       += gui
 QT       += sql
 QT       += network
+QT    += widgets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = testqt
@@ -18,13 +19,19 @@ CONFIG += c++11
 SOURCES += main.cpp\
         mainwindow.cpp \
     listview.cpp \
-    labelmapper.cpp
+    labelmapper.cpp \
+    product.cpp \
+    order.cpp \
+    connectivitymanager.cpp
 
 HEADERS  += mainwindow.h \
     ui_mainwindow.h \
     ui_listview.h \
     listview.h \
-    labelmapper.h
+    labelmapper.h \
+    product.h \
+    order.h \
+    connectivitymanager.h
 
 FORMS    += mainwindow.ui \
     listview.ui

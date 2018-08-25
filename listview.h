@@ -16,19 +16,28 @@ class ListView : public QDialog
 public:
     explicit ListView(QDialog *parent = 0);
     ~ListView();
-    void SetRequestUrl(const char *url);
+    void SetRequestUrl(QString url);
     QNetworkReply *Post(QJsonDocument json);
-    QNetworkReply *Get(const char *url);
+    QNetworkReply *Get(QString url);
     void DropMessageBox(QString text);
 
 private slots:
 
     void on_getMarketInfoButton_clicked();
-    void CharactersFinished();
+    void on_GetRegions_clicked();
+
+    /* callbacks */
+    void OnGetRegionInfoFinished();
+
+    //    void CharactersFinished();
+    //    void CharactersDescriptionFinished();
+    
 private:
     Ui::ListView *ui;
     QNetworkRequest _request;
     QNetworkAccessManager *_manager;
+
+    QJsonDocument _ReadJsonReply();
 };
 
 #endif // LISTVIEW_H

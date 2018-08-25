@@ -13,10 +13,21 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <cstdio>
+
+#include "product.h"
+
 #define DATASOURCE "?datasource=tranquility"
 #define LANGUAGE "language=en-us"
-#define REGION_IDS_URL "https://esi.tech.ccp.is/latest/universe/regions/"
-#define CHARACTER_IDS_URL "https://esi.tech.ccp.is/latest/universe/ids/"
+#define URL_CHARACTER_IDS "https://esi.tech.ccp.is/latest/universe/ids/"
+#define URL_CHARACTER_PUBLIC_DESCRIPTION "https://esi.evetech.net/latest/characters/"
+#define URL_REGIONS "https://esi.evetech.net/latest/universe/regions/"
+#define URL_REGION_INFO "https://esi.evetech.net/latest/universe/regions/"
+#define URL_GET_ORDERS "https://esi.evetech.net/latest/markets/10000043/orders/"
+
+#define ORDER_TYPE_SELL "sell"
+#define ORDER_TYPE_BUY "buy"
+#define ORDER_PAGE "page"
+/*https://esi.evetech.net/latest/markets/10000043/orders/?datasource=tranquility&order_type=sell&page=1*/
 
 ListView::ListView(QDialog *parent) :
     QDialog(parent),
@@ -31,7 +42,7 @@ ListView::ListView(QDialog *parent) :
     _request.setRawHeader("Content-Type", "application/json");
 }
 
-void ListView::SetRequestUrl(const char *url)
+void ListView::SetRequestUrl(QString url)
 {
     _request.setUrl(QUrl(url));
 }
@@ -46,7 +57,7 @@ QNetworkReply* ListView::Post(QJsonDocument json)
     return _manager->post(_request, json.toJson());
 }
 
-QNetworkReply* ListView::Get(const char *url)
+QNetworkReply* ListView::Get(QString url)
 {
     SetRequestUrl(url);
     return _manager->get(_request);
@@ -59,45 +70,33 @@ void ListView::DropMessageBox(QString text)
     mb.exec();
 }
 
-void ListView::CharactersFinished()
+QJsonDocument ListView::_ReadJsonReply()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    QJsonDocument doc = (QJsonDocument::fromJson(reply->readAll()));
-    QJsonObject json_obj = doc.object();
-    QJsonArray arr = json_obj["characters"].toArray();
-    std::list<int> characterIds;
-    if(arr.isEmpty())
-    {
-        DropMessageBox("Empty response. Check spelling");
-        return;
-    }
-
-    for(auto i=0; i < arr.count(); i++)
-    {
-        QJsonObject obj =  arr.at(i).toObject();
-        characterIds.push_back(obj["id"].toInt());
-        DropMessageBox(QString::number(obj["id"].toInt()));
-    }
-
-    for(auto i=0; i < arr.count(); i++)
-    {
-        QJsonObject obj =  arr.at(i).toObject();
-        QJsonArray arr;
-        arr.append(obj["id"].toString());
-        QNetworkReply *reply = Get()
-        connect(reply, SIGNAL(finished()), this, SLOT(CharactersFinished()));
-    }
+    return (QJsonDocument::fromJson(reply->readAll()));
 }
 
 void ListView::on_getMarketInfoButton_clicked()
 {
-    SetRequestUrl(CHARACTER_IDS_URL DATASOURCE "&" LANGUAGE);
-    QStringList charList = ui->CharactersPlainTextEdit->toPlainText().split(',');
-    QJsonArray arr;
 
-    for (auto i = charList.begin(); i < charList.end(); i++)
-        arr.append(*i);
-
-    QNetworkReply *reply = Post((QJsonDocument)arr);
-    connect(reply, SIGNAL(finished()), this, SLOT(CharactersFinished()));
 }
+
+void ListView::OnGetRegionInfoFinished()
+{
+    QJsonObject obj = _ReadJsonReply().object();
+    ui->listWidget->addItem(obj["name"].toString());
+}
+
+
+void ListView::on_GetRegions_clicked()
+{
+    QStringList regions = {"10000002","10000043"};
+
+    for(auto i=0; i < regions.count(); i++)
+    {
+        QString url = QString(URL_REGION_INFO) + regions.at(i) + "/" + QString(DATASOURCE) + "&" + QString(LANGUAGE);
+        QNetworkReply *r = Get(url);
+        connect(r, SIGNAL(finished()), this, SLOT(OnGetRegionInfoFinished()));
+    }
+}
+
