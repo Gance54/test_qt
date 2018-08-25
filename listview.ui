@@ -16,10 +16,10 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>20</y>
+     <x>1140</x>
+     <y>10</y>
      <width>81</width>
-     <height>241</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="orientation">
@@ -65,7 +65,7 @@
     <string>GetRegions</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="ordersListWidget">
+  <widget class="QListWidget" name="productListWidget">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -74,14 +74,27 @@
      <height>601</height>
     </rect>
    </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QTextBrowser" name="goodTextBrowser">
+  <widget class="QTextBrowser" name="productTextBrowser">
    <property name="geometry">
     <rect>
      <x>620</x>
      <y>90</y>
      <width>601</width>
-     <height>601</height>
+     <height>371</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="productHistoryTextBrowser">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>490</y>
+     <width>601</width>
+     <height>201</height>
     </rect>
    </property>
   </widget>

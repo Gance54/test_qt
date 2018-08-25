@@ -28,6 +28,10 @@ private slots:
     void OnGetRegionInfoFinished();
     void OnGetProductListFinished();
     void OnGetProductNamesFinished();
+    void OnGetProductHistoryFinished();
+
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+    void on_productListWidget_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::ListView *ui;
