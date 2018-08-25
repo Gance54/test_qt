@@ -2,6 +2,7 @@
 #define LISTVIEW_H
 #include <QDialog>
 #include "ui_listview.h"
+#include "connectivitymanager.h"
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
@@ -34,9 +35,7 @@ private slots:
     
 private:
     Ui::ListView *ui;
-    QNetworkRequest _request;
-    QNetworkAccessManager *_manager;
-
+    ConnectivityManager *_cManager;
     QJsonDocument _ReadJsonReply();
 };
 

@@ -34,33 +34,12 @@ ListView::ListView(QDialog *parent) :
     ui(new Ui::ListView)
 {
     ui->setupUi(this);
-
-    _manager = new QNetworkAccessManager();
-    QSslConfiguration config = QSslConfiguration::defaultConfiguration();
-    config.setProtocol(QSsl::TlsV1_0OrLater);
-    _request.setSslConfiguration(config);
-    _request.setRawHeader("Content-Type", "application/json");
-}
-
-void ListView::SetRequestUrl(QString url)
-{
-    _request.setUrl(QUrl(url));
+    _cManager = new ConnectivityManager();
 }
 
 ListView::~ListView()
 {
     delete ui;
-}
-
-QNetworkReply* ListView::Post(QJsonDocument json)
-{
-    return _manager->post(_request, json.toJson());
-}
-
-QNetworkReply* ListView::Get(QString url)
-{
-    SetRequestUrl(url);
-    return _manager->get(_request);
 }
 
 void ListView::DropMessageBox(QString text)
@@ -70,12 +49,6 @@ void ListView::DropMessageBox(QString text)
     mb.exec();
 }
 
-QJsonDocument ListView::_ReadJsonReply()
-{
-    QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    return (QJsonDocument::fromJson(reply->readAll()));
-}
-
 void ListView::on_getMarketInfoButton_clicked()
 {
 
@@ -83,7 +56,7 @@ void ListView::on_getMarketInfoButton_clicked()
 
 void ListView::OnGetRegionInfoFinished()
 {
-    QJsonObject obj = _ReadJsonReply().object();
+    QJsonObject obj = _cManager->ReadJsonReply(sender()).object();
     ui->listWidget->addItem(obj["name"].toString());
 }
 
@@ -95,7 +68,7 @@ void ListView::on_GetRegions_clicked()
     for(auto i=0; i < regions.count(); i++)
     {
         QString url = QString(URL_REGION_INFO) + regions.at(i) + "/" + QString(DATASOURCE) + "&" + QString(LANGUAGE);
-        QNetworkReply *r = Get(url);
+        QNetworkReply *r = _cManager->Get(url);
         connect(r, SIGNAL(finished()), this, SLOT(OnGetRegionInfoFinished()));
     }
 }
