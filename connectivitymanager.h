@@ -33,9 +33,14 @@ public:
     QNetworkReply *Get(QString url);
     QJsonDocument ReadJsonReply(QObject *sender);
 
+    QJsonDocument dPost(QString url, QJsonDocument json);
+    QJsonDocument dGet(QString url);
+
 private:
     QNetworkRequest _request;
     QNetworkAccessManager *_manager;
+
+    QJsonDocument _readResponse(QNetworkReply* reply);
 };
 
 #endif // CONNECTIVITYMANAGER_H

@@ -24,11 +24,10 @@ private slots:
 
     void on_getMarketInfoButton_clicked();
     void on_GetRegions_clicked();
+    void GetProductList(int regionId);
 
     /* callbacks */
     void OnGetRegionInfoFinished();
-    void OnGetProductListFinished();
-    void OnGetProductNamesFinished();
     void OnGetProductHistoryFinished();
 
     void on_listWidget_itemClicked(QListWidgetItem *item);
@@ -37,7 +36,6 @@ private slots:
 private:
     Ui::ListView *ui;
     ConnectivityManager *_cManager;
-    QJsonDocument _ReadJsonReply();
     QList <Product*> _products;
 };
 

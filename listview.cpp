@@ -37,49 +37,6 @@ void ListView::DropMessageBox(QString text)
     mb.exec();
 }
 
-void ListView::OnGetProductNamesFinished()
-{
-    QJsonArray productsArray = _cManager->ReadJsonReply(sender()).array();
-
-    if(productsArray.isEmpty())
-    {
-        DropMessageBox("Can not get at least 1 name as array");
-        return;
-    }
-
-    for(auto i=0; i < productsArray.count(); i++)
-    {
-        QJsonObject productJson = productsArray.at(i).toObject();
-        QListWidgetItem *item = new QListWidgetItem();
-        item->setText( productJson["name"].toString());
-        item->setData(Qt::UserRole, productJson["id"].toInt());
-        ui->productListWidget->addItem(item);
-    }
-}
-
-void ListView::OnGetProductListFinished()
-{
-    QJsonArray productIdsArr = _cManager->ReadJsonReply(sender()).array();
-    if(productIdsArr.isEmpty())
-    {
-        DropMessageBox("Failed to get active products in selected region");
-        return;
-    }
-
-    QJsonArray uniqueIds;
-
-    for(auto i = 0; i < productIdsArr.count(); i++)
-    {
-        QJsonValue val = productIdsArr.at(i);
-        if(!uniqueIds.contains(val))
-            uniqueIds.append(val);
-    }
-
-    QString url = QString(URL_UNIVERSE_NAMES) + QString(DATASOURCE);
-    QNetworkReply *r = _cManager->Post(url, QJsonDocument(uniqueIds));
-    connect(r, SIGNAL(finished()), this, SLOT(OnGetProductNamesFinished()));
-}
-
 void ListView::OnGetProductHistoryFinished()
 {
     ui->productHistoryTextBrowser->clear();
@@ -98,14 +55,6 @@ void ListView::OnGetProductHistoryFinished()
                 "Higher: " + QString::number(history.GetHigher(), 'f', 2) + "\n" +
                 "Lower: " + QString::number(history.GetLower(), 'f', 2) + "\n" +
                 "Coef: " + QString::number(history.GetCoefficient(), 'f', 2) + "\n\n";
-
-
-        /*QJsonObject object = arr.at(i).toObject();
-        text += object["date"].toString() + " : " +
-                QString::number(object["lowest"].toDouble(), 'f', 2) + ", " +
-                QString::number(object["average"].toDouble(), 'f', 2) + ", " +
-                QString::number(object["highest"].toDouble(), 'f', 2) + ". " +
-                QString("Volume : ") + QString::number(object["volume"].toInt()) + "\n";*/
     }
 
     ui->productHistoryTextBrowser->setText(text);
@@ -144,6 +93,69 @@ void ListView::on_GetRegions_clicked()
     }
 }
 
+void ListView::GetProductList(int regionId)
+{
+    int page = 1;
+    int pageSize = 0;
+    QJsonArray uniqueIds;
+
+    while(true)
+    {
+        ui->statusLabel->setText("Loading... Page " + QString::number(page) + ". Total: " + QString::number(uniqueIds.count()));
+        QString url = QString(URL_MARKET) + QString::number(regionId)
+                + "/" + MARKET_TYPES + "/" DATASOURCE + "&page=" + QString::number(page);
+
+        QJsonArray productIdsArr = _cManager->dGet(url).array();
+        QJsonArray CurrentIdsArr;
+        if(productIdsArr.isEmpty())
+        {
+            if(page == 1)
+            {
+                DropMessageBox("Can not get product ids for the first page!");
+                return;
+            }
+            return;
+        }
+
+        if(!pageSize)
+            pageSize = productIdsArr.count();
+
+        for(auto i = 0; i < productIdsArr.count(); i++)
+        {
+            QJsonValue val = productIdsArr.at(i);
+            if(!uniqueIds.contains(val))
+            {
+                uniqueIds.append(val);
+                CurrentIdsArr.append(val);
+            }
+        }
+
+        url = QString(URL_UNIVERSE_NAMES) + QString(DATASOURCE);
+        QJsonArray productsArray = _cManager->dPost(url, QJsonDocument(CurrentIdsArr)).array();
+        if(productsArray.isEmpty())
+        {
+            DropMessageBox("Can not get at least 1 product name as array");
+        }
+
+        if(productsArray.count() != CurrentIdsArr.count())
+        {
+            DropMessageBox("Requested count = " +  QString::number(CurrentIdsArr.count())
+                           + ", provided count = " + QString::number(productsArray.count()));
+        }
+
+        for(auto i=0; i < productsArray.count(); i++)
+        {
+            QJsonObject productJson = productsArray.at(i).toObject();
+            QListWidgetItem *item = new QListWidgetItem();
+            item->setText( productJson["name"].toString());
+            item->setData(Qt::UserRole, productJson["id"].toInt());
+            ui->productListWidget->addItem(item);
+        }
+
+        page++;
+    }
+}
+
 void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
 {
     ui->productListWidget->clear();
@@ -154,11 +166,8 @@ void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
     }
 
     QJsonObject regionData = item->data(Qt::UserRole).toJsonObject();
-    QString url = QString(URL_MARKET) + QString::number(regionData["region_id"].toInt())
-            + "/" + MARKET_TYPES + "/" DATASOURCE;
-
-    QNetworkReply *r = _cManager->Get(url);
-    connect(r, SIGNAL(finished()), this, SLOT(OnGetProductListFinished()));
+    int regionId = regionData["region_id"].toInt();
+    GetProductList(regionId);
 }
 
 void ListView::on_productListWidget_itemClicked(QListWidgetItem *item)
