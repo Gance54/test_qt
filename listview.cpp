@@ -15,20 +15,7 @@
 #include <cstdio>
 
 #include "product.h"
-
-#define DATASOURCE "?datasource=tranquility"
-#define LANGUAGE "language=en-us"
-
-#define URL_UNIVERSE_NAMES "https://esi.evetech.net/latest/universe/names/"
-#define URL_CHARACTER_PUBLIC_DESCRIPTION "https://esi.evetech.net/latest/characters/"
-#define URL_REGIONS "https://esi.evetech.net/latest/universe/regions/"
-#define URL_REGION_INFO "https://esi.evetech.net/latest/universe/regions/"
-#define URL_MARKET "https://esi.evetech.net/latest/markets/"
-#define MARKET_ORDERS "orders"
-#define MARKET_HISTORY "history"
-#define MARKET_TYPES "types"
-
-#define PRODUCT_TYPE_ID "type_id"
+#include "connectivitymanager.h"
 
 ListView::ListView(QDialog *parent) :
     QDialog(parent),
@@ -63,11 +50,9 @@ void ListView::OnGetProductNamesFinished()
     for(auto i=0; i < productsArray.count(); i++)
     {
         QJsonObject productJson = productsArray.at(i).toObject();
-        Product *product = new Product(productJson["id"].toInt(), _cManager,
-                productJson["name"].toString());
         QListWidgetItem *item = new QListWidgetItem();
-        item->setText(product->getName());
-        item->setData(Qt::UserRole, product->getId());
+        item->setText( productJson["name"].toString());
+        item->setData(Qt::UserRole, productJson["id"].toInt());
         ui->productListWidget->addItem(item);
     }
 }
@@ -95,16 +80,6 @@ void ListView::OnGetProductListFinished()
     connect(r, SIGNAL(finished()), this, SLOT(OnGetProductNamesFinished()));
 }
 
-void ListView::OnGetProductOrdersFinished()
-{
-    QJsonArray arr = _cManager->ReadJsonReply(sender()).array();
-    /*for (auto i = 0; i < arr.count(); i++)
-    {
-        QJsonObject object = arr.at(i);
-
-    }*/
-}
-
 void ListView::OnGetProductHistoryFinished()
 {
     ui->productHistoryTextBrowser->clear();
@@ -113,12 +88,24 @@ void ListView::OnGetProductHistoryFinished()
 
     for (auto i = 0; i < arr.count(); i++)
     {
-        QJsonObject object = arr.at(i).toObject();
+        DailyHistory history(arr.at(i).toObject());
+
+        text += history.GetDate() + ": \n" +
+                "Capacity: " + QString::number(history.GetCapacity(), 'f', 2) + "\n" +
+                "Volume: " + QString::number(history.GetVolume()) + "\n" +
+                "Medium: " + QString::number(history.GetMedium(), 'f', 2) + "\n" +
+                "Average: " + QString::number(history.GetAverage(), 'f', 2) + "\n" +
+                "Higher: " + QString::number(history.GetHigher(), 'f', 2) + "\n" +
+                "Lower: " + QString::number(history.GetLower(), 'f', 2) + "\n" +
+                "Coef: " + QString::number(history.GetCoefficient(), 'f', 2) + "\n\n";
+
+
+        /*QJsonObject object = arr.at(i).toObject();
         text += object["date"].toString() + " : " +
                 QString::number(object["lowest"].toDouble(), 'f', 2) + ", " +
                 QString::number(object["average"].toDouble(), 'f', 2) + ", " +
                 QString::number(object["highest"].toDouble(), 'f', 2) + ". " +
-                QString("Volume : ") + QString::number(object["volume"].toInt()) + "\n";
+                QString("Volume : ") + QString::number(object["volume"].toInt()) + "\n";*/
     }
 
     ui->productHistoryTextBrowser->setText(text);
@@ -126,15 +113,12 @@ void ListView::OnGetProductHistoryFinished()
 
 void ListView::on_getMarketInfoButton_clicked()
 {
+    int regionId = (ui->listWidget->currentItem()->data(Qt::UserRole).toJsonObject())["region_id"].toInt();
+
     for (auto i = 0; i < ui->productListWidget->count(); i++)
     {
-        itemId = ui->productListWidget->item(i)->data(Qt::UserRole).toInt();
-        QString url = QString(URL_MARKET) + QString::number(regionId) + "/" +
-                QString(MARKET_ORDERS) + "/" + QString(DATASOURCE) + "&" +
-                QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
-
-        QNetworkReply *r = _cManager->Get(url);
-        connect(r, SIGNAL(finished()), this, SLOT(OnGetProductOrdersFinished()));
+        int productId = ui->productListWidget->item(i)->data(Qt::UserRole).toInt();
+        Product *product = new Product(productId, regionId, _cManager, ui->productListWidget->item(i)->text());
     }
 }
 

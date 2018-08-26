@@ -8,26 +8,21 @@
 class Product
 {
 public:
-    Product(int id, ConnectivityManager *cManager, QString name):_id(id)
-    {
-        _cManager = cManager ? cManager : new ConnectivityManager();
-        _name = name;
-    }
-
+    Product(int productId, int regionId, ConnectivityManager *cManager, QString name);
     QString getName() { return _name; }
     int getId() { return _id; }
 
     void AddOrder(QJsonObject json);
+    void AddDailyHistory(QJsonObject json);
 private:
 
     int _id;
     QList <Order> _buyOrders;
     QList <Order> _sellOrders;
+    QList <DailyHistory> _history;
     QString _name;
 
     ConnectivityManager *_cManager;
 };
-
-Q_DECLARE_METATYPE(Product)
 
 #endif // PRODUCT_H

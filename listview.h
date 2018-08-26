@@ -30,7 +30,6 @@ private slots:
     void OnGetProductListFinished();
     void OnGetProductNamesFinished();
     void OnGetProductHistoryFinished();
-    void OnGetProductOrdersFinished();
 
     void on_listWidget_itemClicked(QListWidgetItem *item);
     void on_productListWidget_itemClicked(QListWidgetItem *item);
@@ -39,7 +38,7 @@ private:
     Ui::ListView *ui;
     ConnectivityManager *_cManager;
     QJsonDocument _ReadJsonReply();
-    QList <Product> _products;
+    QList <Product*> _products;
 };
 
 #endif // LISTVIEW_H
