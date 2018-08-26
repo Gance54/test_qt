@@ -111,6 +111,22 @@
     <string>Loaded</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="getChartBtn">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>60</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Get Chart</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>

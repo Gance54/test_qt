@@ -8,7 +8,8 @@ QT       += core
 QT       += gui
 QT       += sql
 QT       += network
-QT    += widgets
+QT       += widgets
+QT       += charts
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = testqt

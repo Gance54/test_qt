@@ -37,37 +37,21 @@ void ListView::DropMessageBox(QString text)
     mb.exec();
 }
 
-void ListView::OnGetProductHistoryFinished()
-{
-    ui->productHistoryTextBrowser->clear();
-    QJsonArray arr = _cManager->ReadJsonReply(sender()).array();
-    QString text;
-
-    for (auto i = 0; i < arr.count(); i++)
-    {
-        DailyHistory history(arr.at(i).toObject());
-
-        text += history.GetDate() + ": \n" +
-                "Capacity: " + QString::number(history.GetCapacity(), 'f', 2) + "\n" +
-                "Volume: " + QString::number(history.GetVolume()) + "\n" +
-                "Medium: " + QString::number(history.GetMedium(), 'f', 2) + "\n" +
-                "Average: " + QString::number(history.GetAverage(), 'f', 2) + "\n" +
-                "Higher: " + QString::number(history.GetHigher(), 'f', 2) + "\n" +
-                "Lower: " + QString::number(history.GetLower(), 'f', 2) + "\n" +
-                "Coef: " + QString::number(history.GetCoefficient(), 'f', 2) + "\n\n";
-    }
-
-    ui->productHistoryTextBrowser->setText(text);
-}
-
 void ListView::on_getMarketInfoButton_clicked()
 {
     int regionId = (ui->listWidget->currentItem()->data(Qt::UserRole).toJsonObject())["region_id"].toInt();
-
     for (auto i = 0; i < ui->productListWidget->count(); i++)
     {
-        int productId = ui->productListWidget->item(i)->data(Qt::UserRole).toInt();
-        Product *product = new Product(productId, regionId, _cManager, ui->productListWidget->item(i)->text());
+        ui->statusLabel->setText("Left " + QString::number(i) + " out of " + QString::number(ui->productListWidget->count()));
+        QListWidgetItem *item = ui->productListWidget->item(i);
+        int productId = item->data(Qt::UserRole).toInt();
+        Product *product = new Product(productId, regionId, _cManager, item->text(), 0);
+        if(!product->isApplicable())
+        {
+            delete item;
+            i--;
+        }
+        delete product;
     }
 }
 
@@ -101,7 +85,6 @@ void ListView::GetProductList(int regionId)
 
     while(true)
     {
-        ui->statusLabel->setText("Loading... Page " + QString::number(page) + ". Total: " + QString::number(uniqueIds.count()));
         QString url = QString(URL_MARKET) + QString::number(regionId)
                 + "/" + MARKET_TYPES + "/" DATASOURCE + "&page=" + QString::number(page);
 
@@ -132,17 +115,6 @@ void ListView::GetProductList(int regionId)
 
         url = QString(URL_UNIVERSE_NAMES) + QString(DATASOURCE);
         QJsonArray productsArray = _cManager->dPost(url, QJsonDocument(CurrentIdsArr)).array();
-        if(productsArray.isEmpty())
-        {
-            DropMessageBox("Can not get at least 1 product name as array");
-        }
-
-        if(productsArray.count() != CurrentIdsArr.count())
-        {
-            DropMessageBox("Requested count = " +  QString::number(CurrentIdsArr.count())
-                           + ", provided count = " + QString::number(productsArray.count()));
-        }
-
         for(auto i=0; i < productsArray.count(); i++)
         {
             QJsonObject productJson = productsArray.at(i).toObject();
@@ -152,6 +124,8 @@ void ListView::GetProductList(int regionId)
             ui->productListWidget->addItem(item);
         }
 
+        ui->statusLabel->setText("Loading... Page " + QString::number(page) + ". Total: " + QString::number(uniqueIds.count()));
+        return;
         page++;
     }
 }
@@ -170,16 +144,34 @@ void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
     GetProductList(regionId);
 }
 
+
+
 void ListView::on_productListWidget_itemClicked(QListWidgetItem *item)
 {
     ui->productHistoryTextBrowser->clear();
     ui->productTextBrowser->clear();
     int regionId = (ui->listWidget->currentItem()->data(Qt::UserRole).toJsonObject())["region_id"].toInt();
     int productId = item->data(Qt::UserRole).toInt();
+
     QString url = QString(URL_MARKET) + QString::number(regionId) + "/" +
             QString(MARKET_HISTORY) + "/" + QString(DATASOURCE) + "&" +
             QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
 
-    QNetworkReply *r = _cManager->Get(url);
-    connect(r, SIGNAL(finished()), this, SLOT(OnGetProductHistoryFinished()));
+    Product product(productId, regionId, _cManager, item->text(), 30);
+
+    QString text = product.GetHistoryInfo(30);
+    ui->productHistoryTextBrowser->setText(text);
+
+    QChart *chart = new QChart();
+    product.FillProductChart(chart, Product::CHART_HISTORY);
+    chart->createDefaultAxes();
+    chart->setTitle(item->text() + " market history");
+    QChartView *chartView = new QChartView(chart);
+    chartView->resize(700, 400);
+    chartView->show();
+}
+
+void ListView::on_productListWidget_itemDoubleClicked(QListWidgetItem *item)
+{
+
 }

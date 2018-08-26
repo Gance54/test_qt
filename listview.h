@@ -18,7 +18,7 @@ class ListView : public QDialog
 public:
     explicit ListView(QDialog *parent = 0);
     ~ListView();
-    void DropMessageBox(QString text);
+    static void DropMessageBox(QString text);
 
 private slots:
 
@@ -28,10 +28,11 @@ private slots:
 
     /* callbacks */
     void OnGetRegionInfoFinished();
-    void OnGetProductHistoryFinished();
 
     void on_listWidget_itemClicked(QListWidgetItem *item);
     void on_productListWidget_itemClicked(QListWidgetItem *item);
+
+    void on_productListWidget_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     Ui::ListView *ui;

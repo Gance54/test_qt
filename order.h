@@ -8,14 +8,17 @@ class Order
 {
 public:
     Order(QJsonObject json);
-
+    double getPrice() { return _price; }
+    int GetVolumeRemained() { return _volumeRemained; }
+    int GetVolumeTotal() { return _volumeTotal; }
+    int GetSystemId() { return _systemId; }
 private:
     int _id;
     int _locationId;
     int _systemId;
     int _volumeTotal;
     int _volumeRemained;
-    float _price;
+    double _price;
 };
 
 class DailyHistory
