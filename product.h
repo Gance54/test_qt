@@ -46,6 +46,8 @@ private:
     ConnectivityManager *_cManager;
 
     int _volumeRemained;
+    int _volumeSellRemained;
+    int _volumeBuyRemained;
     int _volumeTotal;
     double _buyPrice;
     double _sellPrice;

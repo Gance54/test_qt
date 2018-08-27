@@ -16,6 +16,8 @@ Product::Product(int productId, int regionId, ConnectivityManager *cManager, QSt
     _sellPrice = 0;
     _volumeTotal = 0;
     _volumeRemained = 0;
+    _volumeSellRemained = 0;
+    _volumeBuyRemained = 0;
 
     QString url = QString(URL_MARKET) + QString::number(regionId) + "/" +
             QString(MARKET_ORDERS) + "/" + QString(DATASOURCE) + "&" +
@@ -51,6 +53,7 @@ Product::Product(int productId, int regionId, ConnectivityManager *cManager, QSt
 
         _volumeTotal += o.GetVolumeTotal();
         _volumeRemained += o.GetVolumeRemained();
+        _volumeBuyRemained += o.GetVolumeRemained();
     }
 
     if(_sellOrders.count())
@@ -69,6 +72,7 @@ Product::Product(int productId, int regionId, ConnectivityManager *cManager, QSt
 
         _volumeTotal += o.GetVolumeTotal();
         _volumeRemained += o.GetVolumeRemained();
+        _volumeSellRemained += o.GetVolumeRemained();
     }
 
     for (auto i = 0; i < _history.count(); i++)
@@ -151,10 +155,19 @@ bool Product::isApplicable()
     if(_averageCapacity < 10000000000)
         return false;
 
-    if(diff <= 0)
+    /*if(diff <= 0)
         return false;
 
     if(diff/_buyPrice < koef)
+        return false;*/
+
+    if (!_volumeBuyRemained)
+        return false;
+
+    double vsr = static_cast<double>(_volumeSellRemained);
+    double vbr = static_cast<double>(_volumeBuyRemained);
+
+    if(vsr/vbr > 0.05)
         return false;
 
     return true;

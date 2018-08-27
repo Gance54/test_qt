@@ -85,6 +85,7 @@ void ListView::GetProductList(int regionId)
     int pageSize = 0;
     QJsonArray uniqueIds;
 
+    //while(page < 3)
     while(true)
     {
         QString url = QString(URL_MARKET) + QString::number(regionId)
