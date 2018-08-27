@@ -51,6 +51,7 @@ private:
     double _sellPrice;
     int _averageVolume;
     double _averageCapacity;
+    double _average_history_price;
 
     void _FillHistoryChart(QChart * chart);
 };

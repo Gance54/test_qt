@@ -17,6 +17,8 @@
 #include "product.h"
 #include "connectivitymanager.h"
 
+#define DAYS 200
+
 ListView::ListView(QDialog *parent) :
     QDialog(parent),
     ui(new Ui::ListView)
@@ -125,7 +127,6 @@ void ListView::GetProductList(int regionId)
         }
 
         ui->statusLabel->setText("Loading... Page " + QString::number(page) + ". Total: " + QString::number(uniqueIds.count()));
-        return;
         page++;
     }
 }
@@ -157,9 +158,9 @@ void ListView::on_productListWidget_itemClicked(QListWidgetItem *item)
             QString(MARKET_HISTORY) + "/" + QString(DATASOURCE) + "&" +
             QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
 
-    Product product(productId, regionId, _cManager, item->text(), 30);
+    Product product(productId, regionId, _cManager, item->text(), DAYS);
 
-    QString text = product.GetHistoryInfo(30);
+    QString text = product.GetHistoryInfo(DAYS);
     ui->productHistoryTextBrowser->setText(text);
 
     QChart *chart = new QChart();

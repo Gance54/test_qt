@@ -31,10 +31,11 @@ Product::Product(int productId, int regionId, ConnectivityManager *cManager, QSt
 
     QJsonArray ordersHistory = _cManager->dGet(url).array();
 
-    if(historyDays >= ordersHistory.count())
+    if(historyDays > ordersHistory.count())
     {
-        ListView::DropMessageBox("History for " + QString::number(historyDays) + " not available");
-        return;
+        if(ordersHistory.count() > 5)
+            historyDays = ordersHistory.count() - 1;
+        else return;
     }
 
     for(auto i = ordersHistory.count() - 1; i >= ordersHistory.count() - historyDays; i--)
@@ -77,6 +78,7 @@ Product::Product(int productId, int regionId, ConnectivityManager *cManager, QSt
         totalHistoryCapacity += h.GetCapacity();
     }
 
+    _average_history_price = totalHistoryCapacity/totalHistoryVolume;
     _averageVolume = totalHistoryVolume/_history.count();
     _averageCapacity = totalHistoryCapacity/_history.count();
 }
@@ -112,20 +114,25 @@ void Product::_FillHistoryChart(QChart *chart)
 {
      QLineSeries *averageSeries = new QLineSeries();
      QLineSeries *mediumSeries = new QLineSeries();
+     QLineSeries *avgTotal = new QLineSeries();
      averageSeries->setName("Average");
      averageSeries->setColor(QColor("green"));
      mediumSeries->setName("Medium");
      mediumSeries->setColor(QColor("red"));
+     avgTotal->setName("Average");
+     avgTotal->setColor(QColor("blue"));
 
      for (auto i = _history.count() -1 ; i >= 0; i--)
      {
          DailyHistory dh = _history.at(i);
-         averageSeries->append(i, dh.GetAverage());
-         mediumSeries->append(i, dh.GetMedium());
+         averageSeries->append(i+1, dh.GetAverage());
+         mediumSeries->append(i+1, dh.GetMedium());
+         avgTotal->append(i+1, _average_history_price);
      }
 
      chart->addSeries(averageSeries);
      chart->addSeries(mediumSeries);
+     chart->addSeries(avgTotal);
 }
 
 void Product::FillProductChart(QChart *chart, ChartType type)
