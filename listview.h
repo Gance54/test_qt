@@ -32,8 +32,6 @@ private slots:
     void on_listWidget_itemClicked(QListWidgetItem *item);
     void on_productListWidget_itemClicked(QListWidgetItem *item);
 
-    void on_productListWidget_itemDoubleClicked(QListWidgetItem *item);
-
 private:
     Ui::ListView *ui;
     ConnectivityManager *_cManager;

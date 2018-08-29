@@ -6,7 +6,10 @@
 class ProductListWidgetItem : public QListWidgetItem
 {
 public:
-    ProductListWidgetItem(Product *p) : _product(p) {}
+    ProductListWidgetItem(Product *p) : _product(p)
+    {
+        setText(p->getName());
+    }
     Product *GetProduct() { return _product; }
 
 private:

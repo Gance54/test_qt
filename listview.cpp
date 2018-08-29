@@ -42,20 +42,20 @@ void ListView::DropMessageBox(QString text)
 
 void ListView::on_getMarketInfoButton_clicked()
 {
-    int regionId = (ui->listWidget->currentItem()->data(Qt::UserRole).toJsonObject())["region_id"].toInt();
-    for (auto i = 0; i < ui->productListWidget->count(); i++)
+    int total = ui->productListWidget->count();
+    int found = 0;
+    ui->statusLabel->setText("Left 0 out of " + QString::number(total));
+    for (auto i = 0; i < total; i++)
     {
-        ui->statusLabel->setText("Left " + QString::number(i) + " out of " + QString::number(ui->productListWidget->count()));
-        QListWidgetItem *item = ui->productListWidget->item(i);
+        ProductListWidgetItem *pItem = dynamic_cast<ProductListWidgetItem*>(ui->productListWidget->item(i));
+        Product *product = pItem->GetProduct();
 
-        int productId = item->data(Qt::UserRole).toInt();
-        Product *product = new Product(productId, regionId, _cManager, item->text(), 0);
         if(!product->isApplicable())
         {
-            delete item;
-            i--;
+            pItem->setHidden(true);
         }
-        delete product;
+        else
+            ui->statusLabel->setText("Applicable " + QString::number(found) + " out of " + QString::number(total));
     }
 }
 
@@ -87,9 +87,11 @@ void ListView::GetProductList(int regionId)
     int pageSize = 0;
     QJsonArray uniqueIds;
 
-    //while(page < 3)
-    while(true)
+    //while(page < 2)
+    //while(true)
     {
+        ui->statusLabel->setText("Loading page " + QString::number(page) + "...");
+
         QString url = QString(URL_MARKET) + QString::number(regionId)
                 + "/" + MARKET_TYPES + "/" DATASOURCE + "&page=" + QString::number(page);
 
@@ -120,16 +122,16 @@ void ListView::GetProductList(int regionId)
 
         url = QString(URL_UNIVERSE_NAMES) + QString(DATASOURCE);
         QJsonArray productsArray = _cManager->dPost(url, QJsonDocument(CurrentIdsArr)).array();
-        for(auto i=0; i < productsArray.count(); i++)
+        int totalCount = productsArray.count();
+        for(auto i=0; i < totalCount; i++)
         {
+            ui->itemStatusLabel->setText(QString::number(i+1) + " from " + QString::number(totalCount) + " unique items on page " + QString::number(page));
             QJsonObject productJson = productsArray.at(i).toObject();
-            QListWidgetItem *item = new QListWidgetItem();
-            item->setText( productJson["name"].toString());
-            item->setData(Qt::UserRole, productJson["id"].toInt());
+            Product *p = new Product(productJson["id"].toInt(), regionId, _cManager, productJson["name"].toString(), DAYS);
+            ProductListWidgetItem *item = new ProductListWidgetItem(p);
             ui->productListWidget->addItem(item);
         }
 
-        ui->statusLabel->setText("Loading... Page " + QString::number(page) + ". Total: " + QString::number(uniqueIds.count()));
         page++;
     }
 }
@@ -154,28 +156,14 @@ void ListView::on_productListWidget_itemClicked(QListWidgetItem *item)
 {
     ui->productHistoryTextBrowser->clear();
     ui->productTextBrowser->clear();
-    int regionId = (ui->listWidget->currentItem()->data(Qt::UserRole).toJsonObject())["region_id"].toInt();
-    int productId = item->data(Qt::UserRole).toInt();
-
-    QString url = QString(URL_MARKET) + QString::number(regionId) + "/" +
-            QString(MARKET_HISTORY) + "/" + QString(DATASOURCE) + "&" +
-            QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
-
-    Product product(productId, regionId, _cManager, item->text(), DAYS);
-
-    QString text = product.GetHistoryInfo(DAYS);
-    ui->productHistoryTextBrowser->setText(text);
-
+    ProductListWidgetItem *pItem = dynamic_cast<ProductListWidgetItem*>(item);
+    Product *product = pItem->GetProduct();
+    ui->productHistoryTextBrowser->setText(product->GetHistoryInfo(DAYS));
     QChart *chart = new QChart();
-    product.FillProductChart(chart, Product::CHART_HISTORY);
+    product->FillProductChart(chart, Product::CHART_HISTORY);
     chart->createDefaultAxes();
     chart->setTitle(item->text() + " market history");
     QChartView *chartView = new QChartView(chart);
     chartView->resize(700, 400);
     chartView->show();
-}
-
-void ListView::on_productListWidget_itemDoubleClicked(QListWidgetItem *item)
-{
-
 }
