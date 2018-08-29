@@ -16,6 +16,7 @@
 
 #include "product.h"
 #include "connectivitymanager.h"
+#include "productlistwidgetitem.h"
 
 #define DAYS 200
 
@@ -46,6 +47,7 @@ void ListView::on_getMarketInfoButton_clicked()
     {
         ui->statusLabel->setText("Left " + QString::number(i) + " out of " + QString::number(ui->productListWidget->count()));
         QListWidgetItem *item = ui->productListWidget->item(i);
+
         int productId = item->data(Qt::UserRole).toInt();
         Product *product = new Product(productId, regionId, _cManager, item->text(), 0);
         if(!product->isApplicable())

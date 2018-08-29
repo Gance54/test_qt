@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     labelmapper.cpp \
     product.cpp \
     order.cpp \
-    connectivitymanager.cpp
+    connectivitymanager.cpp \
+    productlistwidgetitem.cpp
 
 HEADERS  += mainwindow.h \
     ui_mainwindow.h \
@@ -32,7 +33,8 @@ HEADERS  += mainwindow.h \
     labelmapper.h \
     product.h \
     order.h \
-    connectivitymanager.h
+    connectivitymanager.h \
+    productlistwidgetitem.h
 
 FORMS    += mainwindow.ui \
     listview.ui

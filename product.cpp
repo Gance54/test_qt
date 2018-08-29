@@ -155,20 +155,20 @@ bool Product::isApplicable()
     if(_averageCapacity < 10000000000)
         return false;
 
-    /*if(diff <= 0)
+    if(diff <= 0)
         return false;
 
     if(diff/_buyPrice < koef)
-        return false;*/
+        return false;
 
-    if (!_volumeBuyRemained)
+    /*if (!_volumeBuyRemained)
         return false;
 
     double vsr = static_cast<double>(_volumeSellRemained);
     double vbr = static_cast<double>(_volumeBuyRemained);
 
     if(vsr/vbr > 0.05)
-        return false;
+        return false;*/
 
     return true;
 }
