@@ -1,46 +1,46 @@
 #include "product.h"
 #include "listview.h"
+#include <QThread>
 #include <QColor>
 #define JITA_ID 30000142
 
-Product::Product(int productId, int regionId, ConnectivityManager *cManager, QString name, int historyDays)
+#include <QEventLoop>
+#include <QJsonObject>
+#include <QMutex>
+#include <QMutexLocker>
+
+static int counter = 0;
+static QMutex _mutex;
+
+void Product::onOrdersLoaded()
 {
-    int totalHistoryVolume = 0;
-    double totalHistoryCapacity = 0;
-    if(!historyDays)
-        historyDays = 30;
-    _id = productId;
-    _cManager = cManager ? cManager : new ConnectivityManager();
-    _name = name;
-    _buyPrice = 0;
-    _sellPrice = 0;
-    _volumeTotal = 0;
-    _volumeRemained = 0;
-    _volumeSellRemained = 0;
-    _volumeBuyRemained = 0;
-
-    QString url = QString(URL_MARKET) + QString::number(regionId) + "/" +
-            QString(MARKET_ORDERS) + "/" + QString(DATASOURCE) + "&" +
-            QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
-
-    QJsonArray ordersArray = _cManager->dGet(url).array();
+    QJsonArray ordersArray = _cManager->ReadJsonReply(sender()).array();
     for(auto i = 0; i < ordersArray.count(); i++)
         AddOrder(ordersArray.at(i).toObject());
 
-    url = QString(URL_MARKET) + QString::number(regionId) + "/" +
+    QString url = QString(URL_MARKET) + QString::number(_regionId) + "/" +
                 QString(MARKET_HISTORY) + "/" + QString(DATASOURCE) + "&" +
-                QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
+                QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(_id);
 
-    QJsonArray ordersHistory = _cManager->dGet(url).array();
+    QNetworkReply *r = _cManager->Get(url);
+    QObject::connect(r, SIGNAL(finished()), this, SLOT(onHistoryLoaded()));
+}
 
-    if(historyDays > ordersHistory.count())
+void Product::onHistoryLoaded()
+{
+    int totalHistoryVolume = 0;
+    double totalHistoryCapacity = 0;
+
+    QJsonArray ordersHistory = _cManager->ReadJsonReply(sender()).array();
+
+    if(_historyDays > ordersHistory.count())
     {
         if(ordersHistory.count() > 5)
-            historyDays = ordersHistory.count() - 1;
+            _historyDays = ordersHistory.count() - 1;
         else return;
     }
 
-    for(auto i = ordersHistory.count() - 1; i >= ordersHistory.count() - historyDays; i--)
+    for(auto i = ordersHistory.count() - 1; i >= ordersHistory.count() - _historyDays; i--)
         AddDailyHistory(ordersHistory.at(i).toObject());
 
     for (auto i = 0; i < _buyOrders.count(); i++)
@@ -85,6 +85,35 @@ Product::Product(int productId, int regionId, ConnectivityManager *cManager, QSt
     _average_history_price = totalHistoryCapacity/totalHistoryVolume;
     _averageVolume = totalHistoryVolume/_history.count();
     _averageCapacity = totalHistoryCapacity/_history.count();
+
+    delete _cManager;
+
+    _countDecrease();
+}
+
+Product::Product(int productId, int regionId, QString name, int historyDays)
+{
+    if(!historyDays)
+        historyDays = 30;
+    _id = productId;
+    _regionId = regionId;
+    _cManager = new ConnectivityManager();
+    _name = name;
+    _buyPrice = 0;
+    _sellPrice = 0;
+    _volumeTotal = 0;
+    _volumeRemained = 0;
+    _volumeSellRemained = 0;
+    _volumeBuyRemained = 0;
+    _historyDays = historyDays;
+
+    QString url = QString(URL_MARKET) + QString::number(regionId) + "/" +
+            QString(MARKET_ORDERS) + "/" + QString(DATASOURCE) + "&" +
+            QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(productId);
+
+    QNetworkReply *r = _cManager->Get(url);
+    _countIncrease();
+    QObject::connect(r, SIGNAL(finished()), this, SLOT(onOrdersLoaded()));
 }
 
 void Product::AddDailyHistory(QJsonObject json)
@@ -186,4 +215,28 @@ void Product::AddOrder(QJsonObject json)
         if(order.GetSystemId() == JITA_ID)
             _sellOrders.push_back(order);
     }
+}
+
+void Product::_countIncrease()
+{
+    ListView::DropMessageBox(QString::number(counter));
+    while(true)
+    {
+        _mutex.tryLock(500);
+
+        if(counter <= 10)
+        {
+            counter++;
+            return;
+        }
+        _mutex.unlock();
+
+    }
+}
+
+void Product::_countDecrease()
+{
+    _mutex.tryLock(60000);
+    counter--;
+    _mutex.unlock();
 }

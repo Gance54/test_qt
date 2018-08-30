@@ -7,10 +7,15 @@
 #include <QtCharts/QChartView>
 #include <QtCharts/QLineSeries>
 
+#include <QObject>
+#include <qobject.h>
+#include <QMutex>
 QT_CHARTS_USE_NAMESPACE
 
-class Product
+class Product: public QObject
 {
+    Q_OBJECT
+
 public:
     enum ChartType {
         CHART_HISTORY,
@@ -19,7 +24,9 @@ public:
         CHART_MAX
     };
 
-    Product(int productId, int regionId, ConnectivityManager *cManager, QString name, int historyDays);
+   // explicit Product (QObject *parent = 0);
+    Product(int productId, int regionId, QString name, int historyDays);
+    virtual ~Product(){}
     QString getName() { return _name; }
     int getId() { return _id; }
 
@@ -36,9 +43,15 @@ public:
     void FillProductChart(QChart *chart, ChartType type);
     bool isApplicable();
 
+private slots:
+
+    void onOrdersLoaded();
+    void onHistoryLoaded();
+
 private:
 
     int _id;
+    int _regionId;
     QList <Order> _buyOrders;
     QList <Order> _sellOrders;
     QList <DailyHistory> _history;
@@ -49,6 +62,7 @@ private:
     int _volumeSellRemained;
     int _volumeBuyRemained;
     int _volumeTotal;
+    int _historyDays;
     double _buyPrice;
     double _sellPrice;
     int _averageVolume;
@@ -56,6 +70,11 @@ private:
     double _average_history_price;
 
     void _FillHistoryChart(QChart * chart);
+
+    void _countIncrease();
+    void _countDecrease();
+
+    int _count;
 };
 
 #endif // PRODUCT_H

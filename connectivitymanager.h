@@ -36,6 +36,8 @@ public:
     QJsonDocument dPost(QString url, QJsonDocument json);
     QJsonDocument dGet(QString url);
 
+    ~ConnectivityManager() { delete _manager; }
+
 private:
     QNetworkRequest _request;
     QNetworkAccessManager *_manager;
