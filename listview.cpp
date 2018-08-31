@@ -87,8 +87,7 @@ void ListView::GetProductList(int regionId)
     int pageSize = 0;
     QJsonArray uniqueIds;
 
-    //while(page < 2)
-    //while(true)
+    while(true)
     {
         ui->statusLabel->setText("Loading page " + QString::number(page) + "...");
 
@@ -166,4 +165,16 @@ void ListView::on_productListWidget_itemClicked(QListWidgetItem *item)
     QChartView *chartView = new QChartView(chart);
     chartView->resize(700, 400);
     chartView->show();
+}
+
+void ListView::on_resetButton_clicked()
+{
+    int total = ui->productListWidget->count();
+    ui->statusLabel->setText("Loaded");
+    ui->itemStatusLabel->setText("Loaded");
+    for (auto i = 0; i < total; i++)
+    {
+         ProductListWidgetItem *pItem = dynamic_cast<ProductListWidgetItem*>(ui->productListWidget->item(i));
+         pItem->setHidden(false);
+    }
 }

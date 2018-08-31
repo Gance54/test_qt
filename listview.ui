@@ -111,22 +111,6 @@
     <string>Loaded</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="getChartBtn">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>60</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Get Chart</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="itemStatusLabel">
    <property name="geometry">
     <rect>
@@ -138,6 +122,19 @@
    </property>
    <property name="text">
     <string>Loaded</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="resetButton">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>60</y>
+     <width>161</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reset</string>
    </property>
   </widget>
  </widget>
