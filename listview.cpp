@@ -88,7 +88,7 @@ void ListView::GetProductList(int regionId)
     QJsonArray uniqueIds;
 
     //while(page < 2)
-    while(true)
+    //while(true)
     {
         ui->statusLabel->setText("Loading page " + QString::number(page) + "...");
 
@@ -127,7 +127,7 @@ void ListView::GetProductList(int regionId)
         {
             ui->itemStatusLabel->setText(QString::number(i+1) + " from " + QString::number(totalCount) + " unique items on page " + QString::number(page));
             QJsonObject productJson = productsArray.at(i).toObject();
-            Product *p = new Product(productJson["id"].toInt(), regionId, productJson["name"].toString(), DAYS);
+            Product *p = new Product(productJson["id"].toInt(), regionId, _cManager, productJson["name"].toString(), DAYS);
             ProductListWidgetItem *item = new ProductListWidgetItem(p);
             ui->productListWidget->addItem(item);
         }
