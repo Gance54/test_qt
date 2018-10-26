@@ -13,7 +13,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <cstdio>
-
 #include "product.h"
 #include "connectivitymanager.h"
 #include "productlistwidgetitem.h"
@@ -50,12 +49,15 @@ void ListView::on_getMarketInfoButton_clicked()
         ProductListWidgetItem *pItem = dynamic_cast<ProductListWidgetItem*>(ui->productListWidget->item(i));
         Product *product = pItem->GetProduct();
 
+        ui->statusLabel->setText("Applicable " + QString::number(found) + " from " +
+                                 QString::number(i) + " out of " + QString::number(total));
         if(!product->isApplicable())
-        {
             pItem->setHidden(true);
-        }
         else
-            ui->statusLabel->setText("Applicable " + QString::number(found) + " out of " + QString::number(total));
+            found++;
+
+        ui->statusLabel->setText("Applicable " + QString::number(found) + " from " +
+                                 QString::number(i) + " out of " + QString::number(total));
     }
 }
 
@@ -70,7 +72,7 @@ void ListView::OnGetRegionInfoFinished()
 
 void ListView::on_GetRegions_clicked()
 {
-    QStringList regions = {"10000002","10000043"};
+    QStringList regions = {"10000002","10000043", "10000042"};
 
     for(auto i=0; i < regions.count(); i++)
     {
@@ -126,7 +128,8 @@ void ListView::GetProductList(int regionId)
         {
             ui->itemStatusLabel->setText(QString::number(i+1) + " from " + QString::number(totalCount) + " unique items on page " + QString::number(page));
             QJsonObject productJson = productsArray.at(i).toObject();
-            Product *p = new Product(productJson["id"].toInt(), regionId, _cManager, productJson["name"].toString(), DAYS);
+            Product *p = new Product(productJson["id"].toInt(), regionId, productJson["name"].toString(), DAYS);
+            //p->LoadProductInfo();
             ProductListWidgetItem *item = new ProductListWidgetItem(p);
             ui->productListWidget->addItem(item);
         }
@@ -148,8 +151,6 @@ void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
     int regionId = regionData["region_id"].toInt();
     GetProductList(regionId);
 }
-
-
 
 void ListView::on_productListWidget_itemClicked(QListWidgetItem *item)
 {

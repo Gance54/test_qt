@@ -19,7 +19,9 @@ public:
         CHART_MAX
     };
 
-    Product(int productId, int regionId, ConnectivityManager *cManager, QString name, int historyDays);
+    Product(int productId, int regionId, QString name, int historyDays);
+    ~Product() { delete _cManager; }
+    void LoadProductInfo();
     QString getName() { return _name; }
     int getId() { return _id; }
 
@@ -38,7 +40,10 @@ public:
 
 private:
 
+    bool _loaded;
     int _id;
+    int _regionId;
+    int _historyDays;
     QList <Order> _buyOrders;
     QList <Order> _sellOrders;
     QList <DailyHistory> _history;
@@ -56,6 +61,7 @@ private:
     double _average_history_price;
 
     void _FillHistoryChart(QChart * chart);
+    void _LoadCheck();
 };
 
 #endif // PRODUCT_H
