@@ -87,7 +87,7 @@ void ListView::on_GetRegions_clicked()
 void ListView::GetProductList(int regionId)
 {
     int pages = 1;
-    int pageSize = 0;
+    int totalCount = 0;
     QJsonArray uniqueIds;
 
     while(true)
@@ -98,7 +98,6 @@ void ListView::GetProductList(int regionId)
                 + "/" + MARKET_TYPES + "/" DATASOURCE + "&page=" + QString::number(pages);
 
         QJsonArray productIdsArr = _cManager->dGet(url).array();
-        QJsonArray CurrentIdsArr;
         if(productIdsArr.isEmpty())
         {
             if(pages == 1)
@@ -107,42 +106,31 @@ void ListView::GetProductList(int regionId)
                 return;
             }
 
-            DropMessageBox("Loaded!");
             break;
         }
 
-        if(!pageSize)
-            pageSize = productIdsArr.count();
-
-        for(auto i = 0; i < productIdsArr.count(); i++)
-        {
-            QJsonValue val = productIdsArr.at(i);
-            if(!uniqueIds.contains(val))
-            {
-                uniqueIds.append(val);
-                CurrentIdsArr.append(val);
-            }
-        }
-
         url = QString(URL_UNIVERSE_NAMES) + QString(DATASOURCE);
-        QJsonArray productsArray = _cManager->dPost(url, QJsonDocument(CurrentIdsArr)).array();
-        int totalCount = productsArray.count();
-        for(auto i=0; i < totalCount; i++)
+        QJsonArray productsArray = _cManager->dPost(url, QJsonDocument(productIdsArr)).array();
+        int count = productsArray.count();
+        for(auto i=0; i < count; i++)
         {
-            ui->itemStatusLabel->setText(QString::number(i+1) + " from " + QString::number(totalCount)
-                                         + " unique items on page " + QString::number(pages));
             QJsonObject productJson = productsArray.at(i).toObject();
             Product *p = new Product(productJson["id"].toInt(), regionId, productJson["name"].toString(), DAYS);
-            //p->LoadProductInfo();
-            ProductListWidgetItem *item = new ProductListWidgetItem(p);
-            ui->productListWidget->addItem(item);
+
+            QtConcurrent::run([&]() {
+                ProductListWidgetItem *item = new ProductListWidgetItem(p);
+                ui->productListWidget->addItem(item);
+                p->LoadProductInfo();
+                ui->statusLabel->setText("Loaded " + QString::number(ui->productListWidget->count()) + " objects...");
+            });
         }
 
+        totalCount += count;
+        ui->itemStatusLabel->setText("Total objects found: " + QString::number(totalCount));
         pages++;
-    }
 
-    ui->statusLabel->setText("Loaded " + QString::number(pages) + " pages with " +
-                             QString::number(ui->productListWidget->count()) + " goods");
+        break;
+    }
 }
 
 void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
