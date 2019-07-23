@@ -17,7 +17,7 @@
 #include "product.h"
 #include "connectivitymanager.h"
 #include "productlistwidgetitem.h"
-
+#include <QMutex>
 #define DAYS 200
 
 ListView::ListView(QDialog *parent) :
@@ -89,9 +89,11 @@ void ListView::GetProductList(int regionId)
     int pages = 1;
     int totalCount = 0;
     QJsonArray uniqueIds;
+    QMutex mutex;
 
     while(true)
     {
+
         ui->statusLabel->setText("Loading page " + QString::number(pages) + "...");
 
         QString url = QString(URL_MARKET) + QString::number(regionId)
@@ -117,19 +119,19 @@ void ListView::GetProductList(int regionId)
             QJsonObject productJson = productsArray.at(i).toObject();
             Product *p = new Product(productJson["id"].toInt(), regionId, productJson["name"].toString(), DAYS);
 
-            QtConcurrent::run([&]() {
+            QtConcurrent::run([=, &mutex]() {
                 ProductListWidgetItem *item = new ProductListWidgetItem(p);
-                ui->productListWidget->addItem(item);
                 p->LoadProductInfo();
+                mutex.lock();
                 ui->statusLabel->setText("Loaded " + QString::number(ui->productListWidget->count()) + " objects...");
+                ui->productListWidget->addItem(item);
+                mutex.unlock();
             });
         }
 
         totalCount += count;
         ui->itemStatusLabel->setText("Total objects found: " + QString::number(totalCount));
         pages++;
-
-        break;
     }
 }
 
