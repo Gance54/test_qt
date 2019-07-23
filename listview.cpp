@@ -12,6 +12,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QtConcurrentRun>
 #include <cstdio>
 #include "product.h"
 #include "connectivitymanager.h"
@@ -85,27 +86,29 @@ void ListView::on_GetRegions_clicked()
 
 void ListView::GetProductList(int regionId)
 {
-    int page = 1;
+    int pages = 1;
     int pageSize = 0;
     QJsonArray uniqueIds;
 
     while(true)
     {
-        ui->statusLabel->setText("Loading page " + QString::number(page) + "...");
+        ui->statusLabel->setText("Loading page " + QString::number(pages) + "...");
 
         QString url = QString(URL_MARKET) + QString::number(regionId)
-                + "/" + MARKET_TYPES + "/" DATASOURCE + "&page=" + QString::number(page);
+                + "/" + MARKET_TYPES + "/" DATASOURCE + "&page=" + QString::number(pages);
 
         QJsonArray productIdsArr = _cManager->dGet(url).array();
         QJsonArray CurrentIdsArr;
         if(productIdsArr.isEmpty())
         {
-            if(page == 1)
+            if(pages == 1)
             {
                 DropMessageBox("Can not get product ids for the first page!");
                 return;
             }
-            return;
+
+            DropMessageBox("Loaded!");
+            break;
         }
 
         if(!pageSize)
@@ -126,7 +129,8 @@ void ListView::GetProductList(int regionId)
         int totalCount = productsArray.count();
         for(auto i=0; i < totalCount; i++)
         {
-            ui->itemStatusLabel->setText(QString::number(i+1) + " from " + QString::number(totalCount) + " unique items on page " + QString::number(page));
+            ui->itemStatusLabel->setText(QString::number(i+1) + " from " + QString::number(totalCount)
+                                         + " unique items on page " + QString::number(pages));
             QJsonObject productJson = productsArray.at(i).toObject();
             Product *p = new Product(productJson["id"].toInt(), regionId, productJson["name"].toString(), DAYS);
             //p->LoadProductInfo();
@@ -134,8 +138,11 @@ void ListView::GetProductList(int regionId)
             ui->productListWidget->addItem(item);
         }
 
-        page++;
+        pages++;
     }
+
+    ui->statusLabel->setText("Loaded " + QString::number(pages) + " pages with " +
+                             QString::number(ui->productListWidget->count()) + " goods");
 }
 
 void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
