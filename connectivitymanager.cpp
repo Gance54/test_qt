@@ -12,6 +12,11 @@ ConnectivityManager::ConnectivityManager()
     _request.setRawHeader("Content-Type", "application/json");
 }
 
+ConnectivityManager::~ConnectivityManager()
+{
+    delete _manager;
+}
+
 void ConnectivityManager::SetRequestUrl(QString url)
 {
     _request.setUrl(QUrl(url));

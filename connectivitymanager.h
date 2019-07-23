@@ -27,6 +27,7 @@ class ConnectivityManager
 {
 public:
     ConnectivityManager();
+    ~ConnectivityManager();
 
     void SetRequestUrl(QString url);
     QNetworkReply *Post(QString url, QJsonDocument json);

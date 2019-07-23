@@ -20,7 +20,7 @@ public:
     };
 
     Product(int productId, int regionId, QString name, int historyDays);
-    ~Product() { delete _cManager; }
+    ~Product() {}
     void LoadProductInfo();
     QString getName() { return _name; }
     int getId() { return _id; }
@@ -48,7 +48,6 @@ private:
     QList <Order> _sellOrders;
     QList <DailyHistory> _history;
     QString _name;
-    ConnectivityManager *_cManager;
 
     int _volumeRemained;
     int _volumeSellRemained;

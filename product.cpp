@@ -8,7 +8,6 @@ Product::Product(int productId, int regionId, QString name, int historyDays)
     _historyDays = historyDays? historyDays : DEFAULT_DAYS;
     _id = productId;
     _regionId = regionId;
-    _cManager = new ConnectivityManager();
     _name = name;
     _buyPrice = 0;
     _sellPrice = 0;
@@ -23,12 +22,13 @@ void Product::LoadProductInfo()
 {
     int totalHistoryVolume = 0;
     double totalHistoryCapacity = 0;
+    ConnectivityManager cManager;
 
     QString url = QString(URL_MARKET) + QString::number(_regionId) + "/" +
             QString(MARKET_ORDERS) + "/" + QString(DATASOURCE) + "&" +
             QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(_id);
 
-    QJsonArray ordersArray = _cManager->dGet(url).array();
+    QJsonArray ordersArray = cManager.dGet(url).array();
     for(auto i = 0; i < ordersArray.count(); i++)
         AddOrder(ordersArray.at(i).toObject());
 
@@ -36,7 +36,7 @@ void Product::LoadProductInfo()
                 QString(MARKET_HISTORY) + "/" + QString(DATASOURCE) + "&" +
                 QString(PRODUCT_TYPE_ID) + QString("=") + QString::number(_id);
 
-    QJsonArray ordersHistory = _cManager->dGet(url).array();
+    QJsonArray ordersHistory = cManager.dGet(url).array();
 
     if(_historyDays > ordersHistory.count())
     {
