@@ -130,6 +130,9 @@ void ListView::GetProductList(int regionId)
         totalCount += count;
         ui->itemStatusLabel->setText("Total objects found: " + QString::number(totalCount));
         pages++;
+
+        //TODO: turn this off for release
+        break;
     }
 }
 
