@@ -17,7 +17,7 @@
 #include "product.h"
 #include "connectivitymanager.h"
 #include "productlistwidgetitem.h"
-#include <QMutex>
+
 #define DAYS 200
 
 ListView::ListView(QDialog *parent) :
@@ -44,7 +44,7 @@ void ListView::on_getMarketInfoButton_clicked()
 {
     int total = ui->productListWidget->count();
     int found = 0;
-    ui->statusLabel->setText("Left 0 out of " + QString::number(total));
+
     for (auto i = 0; i < total; i++)
     {
         ProductListWidgetItem *pItem = dynamic_cast<ProductListWidgetItem*>(ui->productListWidget->item(i));
@@ -84,18 +84,24 @@ void ListView::on_GetRegions_clicked()
     }
 }
 
+void ListView::LoadConcurrent(QMutex *mutex, Ui::ListView *u, Product *p)
+{
+    p->LoadProductInfo();
+    ProductListWidgetItem *item = new ProductListWidgetItem(p);
+    mutex->lock();
+    u->statusLabel->setText("Loaded " + QString::number(u->productListWidget->count()) + " objects...");
+    u->productListWidget->addItem(item);
+    mutex->unlock();
+}
+
 void ListView::GetProductList(int regionId)
 {
     int pages = 1;
     int totalCount = 0;
     QJsonArray uniqueIds;
-    QMutex mutex;
 
     while(true)
     {
-
-        ui->statusLabel->setText("Loading page " + QString::number(pages) + "...");
-
         QString url = QString(URL_MARKET) + QString::number(regionId)
                 + "/" + MARKET_TYPES + "/" DATASOURCE + "&page=" + QString::number(pages);
 
@@ -118,15 +124,7 @@ void ListView::GetProductList(int regionId)
         {
             QJsonObject productJson = productsArray.at(i).toObject();
             Product *p = new Product(productJson["id"].toInt(), regionId, productJson["name"].toString(), DAYS);
-
-            QtConcurrent::run([=, &mutex]() {
-                ProductListWidgetItem *item = new ProductListWidgetItem(p);
-                p->LoadProductInfo();
-                mutex.lock();
-                ui->statusLabel->setText("Loaded " + QString::number(ui->productListWidget->count()) + " objects...");
-                ui->productListWidget->addItem(item);
-                mutex.unlock();
-            });
+            QtConcurrent::run(LoadConcurrent, &_mutex, ui, p);
         }
 
         totalCount += count;

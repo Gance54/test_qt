@@ -8,6 +8,7 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 #include <QThread>
+#include <QMutex>
 
 namespace Ui {
 class ListView;
@@ -38,8 +39,10 @@ private slots:
 
 private:
     Ui::ListView *ui;
+    QMutex _mutex;
     ConnectivityManager *_cManager;
     QList <Product*> _products;
+    static void LoadConcurrent(QMutex *mutex, Ui::ListView *u, Product *p);
 };
 
 #endif // LISTVIEW_H
