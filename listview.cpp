@@ -89,8 +89,8 @@ void ListView::LoadConcurrent(QMutex *mutex, Ui::ListView *u, Product *p)
     p->LoadProductInfo();
     ProductListWidgetItem *item = new ProductListWidgetItem(p);
     mutex->lock();
-    u->statusLabel->setText("Loaded " + QString::number(u->productListWidget->count()) + " objects...");
     u->productListWidget->addItem(item);
+    u->statusLabel->setText("Loaded " + QString::number(u->productListWidget->count()) + " objects...");
     mutex->unlock();
 }
 
