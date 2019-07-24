@@ -9,6 +9,8 @@
 
 QT_CHARTS_USE_NAMESPACE
 
+#define DEFAULT_DAYS 30
+
 class Product
 {
 public:
@@ -19,7 +21,7 @@ public:
         CHART_MAX
     };
 
-    Product(int productId, int regionId, QString name, int historyDays);
+    Product(int productId, int regionId, QString name, int historyDays = DEFAULT_DAYS);
     ~Product() {}
     void LoadProductInfo();
     QString getName() { return _name; }

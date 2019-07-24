@@ -2,10 +2,10 @@
 #include "listview.h"
 #include <QColor>
 #define JITA_ID 30000142
-#define DEFAULT_DAYS 30
+
 Product::Product(int productId, int regionId, QString name, int historyDays)
 {
-    _historyDays = historyDays? historyDays : DEFAULT_DAYS;
+    _historyDays = historyDays;
     _id = productId;
     _regionId = regionId;
     _name = name;
