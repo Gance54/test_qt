@@ -30,7 +30,7 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     marketlistview.h \
     ui_mainwindow.h \
-    ui_listview.h \
+    ui_marketlistview.h \
     labelmapper.h \
     product.h \
     order.h \

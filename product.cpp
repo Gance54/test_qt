@@ -189,6 +189,11 @@ bool Product::isApplicable()
     return true;
 }
 
+QMutex* Product::GetMutex()
+{
+    return &_mutex;
+}
+
 void Product::AddOrder(QJsonObject json)
 {
     bool isBuy = json["is_buy_order"].toBool();

@@ -6,7 +6,7 @@
 #include "connectivitymanager.h"
 #include <QtCharts/QChartView>
 #include <QtCharts/QLineSeries>
-
+#include <QMutex>
 QT_CHARTS_USE_NAMESPACE
 
 #define DEFAULT_DAYS 30
@@ -39,6 +39,7 @@ public:
     QString GetHistoryInfo(int days);
     void FillProductChart(QChart *chart, ChartType type);
     bool isApplicable();
+    QMutex *GetMutex();
 
 private:
 
@@ -50,6 +51,7 @@ private:
     QList <Order> _sellOrders;
     QList <DailyHistory> _history;
     QString _name;
+    QMutex _mutex;
 
     int _volumeRemained;
     int _volumeSellRemained;

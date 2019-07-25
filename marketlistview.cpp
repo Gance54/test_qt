@@ -1,5 +1,5 @@
 #include "marketlistview.h"
-#include "ui_listview.h"
+#include "ui_marketlistview.h"
 #include <cstdlib>
 #include <iostream>
 #include <QtNetwork/QNetworkAccessManager>
@@ -40,7 +40,7 @@ void MarketListView::DropMessageBox(QString text)
     mb.exec();
 }
 
-void MarketListView::on_getMarketInfoButton_clicked()
+void MarketListView::on_filterMarketInfoButton_clicked()
 {
     int total = ui->productListWidget->count();
     int found = 0;
@@ -84,7 +84,7 @@ void MarketListView::on_GetRegions_clicked()
     }
 }
 
-void MarketListView::LoadConcurrent(QMutex *mutex, Ui::MarketListView *u, Product *p)
+void MarketListView::_LoadSingleProductConcurrent(QMutex *mutex, Ui::MarketListView *u, Product *p)
 {
     p->LoadProductInfo();
     ProductListWidgetItem *item = new ProductListWidgetItem(p);
@@ -94,13 +94,65 @@ void MarketListView::LoadConcurrent(QMutex *mutex, Ui::MarketListView *u, Produc
     mutex->unlock();
 }
 
-void MarketListView::GetProductList(int regionId)
+void MarketListView::_LoadAllProducts(int regionId)
+{
+    int pages = 1;
+    int total_orders = 0;
+
+    while (true)
+    {
+        QString url = QString(URL_MARKET) + QString::number(regionId) + "/" +
+              QString(MARKET_ORDERS) + "/" + QString(DATASOURCE) +
+              QString("&order_type=all&page=") + QString::number(pages);
+
+        QJsonArray ordersArray = _cManager->dGet(url).array();
+        int total_on_page = ordersArray.count();
+        int loaded = 0;
+
+        if (ordersArray.isEmpty())
+        {
+            if (pages == 1)
+            {
+                DropMessageBox("Failed to load products.");
+                return;
+            }
+
+            DropMessageBox("Loaded all orders!");
+            break;
+        }
+
+        for (auto i = 0; i < ordersArray.count(); i++)
+        {
+            QJsonObject orderJson = ordersArray.at(i).toObject();
+            for (auto j = 0; j < ui->productListWidget->count(); j++)
+            {
+                ProductListWidgetItem *pItem = dynamic_cast<ProductListWidgetItem*>(ui->productListWidget->item(j));
+                Product *product = pItem->GetProduct();
+                if(product->getId() == orderJson["type_id"].toInt())
+                {
+                    product->AddOrder(orderJson);
+                    loaded++;
+                    ui->statusLabel->setText("Loaded " + QString::number(loaded) + " from " + QString::number(total_on_page) +
+                                             " orders on page " + QString::number(pages));
+                }
+            }
+        }
+
+        total_orders += loaded;
+
+        ui->itemStatusLabel->setText("Loaded " + QString::number(total_orders) + " orders from " +
+                                     QString::number(pages) + " pages.");
+        pages++;
+    }
+}
+
+void MarketListView::_GetProductList(int regionId)
 {
     int pages = 1;
     int totalCount = 0;
     QJsonArray uniqueIds;
 
-    while(true)
+    while (true)
     {
         QString url = QString(URL_MARKET) + QString::number(regionId)
                 + "/" + MARKET_TYPES + "/" DATASOURCE + "&page=" + QString::number(pages);
@@ -124,7 +176,11 @@ void MarketListView::GetProductList(int regionId)
         {
             QJsonObject productJson = productsArray.at(i).toObject();
             Product *p = new Product(productJson["id"].toInt(), regionId, productJson["name"].toString(), DAYS);
-            QtConcurrent::run(LoadConcurrent, &_mutex, ui, p);
+            //QtConcurrent::run(_LoadSingleProductConcurrent, &_mutex, ui, p);
+
+            ProductListWidgetItem *item = new ProductListWidgetItem(p);
+            ui->productListWidget->addItem(item);
+            ui->statusLabel->setText("Loaded " + QString::number(ui->productListWidget->count()) + " objects...");
         }
 
         totalCount += count;
@@ -132,7 +188,7 @@ void MarketListView::GetProductList(int regionId)
         pages++;
 
         //TODO: turn this off for release
-        break;
+        //break;
     }
 }
 
@@ -147,7 +203,7 @@ void MarketListView::on_listWidget_itemClicked(QListWidgetItem *item)
 
     QJsonObject regionData = item->data(Qt::UserRole).toJsonObject();
     int regionId = regionData["region_id"].toInt();
-    GetProductList(regionId);
+    _GetProductList(regionId);
 }
 
 void MarketListView::on_productListWidget_itemClicked(QListWidgetItem *item)
@@ -176,4 +232,10 @@ void MarketListView::on_resetButton_clicked()
          ProductListWidgetItem *pItem = dynamic_cast<ProductListWidgetItem*>(ui->productListWidget->item(i));
          pItem->setHidden(false);
     }
+}
+
+void MarketListView::on_loadMarketInfoButton_clicked()
+{
+    int id = ui->listWidget->selectedItems()[0]->data(Qt::UserRole).toJsonObject()["region_id"].toInt();
+    _LoadAllProducts(id);
 }

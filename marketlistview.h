@@ -1,7 +1,7 @@
 #ifndef LISTVIEW_H
 #define LISTVIEW_H
 #include <QDialog>
-#include "ui_listview.h"
+#include "ui_marketlistview.h"
 #include "product.h"
 #include "connectivitymanager.h"
 #include <QtNetwork/QNetworkAccessManager>
@@ -19,15 +19,14 @@ class MarketListView : public QDialog
     Q_OBJECT
 
 public:
-    explicit MarketListView(QDialog *parent = 0);
+    explicit MarketListView(QDialog *parent = nullptr);
     ~MarketListView();
     static void DropMessageBox(QString text);
 
 private slots:
 
-    void on_getMarketInfoButton_clicked();
+    void on_filterMarketInfoButton_clicked();
     void on_GetRegions_clicked();
-    void GetProductList(int regionId);
 
     /* callbacks */
     void OnGetRegionInfoFinished();
@@ -37,12 +36,16 @@ private slots:
 
     void on_resetButton_clicked();
 
+    void on_loadMarketInfoButton_clicked();
+
 private:
     Ui::MarketListView *ui;
     QMutex _mutex;
     ConnectivityManager *_cManager;
     QList <Product*> _products;
-    static void LoadConcurrent(QMutex *mutex, Ui::MarketListView *u, Product *p);
+    static void _LoadSingleProductConcurrent(QMutex *mutex, Ui::MarketListView *u, Product *p);
+    void _LoadAllProducts(int regionId);
+    void _GetProductList(int regionId);
 };
 
 #endif // LISTVIEW_H
