@@ -25,7 +25,7 @@ void MainWindow::on_ProductsButton_clicked()
 {
     if(!products)
     {
-        products = new ListView();
+        products = new MarketListView();
         products->setWindowTitle("MarketInfo");
     }
     products->show();

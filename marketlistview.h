@@ -11,16 +11,16 @@
 #include <QMutex>
 
 namespace Ui {
-class ListView;
+class MarketListView;
 }
 
-class ListView : public QDialog
+class MarketListView : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit ListView(QDialog *parent = 0);
-    ~ListView();
+    explicit MarketListView(QDialog *parent = 0);
+    ~MarketListView();
     static void DropMessageBox(QString text);
 
 private slots:
@@ -38,11 +38,11 @@ private slots:
     void on_resetButton_clicked();
 
 private:
-    Ui::ListView *ui;
+    Ui::MarketListView *ui;
     QMutex _mutex;
     ConnectivityManager *_cManager;
     QList <Product*> _products;
-    static void LoadConcurrent(QMutex *mutex, Ui::ListView *u, Product *p);
+    static void LoadConcurrent(QMutex *mutex, Ui::MarketListView *u, Product *p);
 };
 
 #endif // LISTVIEW_H

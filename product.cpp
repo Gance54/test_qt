@@ -1,5 +1,5 @@
 #include "product.h"
-#include "listview.h"
+#include "marketlistview.h"
 #include <QColor>
 #define JITA_ID 30000142
 

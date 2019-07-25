@@ -1,4 +1,4 @@
-#include "listview.h"
+#include "marketlistview.h"
 #include "ui_listview.h"
 #include <cstdlib>
 #include <iostream>
@@ -20,27 +20,27 @@
 
 #define DAYS 200
 
-ListView::ListView(QDialog *parent) :
+MarketListView::MarketListView(QDialog *parent) :
     QDialog(parent),
-    ui(new Ui::ListView)
+    ui(new Ui::MarketListView)
 {
     ui->setupUi(this);
     _cManager = new ConnectivityManager();
 }
 
-ListView::~ListView()
+MarketListView::~MarketListView()
 {
     delete ui;
 }
 
-void ListView::DropMessageBox(QString text)
+void MarketListView::DropMessageBox(QString text)
 {
     QMessageBox mb;
     mb.setText(text);
     mb.exec();
 }
 
-void ListView::on_getMarketInfoButton_clicked()
+void MarketListView::on_getMarketInfoButton_clicked()
 {
     int total = ui->productListWidget->count();
     int found = 0;
@@ -62,7 +62,7 @@ void ListView::on_getMarketInfoButton_clicked()
     }
 }
 
-void ListView::OnGetRegionInfoFinished()
+void MarketListView::OnGetRegionInfoFinished()
 {
     QJsonObject obj = _cManager->ReadJsonReply(sender()).object();
     QListWidgetItem *item = new QListWidgetItem();
@@ -71,7 +71,7 @@ void ListView::OnGetRegionInfoFinished()
     ui->listWidget->addItem(item);
 }
 
-void ListView::on_GetRegions_clicked()
+void MarketListView::on_GetRegions_clicked()
 {
     QStringList regions = {"10000002","10000043", "10000042"};
 
@@ -84,7 +84,7 @@ void ListView::on_GetRegions_clicked()
     }
 }
 
-void ListView::LoadConcurrent(QMutex *mutex, Ui::ListView *u, Product *p)
+void MarketListView::LoadConcurrent(QMutex *mutex, Ui::MarketListView *u, Product *p)
 {
     p->LoadProductInfo();
     ProductListWidgetItem *item = new ProductListWidgetItem(p);
@@ -94,7 +94,7 @@ void ListView::LoadConcurrent(QMutex *mutex, Ui::ListView *u, Product *p)
     mutex->unlock();
 }
 
-void ListView::GetProductList(int regionId)
+void MarketListView::GetProductList(int regionId)
 {
     int pages = 1;
     int totalCount = 0;
@@ -136,7 +136,7 @@ void ListView::GetProductList(int regionId)
     }
 }
 
-void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
+void MarketListView::on_listWidget_itemClicked(QListWidgetItem *item)
 {
     ui->productListWidget->clear();
     if(!item)
@@ -150,7 +150,7 @@ void ListView::on_listWidget_itemClicked(QListWidgetItem *item)
     GetProductList(regionId);
 }
 
-void ListView::on_productListWidget_itemClicked(QListWidgetItem *item)
+void MarketListView::on_productListWidget_itemClicked(QListWidgetItem *item)
 {
     ui->productHistoryTextBrowser->clear();
     ui->productTextBrowser->clear();
@@ -166,7 +166,7 @@ void ListView::on_productListWidget_itemClicked(QListWidgetItem *item)
     chartView->show();
 }
 
-void ListView::on_resetButton_clicked()
+void MarketListView::on_resetButton_clicked()
 {
     int total = ui->productListWidget->count();
     ui->statusLabel->setText("Loaded");

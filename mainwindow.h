@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <listview.h>
+#include <marketlistview.h>
 
 #include <labelmapper.h>
 
@@ -26,7 +26,7 @@ void on_ProductsButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    ListView *products;
+    MarketListView *products;
     void *_object;
 };
 

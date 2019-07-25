@@ -20,17 +20,17 @@ CONFIG += c++11
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    listview.cpp \
     labelmapper.cpp \
+    marketlistview.cpp \
     product.cpp \
     order.cpp \
     connectivitymanager.cpp \
     productlistwidgetitem.cpp
 
 HEADERS  += mainwindow.h \
+    marketlistview.h \
     ui_mainwindow.h \
     ui_listview.h \
-    listview.h \
     labelmapper.h \
     product.h \
     order.h \
@@ -38,4 +38,4 @@ HEADERS  += mainwindow.h \
     productlistwidgetitem.h
 
 FORMS    += mainwindow.ui \
-    listview.ui
+    marketlistview.ui
