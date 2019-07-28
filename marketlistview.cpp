@@ -22,7 +22,7 @@
 
 MarketListView::MarketListView(QDialog *parent) :
     QDialog(parent),
-    ui(new Ui::MarketListView)
+    ui(new MarketHashView)
 {
     ui->setupUi(this);
     _cManager = new ConnectivityManager();
@@ -84,20 +84,37 @@ void MarketListView::on_GetRegions_clicked()
     }
 }
 
-void MarketListView::_LoadSingleProductConcurrent(QMutex *mutex, Ui::MarketListView *u, Product *p)
+static int totalPagesCalculated;
+static QMutex qmutex;
+
+void MarketListView::_LoadProductPageConcurrent(QJsonArray ordersArray, MarketHashView *u)
 {
-    p->LoadProductInfo();
-    ProductListWidgetItem *item = new ProductListWidgetItem(p);
-    mutex->lock();
-    u->productListWidget->addItem(item);
-    u->statusLabel->setText("Loaded " + QString::number(u->productListWidget->count()) + " objects...");
-    mutex->unlock();
+    for (auto i = 0; i < ordersArray.count(); i++)
+    {
+	QJsonObject orderJson = ordersArray.at(i).toObject();
+	for (auto j = 0; j < u->productListWidget->count(); j++)
+	{
+	    ProductListWidgetItem *pItem = dynamic_cast<ProductListWidgetItem*>(u->productListWidget->item(j));
+	    Product *product = pItem->GetProduct();
+	    if(product->getId() == orderJson["type_id"].toInt())
+	    {
+		product->GetMutex()->lock();
+		product->AddOrder(orderJson);
+		product->GetMutex()->unlock();
+		break;
+	    }
+	}
+    }
+    totalPagesCalculated++;
+    qmutex.lock();
+    u->itemStatusLabel->setText("Calculated pages: " + QString::number(totalPagesCalculated));
+    qmutex.unlock();
 }
 
 void MarketListView::_LoadAllProducts(int regionId)
 {
     int pages = 1;
-    int total_orders = 0;
+    totalPagesCalculated = 0;
 
     while (true)
     {
@@ -106,8 +123,6 @@ void MarketListView::_LoadAllProducts(int regionId)
               QString("&order_type=all&page=") + QString::number(pages);
 
         QJsonArray ordersArray = _cManager->dGet(url).array();
-        int total_on_page = ordersArray.count();
-        int loaded = 0;
 
         if (ordersArray.isEmpty())
         {
@@ -121,28 +136,10 @@ void MarketListView::_LoadAllProducts(int regionId)
             break;
         }
 
-        for (auto i = 0; i < ordersArray.count(); i++)
-        {
-            QJsonObject orderJson = ordersArray.at(i).toObject();
-            for (auto j = 0; j < ui->productListWidget->count(); j++)
-            {
-                ProductListWidgetItem *pItem = dynamic_cast<ProductListWidgetItem*>(ui->productListWidget->item(j));
-                Product *product = pItem->GetProduct();
-                if(product->getId() == orderJson["type_id"].toInt())
-                {
-                    product->AddOrder(orderJson);
-                    loaded++;
-                    ui->statusLabel->setText("Loaded " + QString::number(loaded) + " from " + QString::number(total_on_page) +
-                                             " orders on page " + QString::number(pages));
-                }
-            }
-        }
+	QtConcurrent::run(_LoadProductPageConcurrent, ordersArray, ui);
 
-        total_orders += loaded;
-
-        ui->itemStatusLabel->setText("Loaded " + QString::number(total_orders) + " orders from " +
-                                     QString::number(pages) + " pages.");
         pages++;
+	ui->statusLabel->setText("Loaded " + QString::number(pages) + " pages");
     }
 }
 
@@ -176,7 +173,6 @@ void MarketListView::_GetProductList(int regionId)
         {
             QJsonObject productJson = productsArray.at(i).toObject();
             Product *p = new Product(productJson["id"].toInt(), regionId, productJson["name"].toString(), DAYS);
-            //QtConcurrent::run(_LoadSingleProductConcurrent, &_mutex, ui, p);
 
             ProductListWidgetItem *item = new ProductListWidgetItem(p);
             ui->productListWidget->addItem(item);
@@ -186,9 +182,6 @@ void MarketListView::_GetProductList(int regionId)
         totalCount += count;
         ui->itemStatusLabel->setText("Total objects found: " + QString::number(totalCount));
         pages++;
-
-        //TODO: turn this off for release
-        //break;
     }
 }
 

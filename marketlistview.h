@@ -14,6 +14,8 @@ namespace Ui {
 class MarketListView;
 }
 
+class MarketHashView : public Ui::MarketListView {};
+
 class MarketListView : public QDialog
 {
     Q_OBJECT
@@ -39,13 +41,14 @@ private slots:
     void on_loadMarketInfoButton_clicked();
 
 private:
-    Ui::MarketListView *ui;
-    QMutex _mutex;
+    MarketHashView *ui;
     ConnectivityManager *_cManager;
     QList <Product*> _products;
-    static void _LoadSingleProductConcurrent(QMutex *mutex, Ui::MarketListView *u, Product *p);
-    void _LoadAllProducts(int regionId);
+
+    static void _LoadProductPageConcurrent(QJsonArray ordersArray, MarketHashView *u);
+
     void _GetProductList(int regionId);
+    void _LoadAllProducts(int regionId);
 };
 
 #endif // LISTVIEW_H
